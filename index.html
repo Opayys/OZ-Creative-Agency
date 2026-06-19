@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>OZ Creative Agency — Fullstack · AI · Blockchain</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* ═══ HERO ══════════════════════════════════════════════════ */
+#hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  position:relative;overflow:hidden;padding-top:var(--nav-h)
+}
+#c-hero{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:7px 20px;background:rgba(123,47,255,.1);
+  border:1px solid rgba(123,47,255,.3);border-radius:100px;
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan);
+  letter-spacing:.15em;margin-bottom:2.25rem;
+  animation:fadeSlideDown .9s ease both
+}
+.ey-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:dotPulse 2s infinite}
+
+.hero-content{position:relative;z-index:2;max-width:900px;padding:0 1.5rem}
+
+.hero-h1{
+  font-size:clamp(3.2rem,9vw,7.5rem);font-weight:800;line-height:1.02;
+  letter-spacing:-.04em;margin-bottom:1.75rem
+}
+.h1-line{overflow:hidden;display:block}
+.h1-word{display:inline-block;animation:wordUp .85s cubic-bezier(.22,1,.36,1) both}
+.h1-word.d1{animation-delay:.05s}.h1-word.d2{animation-delay:.15s}
+.h1-word.d3{animation-delay:.25s}.h1-word.d4{animation-delay:.35s}
+.h1-word.d5{animation-delay:.45s}
+@keyframes wordUp{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes fadeSlideDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-sub{
+  font-size:clamp(.95rem,2vw,1.15rem);color:var(--muted);
+  max-width:580px;margin:0 auto 2.5rem;line-height:1.8;
+  animation:fadeUp .9s .55s ease both
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-actions{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+  animation:fadeUp .9s .7s ease both
+}
+
+.hero-stats{
+  display:flex;gap:3rem;justify-content:center;margin-top:5rem;
+  padding-top:3rem;border-top:1px solid rgba(123,47,255,.2);
+  animation:fadeUp .9s .85s ease both;flex-wrap:wrap
+}
+.hstat-n{
+  font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;
+  background:linear-gradient(135deg,var(--white),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:block;line-height:1
+}
+.hstat-l{font-size:.75rem;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:.1em;margin-top:.25rem}
+
+.scroll-line{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  z-index:2;animation:scrollBounce 2.5s ease-in-out infinite
+}
+.scroll-line::before{
+  content:'SCROLL';font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  color:var(--muted2);letter-spacing:.25em;display:block;text-align:center;margin-bottom:.5rem
+}
+.scroll-line span{display:block;width:1.5px;height:56px;background:linear-gradient(to bottom,var(--violet),transparent);margin:0 auto}
+@keyframes scrollBounce{0%,100%{opacity:1;transform:translateX(-50%) translateY(0)}50%{opacity:.5;transform:translateX(-50%) translateY(10px)}}
+
+/* ═══ MARQUEE ════════════════════════════════════════════════ */
+#marquee{padding:1.5rem 0;overflow:hidden;border-top:1px solid rgba(123,47,255,.12);border-bottom:1px solid rgba(123,47,255,.12);background:var(--bg2)}
+.marquee-track{display:flex;gap:0;width:max-content;animation:marqueeScroll 28s linear infinite}
+.marquee-item{
+  display:flex;align-items:center;gap:1rem;padding:0 2.5rem;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;
+  color:var(--muted2);white-space:nowrap;transition:color .3s
+}
+.marquee-item:hover{color:var(--white)}
+.marquee-sep{color:var(--violet);font-size:1.2rem}
+@keyframes marqueeScroll{to{transform:translateX(-50%)}}
+
+/* ═══ ABOUT ══════════════════════════════════════════════════ */
+#about{padding:9rem 6%;position:relative;overflow:hidden}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+
+.about-visual-wrap{position:relative;height:520px}
+.about-card-3d{
+  width:100%;height:100%;border-radius:28px;
+  background:linear-gradient(145deg,rgba(123,47,255,.12),rgba(0,240,255,.05));
+  border:1px solid var(--glass-b);position:relative;overflow:hidden;
+  transition:transform .08s linear;will-change:transform;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem
+}
+.ac3-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(123,47,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(123,47,255,.1) 1px,transparent 1px);
+  background-size:48px 48px
+}
+.ac3-glare{
+  position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at var(--mx,50%) var(--my,50%),rgba(255,255,255,.06),transparent 70%);
+  transition:background .05s;pointer-events:none
+}
+.ac3-oz{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:clamp(7rem,14vw,11rem);letter-spacing:-.06em;line-height:1;
+  background:linear-gradient(135deg,var(--violet-light),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 40px rgba(123,47,255,.6));
+  animation:ozGlow 4s ease-in-out infinite;position:relative;z-index:1
+}
+@keyframes ozGlow{0%,100%{filter:drop-shadow(0 0 30px rgba(123,47,255,.5))}50%{filter:drop-shadow(0 0 60px rgba(0,240,255,.7))}}
+.ac3-tag{
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  color:var(--muted);letter-spacing:.3em;text-transform:uppercase;z-index:1
+}
+.fl-badge{
+  position:absolute;padding:8px 14px;border-radius:10px;
+  background:rgba(4,4,15,.9);border:1px solid var(--glass-b);
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  white-space:nowrap;backdrop-filter:blur(10px)
+}
+.fl-badge.b1{top:18px;right:-16px;color:var(--cyan);border-color:rgba(0,240,255,.3);animation:fl 5s ease-in-out infinite}
+.fl-badge.b2{bottom:80px;left:-16px;color:var(--violet-light);animation:fl 5s 1.5s ease-in-out infinite}
+.fl-badge.b3{bottom:18px;right:18px;color:#22ff88;border-color:rgba(34,255,136,.3);animation:fl 5s .75s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+.about-text .about-accent{
+  display:flex;gap:3px;margin-bottom:1.25rem
+}
+.about-accent span{display:block;height:3px;border-radius:2px}
+.about-accent span:nth-child(1){width:40px;background:var(--violet)}
+.about-accent span:nth-child(2){width:20px;background:var(--cyan)}
+.about-accent span:nth-child(3){width:10px;background:var(--pink)}
+
+.about-text h2{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:800;margin-bottom:1.5rem}
+.about-text p{color:var(--muted);line-height:1.85;margin-bottom:1rem}
+.about-text p strong{color:var(--white)}
+.about-stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.75rem}
+
+/* ═══ FOUNDERS ══════════════════════════════════════════════ */
+#founders{
+  padding:9rem 6%;background:linear-gradient(180deg,transparent,rgba(123,47,255,.04),transparent);
+  position:relative;overflow:hidden
+}
+.founders-head{text-align:center;margin-bottom:5rem}
+.founders-head h2{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:800;margin-bottom:1rem}
+.founders-head p{color:var(--muted);max-width:480px;margin:0 auto}
+.oz-divider{
+  display:flex;align-items:center;gap:1.5rem;justify-content:center;margin:2.5rem 0
+}
+.oz-line{flex:1;max-width:180px;height:1px;background:linear-gradient(90deg,transparent,rgba(123,47,255,.4))}
+.oz-line.r{background:linear-gradient(90deg,rgba(123,47,255,.4),transparent)}
+.oz-pill{
+  padding:8px 24px;border-radius:100px;
+  background:linear-gradient(135deg,var(--violet),#4400aa);
+  font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;
+  letter-spacing:.12em;box-shadow:var(--glow-v)
+}
+
+.founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1060px;margin:0 auto}
+
+.fc{
+  border-radius:24px;padding:2.75rem;position:relative;overflow:hidden;
+  background:linear-gradient(145deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+  border:1px solid rgba(123,47,255,.2);transition:all .5s cubic-bezier(.22,1,.36,1)
+}
+.fc::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(123,47,255,.12),transparent 60%);
+  opacity:0;transition:opacity .5s
+}
+.fc:hover::before{opacity:1}
+.fc:hover{border-color:var(--violet-light);transform:translateY(-8px);box-shadow:var(--glow-v),0 24px 60px rgba(0,0,0,.4)}
+.fc.c2::before{background:linear-gradient(135deg,rgba(0,240,255,.08),transparent 60%)}
+.fc.c2:hover{border-color:var(--cyan);box-shadow:var(--glow-c),0 24px 60px rgba(0,0,0,.4)}
+
+/* PHOTO SLOT */
+.fc-photo{
+  width:90px;height:90px;border-radius:50%;margin-bottom:1.5rem;
+  position:relative;flex-shrink:0
+}
+.fc-photo img{
+  width:100%;height:100%;object-fit:cover;border-radius:50%;
+  border:2.5px solid rgba(123,47,255,.5);display:block
+}
+.fc-photo-fallback{
+  width:100%;height:100%;border-radius:50%;
+  background:linear-gradient(135deg,var(--violet),var(--cyan));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;
+  border:2.5px solid rgba(123,47,255,.5)
+}
+.fc.c2 .fc-photo-fallback{background:linear-gradient(135deg,var(--cyan),var(--violet))}
+.fc-photo-ring{
+  position:absolute;inset:-4px;border-radius:50%;
+  border:1.5px solid transparent;
+  background:linear-gradient(135deg,var(--violet),var(--cyan)) border-box;
+  -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:destination-out;mask-composite:exclude;
+  animation:ringRotate 4s linear infinite
+}
+@keyframes ringRotate{to{transform:rotate(360deg)}}
+.fc-online{
+  position:absolute;bottom:5px;right:5px;width:16px;height:16px;
+  border-radius:50%;background:#22ff88;border:2.5px solid var(--bg2);
+  box-shadow:0 0 10px #22ff88
+}
+
+.fc-handle{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;
+  color:var(--cyan);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.3rem
+}
+.fc.c2 .fc-handle{color:var(--violet-light)}
+.fc-name{font-family:'Syne',sans-serif;font-weight:800;font-size:1.45rem;margin-bottom:.5rem}
+.fc-role{
+  display:inline-block;font-size:.78rem;color:var(--muted);
+  padding:4px 14px;background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);border-radius:100px;margin-bottom:1.5rem
+}
+.fc-bio{color:var(--muted);font-size:.88rem;line-height:1.8;margin-bottom:1.5rem}
+
+.fc-skills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem}
+.fskill{
+  padding:3px 11px;border-radius:7px;
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:500;
+  background:rgba(123,47,255,.12);border:1px solid rgba(123,47,255,.25);color:var(--violet-light)
+}
+.fc.c2 .fskill{background:rgba(0,240,255,.06);border-color:rgba(0,240,255,.2);color:var(--cyan-dim)}
+
+.fc-hr{height:1px;background:rgba(123,47,255,.15);margin:.25rem 0 1.25rem}
+.fc-footer{display:flex;justify-content:space-between;align-items:center}
+.fc-socials{display:flex;gap:.65rem}
+.fc-soc{
+  width:34px;height:34px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--glass);border:1px solid var(--glass-b);
+  color:var(--muted);text-decoration:none;transition:all .3s
+}
+.fc-soc:hover{color:var(--cyan);border-color:rgba(0,240,255,.4);box-shadow:0 0 14px rgba(0,240,255,.3)}
+.fc-tag{
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted2);
+  padding:3px 10px;background:var(--glass);border-radius:6px;border:1px solid rgba(255,255,255,.06)
+}
+
+/* ═══ MINI PROJECT PREVIEW ═══════════════════════════════════ */
+#projects-preview{padding:9rem 6%;position:relative;overflow:hidden}
+.pp-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;flex-wrap:wrap;gap:1.5rem}
+.pp-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+
+.pp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.pp-card{
+  border-radius:20px;padding:0;overflow:hidden;position:relative;
+  border:1px solid rgba(123,47,255,.18);
+  transition:all .45s cubic-bezier(.22,1,.36,1);cursor:pointer;
+  background:var(--bg2)
+}
+.pp-card:hover{border-color:var(--violet-light);transform:translateY(-6px);box-shadow:var(--glow-v),0 20px 50px rgba(0,0,0,.5)}
+.pp-img{
+  height:200px;background:linear-gradient(135deg,rgba(123,47,255,.2),rgba(0,240,255,.08));
+  display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative
+}
+.pp-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.pp-card:hover .pp-img img{transform:scale(1.06)}
+.pp-img-fallback{
+  font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;
+  background:linear-gradient(135deg,var(--violet-light),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  letter-spacing:-.04em
+}
+.pp-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 50%,var(--bg2));
+  pointer-events:none
+}
+.pp-body{padding:1.5rem}
+.pp-eco{
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--cyan);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem
+}
+.pp-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:.5rem}
+.pp-desc{color:var(--muted);font-size:.82rem;line-height:1.7;margin-bottom:1rem}
+.pp-foot{display:flex;justify-content:space-between;align-items:center}
+.pp-links{display:flex;gap:.6rem}
+.pp-link{
+  padding:4px 12px;border-radius:7px;font-size:.72rem;font-weight:600;
+  font-family:'JetBrains Mono',monospace;text-decoration:none;
+  background:var(--glass);border:1px solid var(--glass-b);color:var(--muted);
+  transition:all .3s;display:flex;align-items:center;gap:5px
+}
+.pp-link:hover{color:var(--cyan);border-color:rgba(0,240,255,.35)}
+.pp-status{
+  padding:3px 10px;border-radius:100px;font-size:.68rem;font-weight:600;
+  font-family:'JetBrains Mono',monospace
+}
+.pp-status.live{background:rgba(34,255,136,.1);border:1px solid rgba(34,255,136,.3);color:#22ff88}
+.pp-status.dev{background:rgba(255,200,0,.1);border:1px solid rgba(255,200,0,.3);color:#ffc800}
+
+/* ═══ CTA STRIP ══════════════════════════════════════════════ */
+#cta{padding:8rem 6%;text-align:center;position:relative;overflow:hidden}
+.cta-box{
+  max-width:740px;margin:0 auto;padding:4.5rem 3.5rem;border-radius:28px;
+  background:linear-gradient(145deg,rgba(123,47,255,.1),rgba(0,240,255,.04));
+  border:1px solid rgba(123,47,255,.25);position:relative;overflow:hidden
+}
+.cta-box::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(123,47,255,.12),transparent);
+  pointer-events:none
+}
+.cta-box h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem;position:relative}
+.cta-box p{color:var(--muted);margin-bottom:2.5rem;position:relative;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative}
+
+@media(max-width:860px){
+  .about-grid{grid-template-columns:1fr}
+  .about-visual-wrap{height:300px}
+  .founders-grid{grid-template-columns:1fr}
+  .pp-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .hero-stats{gap:1.5rem}
+  .cta-box{padding:3rem 1.75rem}
+  .pp-head{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div id="page-curtain"></div>
+<div id="cursor-glow"></div>
+
+<!-- ── NAV ─────────────────────────────────── -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-dot"></div>
+    <span class="oz">OZ</span>&nbsp;Creative
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hbg"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────── -->
+<section id="hero" class="grid-bg">
+  <canvas id="c-hero"></canvas>
+  <div class="orb orb-v" style="width:700px;height:700px;top:-250px;left:-200px;opacity:.5;animation:orbF1 9s ease-in-out infinite"></div>
+  <div class="orb orb-c" style="width:550px;height:550px;bottom:-200px;right:-150px;opacity:.4;animation:orbF2 11s ease-in-out infinite"></div>
+  <div class="orb orb-p" style="width:300px;height:300px;top:40%;left:60%;opacity:.3;animation:orbF3 7s ease-in-out infinite"></div>
+  <style>
+    @keyframes orbF1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,40px) scale(1.05)}}
+    @keyframes orbF2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,50px) scale(1.07)}}
+    @keyframes orbF3{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+  </style>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="ey-dot"></div>
+      Fullstack &nbsp;·&nbsp; AI Engineering &nbsp;·&nbsp; Blockchain
+    </div>
+
+    <h1 class="hero-h1">
+      <span class="h1-line"><span class="h1-word d1">We&nbsp;</span><span class="h1-word d2">Build</span></span>
+      <span class="h1-line"><span class="h1-word d3 g-text">Digital&nbsp;</span><span class="h1-word d4 g-text">Future</span></span>
+      <span class="h1-line"><span class="h1-word d5">From&nbsp;Scratch.</span></span>
+    </h1>
+
+    <p class="hero-sub">
+      OZ Creative Agency adalah dua builder yang menghadirkan solusi Web3, AI, dan Fullstack terdepan.
+      Dari protokol DeFi on-chain hingga GameFi arcade — kami eksekusi dari nol sampai live.
+    </p>
+
+    <div class="hero-actions">
+      <a href="projects.html" class="btn btn-primary">
+        <span class="btn-shine"></span>
+        Explore Projects
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="contact.html" class="btn btn-outline">
+        <span class="btn-shine"></span>
+        Get In Touch
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div><span class="hstat-n" data-target="4">0</span><span class="hstat-l">Live Projects</span></div>
+      <div><span class="hstat-n" data-target="3">0</span><span class="hstat-l">Ecosystems</span></div>
+      <div><span class="hstat-n" data-target="2">0</span><span class="hstat-l">Founders</span></div>
+      <div><span class="hstat-n" data-target="100">0</span><span class="hstat-l">% On-Chain</span></div>
+    </div>
+  </div>
+
+  <div class="scroll-line"><span></span></div>
+</section>
+
+<!-- ── MARQUEE ───────────────────────────────── -->
+<div id="marquee">
+  <div class="marquee-track" id="mqTrack">
+    <span class="marquee-item">Solana Ecosystem <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Ethereum & EVM <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Rust / Anchor <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Solidity / Foundry <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">AI Engineering <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Next.js / React <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">DeFi Protocols <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">GameFi & Web3 Gaming <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Zero-Knowledge Proofs <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Smart Contracts <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Solana Ecosystem <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Ethereum & EVM <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Rust / Anchor <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Solidity / Foundry <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">AI Engineering <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Next.js / React <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">DeFi Protocols <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">GameFi & Web3 Gaming <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Zero-Knowledge Proofs <span class="marquee-sep">✦</span></span>
+    <span class="marquee-item">Smart Contracts <span class="marquee-sep">✦</span></span>
+  </div>
+</div>
+
+<!-- ── ABOUT ─────────────────────────────────── -->
+<section id="about">
+  <div class="orb orb-v" style="width:400px;height:400px;top:0;right:0;opacity:.25"></div>
+  <div class="about-grid">
+    <div class="about-visual-wrap sr left">
+      <div class="about-card-3d" id="ac3d">
+        <div class="ac3-grid"></div>
+        <div class="ac3-glare" id="ac3glare"></div>
+        <div class="ac3-oz">OZ</div>
+        <div class="ac3-tag">Opayy &times; Zenn — Creative Agency</div>
+      </div>
+      <div class="fl-badge b1">🔗 Solana Ecosystem</div>
+      <div class="fl-badge b2">⚡ Ethereum & EVM</div>
+      <div class="fl-badge b3">🤖 AI Engineering</div>
+    </div>
+
+    <div class="about-text">
+      <div class="sr up" style="transition-delay:.1s">
+        <div class="label">Tentang Kami</div>
+        <div class="about-accent"><span></span><span></span><span></span></div>
+        <h2>Dua Builder.<br><span class="g-text">Satu Visi.</span></h2>
+      </div>
+      <div class="sr up" style="transition-delay:.2s">
+        <p><strong>OZ Creative Agency</strong> lahir dari kolaborasi dua developer muda yang memiliki passion mendalam di dunia Web3 dan teknologi masa depan. Nama <strong>OZ</strong> lahir dari dua alias kami — <strong style="color:var(--violet-light)">Opayy</strong> dan <strong style="color:var(--cyan)">Zenn</strong>.</p>
+        <p>Kami tidak hanya menulis kode — kami membangun <strong>infrastruktur digital</strong> yang membawa dampak nyata. Dari smart contract yang mengamankan ribuan transaksi, sistem anti-cheat kriptografis, hingga platform governance terdesentralisasi.</p>
+        <p>Dengan pengalaman di ekosistem <strong>Solana</strong> dan <strong>Ethereum</strong>, kami menggabungkan kedalaman teknis dengan visibilitas bisnis untuk menciptakan produk yang <strong>scalable</strong>, <strong>secure</strong>, dan <strong>impactful</strong>.</p>
+      </div>
+      <div class="about-stack sr up" style="transition-delay:.3s">
+        <span class="badge">Rust</span>
+        <span class="badge">Anchor Framework</span>
+        <span class="badge">Solidity</span>
+        <span class="badge">Foundry</span>
+        <span class="badge cyan">Next.js</span>
+        <span class="badge cyan">Wagmi / Viem</span>
+        <span class="badge cyan">Python</span>
+        <span class="badge">Node.js / Go</span>
+        <span class="badge">ZK Proofs</span>
+        <span class="badge cyan">AI Engineering</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOUNDERS ───────────────────────────────── -->
+<section id="founders">
+  <div class="orb orb-c" style="width:500px;height:500px;top:50%;left:-150px;transform:translateY(-50%);opacity:.2"></div>
+  <div class="founders-head">
+    <div class="label" style="justify-content:center" ><span style="transform:scaleX(-1);display:inline-block">—</span>&nbsp;Meet The Founders&nbsp;<span>—</span></div>
+    <h2 class="sr up">Dua Pendiri, <span class="g-text">Satu Agency</span></h2>
+    <p class="sr up" style="transition-delay:.1s">Kami setara dalam skill teknis, sama-sama all-in, dan saling melengkapi.</p>
+    <div class="oz-divider sr up" style="transition-delay:.2s">
+      <div class="oz-line"></div>
+      <div class="oz-pill">O × Z</div>
+      <div class="oz-line r"></div>
+    </div>
+  </div>
+
+  <div class="founders-grid">
+    <!-- OPAYY -->
+    <div class="fc sr left" style="transition-delay:.1s">
+      <div class="fc-photo">
+        <!-- GANTI src="foto-opayy.jpg" dengan path foto kamu -->
+        <img src="foto-opayy.jpg" alt="Naufal Aufaa Abyan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="fc-photo-fallback" style="display:none">N</div>
+        <div class="fc-photo-ring"></div>
+        <div class="fc-online"></div>
+      </div>
+      <div class="fc-handle">// Opayy</div>
+      <div class="fc-name">Naufal Aufaa Abyan</div>
+      <div class="fc-role">Co-Founder · Dev & Business Development</div>
+      <div class="fc-bio">
+        Fullstack developer sekaligus business strategist. Di balik layar, Naufal menulis smart contract Rust/Anchor untuk Solana dan Solidity untuk Ethereum. Di depan layar, ia menjadi jembatan antara visi produk dan realita pasar — dari pitch deck, strategi go-to-market, hingga partnership dan investor outreach.
+      </div>
+      <div class="fc-skills">
+        <span class="fskill">Rust</span>
+        <span class="fskill">Anchor</span>
+        <span class="fskill">Solidity</span>
+        <span class="fskill">Foundry</span>
+        <span class="fskill">Next.js</span>
+        <span class="fskill">Wagmi</span>
+        <span class="fskill">Business Dev</span>
+        <span class="fskill">Product Strategy</span>
+      </div>
+      <div class="fc-hr"></div>
+      <div class="fc-footer">
+        <div class="fc-socials">
+          <a href="https://github.com/Opayys" target="_blank" class="fc-soc" title="GitHub">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://x.com/axeonprotocol" target="_blank" class="fc-soc" title="X">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <div class="fc-tag">Jambi, ID 🇮🇩</div>
+      </div>
+    </div>
+
+    <!-- ZENN -->
+    <div class="fc c2 sr right" style="transition-delay:.2s">
+      <div class="fc-photo">
+        <!-- GANTI src="foto-zenn.jpg" dengan path foto Reza -->
+        <img src="foto-zenn.jpg" alt="Reza Dwi Wiranata" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="fc-photo-fallback" style="display:none">R</div>
+        <div class="fc-photo-ring" style="animation-direction:reverse"></div>
+        <div class="fc-online"></div>
+      </div>
+      <div class="fc-handle">// Zenn</div>
+      <div class="fc-name">Reza Dwi Wiranata</div>
+      <div class="fc-role">Co-Founder · Core Developer</div>
+      <div class="fc-bio">
+        Core developer yang fokus pada implementasi teknis end-to-end. Reza memastikan setiap baris kode yang keluar dari OZ Creative Agency berjalan dengan performa tinggi, arsitektur yang bersih, dan keamanan yang solid — dari tahap desain kontrak hingga deployment ke mainnet.
+      </div>
+      <div class="fc-skills">
+        <span class="fskill">Rust</span>
+        <span class="fskill">Anchor</span>
+        <span class="fskill">Solidity</span>
+        <span class="fskill">Next.js</span>
+        <span class="fskill">Node.js</span>
+        <span class="fskill">Web3 Dev</span>
+        <span class="fskill">Smart Contract</span>
+        <span class="fskill">Fullstack</span>
+      </div>
+      <div class="fc-hr"></div>
+      <div class="fc-footer">
+        <div class="fc-socials">
+          <a href="https://github.com/GodZenn" target="_blank" class="fc-soc" title="GitHub">
+            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://x.com/stackyourblock" target="_blank" class="fc-soc" title="X">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <div class="fc-tag">Jambi, ID 🇮🇩</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MINI PROJECT PREVIEW ───────────────────── -->
+<section id="projects-preview">
+  <div class="orb orb-p" style="width:400px;height:400px;bottom:0;right:0;opacity:.2"></div>
+  <div class="pp-head">
+    <div>
+      <div class="label">Featured Work</div>
+      <h2 class="sr up">Projects <span class="g-text">yang Sudah Live</span></h2>
+    </div>
+    <a href="projects.html" class="btn btn-outline btn-sm sr right">
+      <span class="btn-shine"></span>
+      Lihat Semua Projects
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="pp-grid">
+    <!-- AXEON -->
+    <div class="pp-card sr up" style="transition-delay:.05s" onclick="location.href='projects.html'">
+      <div class="pp-img">
+        <!-- GANTI src="img-axeon.jpg" -->
+        <img src="img-axeon.jpg" alt="Axeon Protocol" onerror="this.style.display='none'"/>
+        <div class="pp-img-fallback">AX</div>
+        <div class="pp-img-overlay"></div>
+      </div>
+      <div class="pp-body">
+        <div class="pp-eco">Solana Ecosystem</div>
+        <div class="pp-title">Axeon Management Protocol</div>
+        <div class="pp-desc">Infrastruktur hybrid DeFi untuk manajemen komunitas Telegram premium — pembayaran QRIS + Kripto otomatis dengan ZK Privacy.</div>
+        <div class="pp-foot">
+          <div class="pp-links">
+            <a href="https://axeon-protocol.vercel.app/" target="_blank" class="pp-link" onclick="event.stopPropagation()">🌐 Demo</a>
+            <a href="https://github.com/Opayys/Axeon-Management-Protocol" target="_blank" class="pp-link" onclick="event.stopPropagation()">⌥ GitHub</a>
+          </div>
+          <div class="pp-status live">● Live</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STACK BLOCK -->
+    <div class="pp-card sr up" style="transition-delay:.1s" onclick="location.href='projects.html'">
+      <div class="pp-img">
+        <img src="img-stackblock.jpg" alt="Stack Block Arcade" onerror="this.style.display='none'"/>
+        <div class="pp-img-fallback">SB</div>
+        <div class="pp-img-overlay"></div>
+      </div>
+      <div class="pp-body">
+        <div class="pp-eco">Solana · GameFi</div>
+        <div class="pp-title">Stack Block Arcade</div>
+        <div class="pp-desc">GameFi arcade berbasis skill-to-earn dengan arsitektur hybrid Web2.5 — anti-cheat kriptografis dan on-chain leaderboard prize pool.</div>
+        <div class="pp-foot">
+          <div class="pp-links">
+            <a href="https://stack-block-arcade-ten.vercel.app/" target="_blank" class="pp-link" onclick="event.stopPropagation()">🌐 Demo</a>
+            <a href="https://github.com/GodZenn/Stack-Block-Arcade-V2" target="_blank" class="pp-link" onclick="event.stopPropagation()">⌥ GitHub</a>
+          </div>
+          <div class="pp-status live">● Live</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VERITAS VOTE -->
+    <div class="pp-card sr up" style="transition-delay:.15s" onclick="location.href='projects.html'">
+      <div class="pp-img">
+        <img src="img-veritas.jpg" alt="VeritasVote" onerror="this.style.display='none'"/>
+        <div class="pp-img-fallback">VV</div>
+        <div class="pp-img-overlay"></div>
+      </div>
+      <div class="pp-body">
+        <div class="pp-eco">Ethereum Ecosystem</div>
+        <div class="pp-title">VeritasVote</div>
+        <div class="pp-desc">Protokol governance terdesentralisasi full-stack di Ethereum — voting on-chain anti-manipulasi dengan snapshot dan timelock execution.</div>
+        <div class="pp-foot">
+          <div class="pp-links">
+            <a href="https://github.com/Opayys/VeritasVote" target="_blank" class="pp-link" onclick="event.stopPropagation()">⌥ GitHub</a>
+          </div>
+          <div class="pp-status live">● Live</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOVEREIGN -->
+    <div class="pp-card sr up" style="transition-delay:.2s" onclick="location.href='projects.html'">
+      <div class="pp-img">
+        <img src="img-sovereign.jpg" alt="Sovereign Intelligence" onerror="this.style.display='none'"/>
+        <div class="pp-img-fallback">SI</div>
+        <div class="pp-img-overlay"></div>
+      </div>
+      <div class="pp-body">
+        <div class="pp-eco">AI · Python · Discord</div>
+        <div class="pp-title">Sovereign Intelligence</div>
+        <div class="pp-desc">Sistem intelligence otomatis yang mengolah data pasar real-time — scraping, filtering, dan delivery presisi ke Discord 24/7.</div>
+        <div class="pp-foot">
+          <div class="pp-links">
+            <a href="#" class="pp-link" onclick="event.stopPropagation()">🔒 Private</a>
+          </div>
+          <div class="pp-status dev">● Internal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────── -->
+<section id="cta">
+  <div class="orb orb-v" style="width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);opacity:.2"></div>
+  <div class="cta-box sr scale">
+    <h2>Siap Membangun <span class="g-text">Bersama Kami?</span></h2>
+    <p>Dari smart contract hingga full-stack dApp dan AI system — kami siap mengeksekusi ide Anda menjadi produk nyata yang berjalan di blockchain.</p>
+    <div class="cta-acts">
+      <a href="contact.html" class="btn btn-primary"><span class="btn-shine"></span>Hubungi Kami <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="services.html" class="btn btn-outline"><span class="btn-shine"></span>Lihat Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="fl"><span class="g-text">OZ</span> Creative</div>
+      <p>Fullstack · AI Engineering · Blockchain. Membangun masa depan digital dari Jambi, Indonesia.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Projects</h4>
+      <ul>
+        <li><a href="https://axeon-protocol.vercel.app/" target="_blank">Axeon Protocol</a></li>
+        <li><a href="https://stack-block-arcade-ten.vercel.app/" target="_blank">Stack Block Arcade</a></li>
+        <li><a href="https://github.com/Opayys/VeritasVote" target="_blank">VeritasVote</a></li>
+        <li><a href="#">Sovereign Intel</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://github.com/Opayys" target="_blank">GitHub — Opayy</a></li>
+        <li><a href="https://github.com/GodZenn" target="_blank">GitHub — Zenn</a></li>
+        <li><a href="https://x.com/axeonprotocol" target="_blank">X — Axeon</a></li>
+        <li><a href="https://x.com/stackyourblock" target="_blank">X — StackBlock</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 OZ Creative Agency. Built with <span>♥</span> by Opayy × Zenn</p>
+    <div class="footer-socials">
+      <a href="https://github.com/Opayys" target="_blank" class="fsoc">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a href="https://x.com/axeonprotocol" target="_blank" class="fsoc">
+        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* CURSOR GLOW */
+const cg = document.getElementById('cursor-glow');
+document.addEventListener('mousemove', e => {
+  cg.style.left = e.clientX + 'px';
+  cg.style.top = e.clientY + 'px';
+});
+
+/* NAV SCROLL */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+
+/* HAMBURGER */
+const hbg = document.getElementById('hbg'), nl = document.getElementById('navLinks');
+hbg.addEventListener('click', () => { hbg.classList.toggle('open'); nl.classList.toggle('open'); });
+
+/* PAGE TRANSITION */
+document.querySelectorAll('a[href]').forEach(a => {
+  const href = a.getAttribute('href');
+  if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const el = document.createElement('div');
+    el.id = 'page-curtain';
+    el.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#04040f;transform:scaleY(0);transform-origin:bottom;animation:curtainIn .5s cubic-bezier(.77,0,.175,1) forwards';
+    document.body.appendChild(el);
+    setTimeout(() => location.href = href, 480);
+  });
+});
+
+/* CANVAS PARTICLES */
+const cv = document.getElementById('c-hero'), cx = cv.getContext('2d');
+let W, H, pts = [], mouse = {x:0, y:0};
+function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+addEventListener('resize', resize); resize();
+class Pt {
+  constructor(){ this.reset(); }
+  reset(){
+    this.x = Math.random()*W; this.y = Math.random()*H;
+    this.vx = (Math.random()-.5)*.5; this.vy = (Math.random()-.5)*.5;
+    this.r = Math.random()*1.8+.4;
+    this.op = Math.random()*.6+.1;
+    this.col = Math.random()>.5 ? '123,47,255' : '0,240,255';
+  }
+  tick(){
+    this.x += this.vx; this.y += this.vy;
+    const dx=mouse.x-this.x, dy=mouse.y-this.y, d=Math.hypot(dx,dy);
+    if(d<140){ this.x -= dx*.025; this.y -= dy*.025; }
+    if(this.x<-10||this.x>W+10||this.y<-10||this.y>H+10) this.reset();
+  }
+  draw(){
+    cx.beginPath(); cx.arc(this.x,this.y,this.r,0,Math.PI*2);
+    cx.fillStyle=`rgba(${this.col},${this.op})`; cx.fill();
+  }
+}
+for(let i=0;i<140;i++) pts.push(new Pt());
+function frame(){
+  cx.clearRect(0,0,W,H);
+  for(let i=0;i<pts.length;i++){
+    pts[i].tick(); pts[i].draw();
+    for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, d=Math.hypot(dx,dy);
+      if(d<110){
+        cx.beginPath(); cx.moveTo(pts[i].x,pts[i].y); cx.lineTo(pts[j].x,pts[j].y);
+        cx.strokeStyle=`rgba(123,47,255,${.18*(1-d/110)})`; cx.lineWidth=.6; cx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(frame);
+}
+frame();
+addEventListener('mousemove', e => { mouse.x=e.clientX; mouse.y=e.clientY; });
+
+/* 3D TILT */
+const ac3 = document.getElementById('ac3d'), glare = document.getElementById('ac3glare');
+if(ac3) ac3.parentElement.addEventListener('mousemove', e => {
+  const r = ac3.getBoundingClientRect();
+  const nx=(e.clientX-r.left)/r.width, ny=(e.clientY-r.top)/r.height;
+  const rx=(ny-.5)*18, ry=(nx-.5)*-18;
+  ac3.style.transform=`perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  glare.style.setProperty('--mx', (nx*100)+'%');
+  glare.style.setProperty('--my', (ny*100)+'%');
+});
+if(ac3) ac3.parentElement.addEventListener('mouseleave', () => {
+  ac3.style.transform='perspective(700px) rotateX(0) rotateY(0)';
+});
+
+/* COUNTERS */
+function runCounter(el){
+  const target = +el.dataset.target, dur = 1600, s = performance.now();
+  function step(now){
+    const p = Math.min((now-s)/dur, 1), ease = 1-Math.pow(1-p,3);
+    el.textContent = Math.round(ease*target);
+    if(p<1) requestAnimationFrame(step); else el.textContent = target + (target===100?'%':'');
+  }
+  requestAnimationFrame(step);
+}
+
+/* SCROLL REVEAL */
+const srEls = document.querySelectorAll('.sr');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('[data-target]').forEach(runCounter);
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold:.12});
+srEls.forEach(el => io.observe(el));
+document.querySelectorAll('[data-target]').forEach(el => {
+  const io2 = new IntersectionObserver(e => { if(e[0].isIntersecting){ runCounter(el); io2.disconnect(); } },{threshold:.8});
+  io2.observe(el);
+});
+</script>
+</body>
+</html>

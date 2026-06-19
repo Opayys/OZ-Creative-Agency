@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Services — OZ Creative Agency</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+#phero{
+  min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:calc(var(--nav-h)+4rem) 6% 5rem;position:relative;overflow:hidden
+}
+#phero h1{font-size:clamp(3rem,7vw,6rem);font-weight:800;margin-bottom:1rem}
+#phero p{color:var(--muted);max-width:520px;font-size:1.05rem;line-height:1.8}
+
+/* ═══ SERVICES GRID ══════════════════ */
+#services{padding:6rem 6% 8rem}
+.svc-intro{text-align:center;margin-bottom:5rem}
+.svc-intro h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem}
+.svc-intro p{color:var(--muted);max-width:540px;margin:0 auto}
+
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+
+.svc-card{
+  padding:2.5rem;border-radius:22px;border:1px solid rgba(123,47,255,.18);
+  background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.01));
+  position:relative;overflow:hidden;transition:all .5s cubic-bezier(.22,1,.36,1)
+}
+.svc-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(123,47,255,.1),transparent 60%);
+  opacity:0;transition:opacity .5s
+}
+.svc-card:hover::before{opacity:1}
+.svc-card:hover{border-color:var(--violet-light);transform:translateY(-8px);box-shadow:var(--glow-v),0 20px 50px rgba(0,0,0,.4)}
+.svc-card.c-cyan::before{background:linear-gradient(135deg,rgba(0,240,255,.08),transparent 60%)}
+.svc-card.c-cyan:hover{border-color:var(--cyan);box-shadow:var(--glow-c),0 20px 50px rgba(0,0,0,.4)}
+.svc-card.c-pink::before{background:linear-gradient(135deg,rgba(255,60,172,.08),transparent 60%)}
+.svc-card.c-pink:hover{border-color:var(--pink);box-shadow:var(--glow-p),0 20px 50px rgba(0,0,0,.4)}
+
+.svc-icon{
+  width:60px;height:60px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.75rem;margin-bottom:1.5rem;
+  background:rgba(123,47,255,.12);border:1px solid rgba(123,47,255,.25);
+  transition:all .4s
+}
+.svc-card.c-cyan .svc-icon{background:rgba(0,240,255,.08);border-color:rgba(0,240,255,.2)}
+.svc-card.c-pink .svc-icon{background:rgba(255,60,172,.08);border-color:rgba(255,60,172,.2)}
+.svc-card:hover .svc-icon{transform:scale(1.1) rotate(-5deg)}
+
+.svc-title{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:.75rem}
+.svc-desc{color:var(--muted);font-size:.875rem;line-height:1.8;margin-bottom:1.5rem}
+.svc-items{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.svc-items li{
+  font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:8px
+}
+.svc-items li::before{content:'→';color:var(--violet-light);font-family:'JetBrains Mono',monospace;font-size:.75rem}
+.svc-card.c-cyan .svc-items li::before{color:var(--cyan)}
+.svc-card.c-pink .svc-items li::before{color:var(--pink)}
+
+/* ═══ TECH STACK SECTION ══════════════ */
+#techstack{
+  padding:6rem 6%;
+  background:linear-gradient(180deg,transparent,rgba(123,47,255,.04),transparent)
+}
+.ts-head{text-align:center;margin-bottom:4rem}
+.ts-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem}
+
+.ts-categories{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.ts-cat{
+  padding:2rem;border-radius:18px;
+  background:var(--glass);border:1px solid rgba(123,47,255,.15);
+  transition:all .4s
+}
+.ts-cat:hover{border-color:rgba(123,47,255,.35);background:rgba(123,47,255,.06)}
+.ts-cat-label{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;
+  color:var(--cyan);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.25rem;
+  display:flex;align-items:center;gap:8px
+}
+.ts-cat-label::before{content:'';display:block;width:20px;height:1px;background:var(--cyan)}
+.ts-badges{display:flex;flex-wrap:wrap;gap:7px}
+.ts-item{
+  padding:6px 14px;border-radius:9px;
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;
+  background:rgba(123,47,255,.08);border:1px solid rgba(123,47,255,.2);
+  color:var(--violet-light);transition:all .3s;cursor:default
+}
+.ts-item:hover{background:rgba(123,47,255,.2);color:var(--white);transform:translateY(-2px)}
+.ts-item.cy{background:rgba(0,240,255,.06);border-color:rgba(0,240,255,.2);color:var(--cyan-dim)}
+.ts-item.cy:hover{background:rgba(0,240,255,.15);color:var(--white)}
+
+/* ═══ PROCESS ════════════════════════ */
+#process{padding:6rem 6% 8rem;position:relative;overflow:hidden}
+.proc-head{text-align:center;margin-bottom:5rem}
+.proc-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem}
+
+.proc-track{
+  display:flex;flex-direction:column;gap:0;
+  max-width:760px;margin:0 auto;position:relative
+}
+.proc-track::before{
+  content:'';position:absolute;left:27px;top:0;bottom:0;width:1.5px;
+  background:linear-gradient(to bottom,var(--violet),var(--cyan),transparent)
+}
+.proc-step{
+  display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;
+  opacity:0;transform:translateX(-30px);transition:all .7s ease
+}
+.proc-step.vis{opacity:1;transform:none}
+.proc-num{
+  width:56px;height:56px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--violet),#4400cc);
+  border:2px solid rgba(123,47,255,.4);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;
+  box-shadow:0 0 24px rgba(123,47,255,.4);z-index:1;position:relative
+}
+.proc-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;margin-bottom:.5rem}
+.proc-body p{color:var(--muted);font-size:.88rem;line-height:1.75}
+
+@media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+  .svc-grid{grid-template-columns:1fr}
+  .ts-categories{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div id="page-curtain"></div>
+<div id="cursor-glow"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-dot"></div><span class="oz">OZ</span>&nbsp;Creative</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hbg"><span></span><span></span><span></span></button>
+</nav>
+
+<section id="phero" class="grid-bg">
+  <div class="orb orb-v" style="width:500px;height:500px;top:-100px;left:-100px;opacity:.35"></div>
+  <div class="orb orb-c" style="width:400px;height:400px;bottom:-80px;right:-50px;opacity:.25"></div>
+  <canvas id="c-mini" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.5"></canvas>
+  <div style="position:relative;z-index:1">
+    <div class="label" style="justify-content:center;margin-bottom:1.5rem">What We Do</div>
+    <h1 class="sr up"><span class="g-text">Services</span> Kami</h1>
+    <p class="sr up" style="transition-delay:.1s;margin:1rem auto 0">Dari konsep hingga deployment — kami handle semuanya dengan standar profesional dan teknologi terdepan.</p>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section id="services">
+  <div class="svc-intro">
+    <div class="label" style="justify-content:center">Core Services</div>
+    <h2 class="sr up">Apa yang Bisa <span class="g-text">Kami Kerjakan</span></h2>
+    <p class="sr up" style="transition-delay:.1s">Tiga pilar utama yang menjadi fondasi setiap project yang kami bangun.</p>
+  </div>
+
+  <div class="svc-grid">
+    <!-- BLOCKCHAIN -->
+    <div class="svc-card sr up" style="transition-delay:.05s">
+      <div class="svc-icon">⛓️</div>
+      <div class="svc-title">Blockchain Development</div>
+      <div class="svc-desc">Smart contract, DeFi protocols, GameFi, dan Web3 infrastructure di Solana dan Ethereum. Dari desain arsitektur hingga mainnet deployment.</div>
+      <ul class="svc-items">
+        <li>Smart Contract (Rust/Anchor, Solidity)</li>
+        <li>DeFi & Protocol Development</li>
+        <li>GameFi & On-Chain Mechanics</li>
+        <li>DAO & Governance Systems</li>
+        <li>ZK Proofs Integration</li>
+        <li>Wallet & dApp Integration</li>
+        <li>Smart Contract Auditing</li>
+      </ul>
+    </div>
+    <!-- FULLSTACK -->
+    <div class="svc-card c-cyan sr up" style="transition-delay:.1s">
+      <div class="svc-icon">⚡</div>
+      <div class="svc-title">Fullstack Development</div>
+      <div class="svc-desc">Web application modern dari frontend yang reaktif hingga backend yang scalable. UI/UX yang clean, performa tinggi, dan siap production.</div>
+      <ul class="svc-items">
+        <li>Next.js / React Frontend</li>
+        <li>Node.js / Go Backend</li>
+        <li>REST API & GraphQL</li>
+        <li>Database Design & Optimization</li>
+        <li>Web3 dApp Dashboard</li>
+        <li>Real-time & Streaming Data</li>
+        <li>Deployment & DevOps</li>
+      </ul>
+    </div>
+    <!-- AI -->
+    <div class="svc-card c-pink sr up" style="transition-delay:.15s">
+      <div class="svc-icon">🤖</div>
+      <div class="svc-title">AI Engineering</div>
+      <div class="svc-desc">Sistem intelligence otomatis, bot, dan pipeline data berbasis AI. Mengubah raw data menjadi insight yang actionable, real-time.</div>
+      <ul class="svc-items">
+        <li>Automated Intelligence Systems</li>
+        <li>Web Scraping & Data Pipeline</li>
+        <li>Discord / Telegram Bot</li>
+        <li>Market Data Intelligence</li>
+        <li>AI-powered Automation</li>
+        <li>Data Processing & Filtering</li>
+        <li>Cloud Deployment (Railway/VPS)</li>
+      </ul>
+    </div>
+    <!-- SMART CONTRACT AUDIT -->
+    <div class="svc-card sr up" style="transition-delay:.2s">
+      <div class="svc-icon">🔐</div>
+      <div class="svc-title">Security & Audit</div>
+      <div class="svc-desc">Review keamanan smart contract sebelum mainnet. Fuzz testing, vulnerability assessment, dan zero-knowledge implementation.</div>
+      <ul class="svc-items">
+        <li>Smart Contract Security Review</li>
+        <li>Fuzz Testing (Foundry)</li>
+        <li>ZK Privacy Implementation</li>
+        <li>Anti-Cheat System Design</li>
+        <li>Cryptographic Signature Scheme</li>
+      </ul>
+    </div>
+    <!-- BUSINESS DEV -->
+    <div class="svc-card c-cyan sr up" style="transition-delay:.25s">
+      <div class="svc-icon">📈</div>
+      <div class="svc-title">Business Development</div>
+      <div class="svc-desc">Lebih dari sekadar kode — kami bantu dari sisi strategi, positioning produk, dan go-to-market execution untuk proyek Web3.</div>
+      <ul class="svc-items">
+        <li>Pitch Deck & Whitepaper</li>
+        <li>Tokenomics Design</li>
+        <li>Product Strategy & Roadmap</li>
+        <li>Partnership & Community</li>
+        <li>Investor Outreach Support</li>
+      </ul>
+    </div>
+    <!-- KONSULTASI -->
+    <div class="svc-card c-pink sr up" style="transition-delay:.3s">
+      <div class="svc-icon">💡</div>
+      <div class="svc-title">Web3 Consultation</div>
+      <div class="svc-desc">Baru masuk ke ekosistem blockchain? Kami guide dari nol — arsitektur sistem, pemilihan chain, dan strategi teknis yang tepat untuk problem Anda.</div>
+      <ul class="svc-items">
+        <li>Architecture Consultation</li>
+        <li>Chain Selection Strategy</li>
+        <li>Tech Stack Recommendation</li>
+        <li>Ecosystem Guidance (Solana/ETH)</li>
+        <li>Web2 → Web3 Migration</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="techstack">
+  <div class="orb orb-v" style="width:400px;height:400px;top:50%;right:0;transform:translateY(-50%);opacity:.2"></div>
+  <div class="ts-head">
+    <div class="label" style="justify-content:center">Tech Arsenal</div>
+    <h2 class="sr up">Stack yang Kami <span class="g-text">Kuasai</span></h2>
+    <p class="sr up" style="transition-delay:.1s;color:var(--muted);max-width:480px;margin:.75rem auto 0">Tools dan teknologi yang kami gunakan sehari-hari untuk membangun produk berkualitas tinggi.</p>
+  </div>
+  <div class="ts-categories">
+    <div class="ts-cat sr left" style="transition-delay:.05s">
+      <div class="ts-cat-label">Blockchain</div>
+      <div class="ts-badges">
+        <span class="ts-item">Rust</span>
+        <span class="ts-item">Anchor</span>
+        <span class="ts-item">Solana</span>
+        <span class="ts-item">Solidity</span>
+        <span class="ts-item">Foundry</span>
+        <span class="ts-item">Forge</span>
+        <span class="ts-item">Cast</span>
+        <span class="ts-item">Ethereum</span>
+        <span class="ts-item">PDA</span>
+        <span class="ts-item">ZK Proofs</span>
+        <span class="ts-item">Fuzz Testing</span>
+      </div>
+    </div>
+    <div class="ts-cat sr right" style="transition-delay:.1s">
+      <div class="ts-cat-label" style="color:var(--cyan)">Frontend</div>
+      <div class="ts-badges">
+        <span class="ts-item cy">Next.js</span>
+        <span class="ts-item cy">React</span>
+        <span class="ts-item cy">TypeScript</span>
+        <span class="ts-item cy">Wagmi</span>
+        <span class="ts-item cy">Viem</span>
+        <span class="ts-item cy">Wallet Adapter</span>
+        <span class="ts-item cy">Tailwind CSS</span>
+        <span class="ts-item cy">HTML5 Canvas</span>
+      </div>
+    </div>
+    <div class="ts-cat sr left" style="transition-delay:.15s">
+      <div class="ts-cat-label">Backend & AI</div>
+      <div class="ts-badges">
+        <span class="ts-item">Python</span>
+        <span class="ts-item">Node.js</span>
+        <span class="ts-item">Go</span>
+        <span class="ts-item">Aiohttp</span>
+        <span class="ts-item">Asyncio</span>
+        <span class="ts-item">BeautifulSoup4</span>
+        <span class="ts-item">Playwright</span>
+        <span class="ts-item">discord.py</span>
+        <span class="ts-item">REST API</span>
+      </div>
+    </div>
+    <div class="ts-cat sr right" style="transition-delay:.2s">
+      <div class="ts-cat-label" style="color:var(--cyan)">Tools & Infra</div>
+      <div class="ts-badges">
+        <span class="ts-item cy">Windsurf IDE</span>
+        <span class="ts-item cy">WSL2 / Ubuntu</span>
+        <span class="ts-item cy">Railway Cloud</span>
+        <span class="ts-item cy">Vercel</span>
+        <span class="ts-item cy">Git / GitHub</span>
+        <span class="ts-item cy">Docker</span>
+        <span class="ts-item cy">Telegram Bot API</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="orb orb-c" style="width:350px;height:350px;bottom:0;left:0;opacity:.2"></div>
+  <div class="proc-head">
+    <div class="label" style="justify-content:center">How We Work</div>
+    <h2 class="sr up">Alur Kerja <span class="g-text">Kami</span></h2>
+    <p class="sr up" style="transition-delay:.1s;color:var(--muted);max-width:440px;margin:.75rem auto 0">Dari brief pertama hingga product live — ini bagaimana kami mengeksekusi setiap project.</p>
+  </div>
+  <div class="proc-track">
+    <div class="proc-step"><div class="proc-num">01</div><div class="proc-body"><h3>Discovery & Scoping</h3><p>Kami mulai dengan memahami problem yang ingin diselesaikan. Deep dive ke use case, target user, dan constraint teknis — sebelum satu baris kode pun ditulis.</p></div></div>
+    <div class="proc-step"><div class="proc-num">02</div><div class="proc-body"><h3>Architecture Design</h3><p>Merancang arsitektur sistem yang scalable dan secure. Pemilihan chain, desain smart contract, data flow, dan tech stack yang paling tepat untuk kebutuhan spesifik Anda.</p></div></div>
+    <div class="proc-step"><div class="proc-num">03</div><div class="proc-body"><h3>Development & Testing</h3><p>Build iteratif dengan testing menyeluruh di setiap layer — unit test, fuzz test untuk kontrak, dan QA end-to-end. Tidak ada yang ke testnet tanpa lolos semua test.</p></div></div>
+    <div class="proc-step"><div class="proc-num">04</div><div class="proc-body"><h3>Audit & Security Review</h3><p>Review keamanan internal sebelum deployment. Identifikasi potensi exploit, integer overflow, atau vulnerabilitas lain yang bisa merugikan pengguna.</p></div></div>
+    <div class="proc-step"><div class="proc-num">05</div><div class="proc-body"><h3>Deploy & Go Live</h3><p>Deployment ke mainnet/production dengan monitoring ketat. Kami pastikan semua berjalan smooth sebelum meninggalkan project ke tangan Anda.</p></div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="fl"><span class="g-text">OZ</span> Creative</div><p>Fullstack · AI Engineering · Blockchain. Dari Jambi untuk dunia.</p></div>
+    <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Blockchain Dev</a></li><li><a href="services.html">Fullstack Dev</a></li><li><a href="services.html">AI Engineering</a></li><li><a href="services.html">Consultation</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/Opayys" target="_blank">GitHub — Opayy</a></li><li><a href="https://github.com/GodZenn" target="_blank">GitHub — Zenn</a></li><li><a href="https://x.com/axeonprotocol" target="_blank">X — Axeon</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p class="footer-copy">© 2025 OZ Creative Agency. Built by <span>Opayy × Zenn</span></p></div>
+</footer>
+
+<script>
+const cg=document.getElementById('cursor-glow');
+document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px'});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const hbg=document.getElementById('hbg'),nl=document.getElementById('navLinks');
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');nl.classList.toggle('open')});
+document.querySelectorAll('a[href]').forEach(a=>{
+  const href=a.getAttribute('href');
+  if(!href||href.startsWith('#')||href.startsWith('http')||href.startsWith('mailto'))return;
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const el=document.createElement('div');
+    el.style.cssText='position:fixed;inset:0;z-index:9999;background:#04040f;transform:scaleY(0);transform-origin:bottom;animation:curtainIn .5s cubic-bezier(.77,0,.175,1) forwards';
+    document.body.appendChild(el);
+    setTimeout(()=>location.href=href,480);
+  });
+});
+const cv=document.getElementById('c-mini'),cx=cv.getContext('2d');
+let W,H,pts=[];
+function resize(){W=cv.width=innerWidth;H=cv.height=cv.parentElement.offsetHeight||400}
+addEventListener('resize',resize);resize();
+for(let i=0;i<50;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.4,c:Math.random()>.5?'123,47,255':'0,240,255'});
+function frame(){cx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=`rgba(${p.c},.35)`;cx.fill()});requestAnimationFrame(frame)}
+frame();
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis','visible');io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.sr,.proc-step').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

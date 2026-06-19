@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Projects — OZ Creative Agency</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* ═══ PAGE HERO ══════════════════════ */
+#phero{
+  min-height:55vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:calc(var(--nav-h) + 4rem) 6% 5rem;
+  position:relative;overflow:hidden
+}
+#phero h1{font-size:clamp(3rem,7vw,6rem);font-weight:800;margin-bottom:1rem}
+#phero p{color:var(--muted);max-width:520px;font-size:1.05rem;line-height:1.8}
+
+/* FILTER TABS */
+#filter-bar{
+  display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;
+  padding:0 6% 4rem;position:relative;z-index:2
+}
+.ftab{
+  padding:.55rem 1.4rem;border-radius:100px;
+  font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:500;
+  background:var(--glass);border:1px solid rgba(255,255,255,.08);
+  color:var(--muted);cursor:pointer;transition:all .3s;letter-spacing:.08em
+}
+.ftab.active,.ftab:hover{background:rgba(123,47,255,.15);border-color:var(--glass-b);color:var(--violet-light)}
+.ftab.active{box-shadow:0 0 20px rgba(123,47,255,.3)}
+
+/* ═══ PROJECT CARDS ══════════════════ */
+#projects-list{padding:0 6% 8rem;display:flex;flex-direction:column;gap:6rem}
+
+.proj{
+  display:grid;gap:4rem;align-items:center;
+  opacity:0;transform:translateY(48px);
+  transition:opacity .85s ease,transform .85s ease
+}
+.proj.alt{direction:rtl}
+.proj.alt > *{direction:ltr}
+.proj.vis{opacity:1;transform:translateY(0)}
+.proj-2col{grid-template-columns:1.1fr .9fr}
+
+/* IMAGE SLOT */
+.proj-img-wrap{
+  border-radius:24px;overflow:hidden;position:relative;
+  background:linear-gradient(135deg,rgba(123,47,255,.12),rgba(0,240,255,.05));
+  border:1px solid rgba(123,47,255,.2);aspect-ratio:16/9;
+  transition:all .5s ease
+}
+.proj-img-wrap:hover{border-color:var(--violet-light);box-shadow:var(--glow-v)}
+.proj-img-wrap img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .7s ease
+}
+.proj-img-wrap:hover img{transform:scale(1.04)}
+.proj-img-fallback{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;
+  min-height:300px
+}
+.proj-img-fallback .proj-abbr{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:5rem;letter-spacing:-.05em;
+  background:linear-gradient(135deg,var(--violet-light),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+}
+.proj-img-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(123,47,255,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(123,47,255,.08) 1px,transparent 1px);
+  background-size:40px 40px;pointer-events:none
+}
+.proj-img-scan{
+  position:absolute;top:-2px;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  animation:scan 3s ease-in-out infinite
+}
+@keyframes scan{0%{top:-2px;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
+.proj-live-badge{
+  position:absolute;top:16px;right:16px;
+  padding:5px 14px;border-radius:100px;
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:600;
+  background:rgba(34,255,136,.12);border:1px solid rgba(34,255,136,.35);
+  color:#22ff88;box-shadow:0 0 16px rgba(34,255,136,.2)
+}
+.proj-internal-badge{
+  position:absolute;top:16px;right:16px;
+  padding:5px 14px;border-radius:100px;
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:600;
+  background:rgba(255,200,0,.1);border:1px solid rgba(255,200,0,.3);color:#ffc800
+}
+
+/* PROJECT INFO */
+.proj-info{}
+.proj-num{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;
+  color:var(--muted2);letter-spacing:.2em;margin-bottom:.75rem
+}
+.proj-eco{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:5px 14px;border-radius:100px;
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:500;
+  color:var(--cyan);background:rgba(0,240,255,.08);border:1px solid rgba(0,240,255,.2);
+  margin-bottom:1.25rem
+}
+.proj-title{font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:800;margin-bottom:1rem;line-height:1.1}
+.proj-tagline{
+  font-family:'Syne',sans-serif;font-size:1rem;font-weight:600;
+  color:var(--violet-light);margin-bottom:1.25rem;line-height:1.5
+}
+.proj-desc{color:var(--muted);line-height:1.85;margin-bottom:1.75rem;font-size:.93rem}
+.proj-desc strong{color:var(--white)}
+
+/* FEATURES LIST */
+.proj-feats{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem}
+.proj-feats li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:.875rem;color:var(--muted);line-height:1.6
+}
+.proj-feats li::before{
+  content:'';display:block;flex-shrink:0;
+  width:6px;height:6px;border-radius:50%;margin-top:7px;
+  background:linear-gradient(135deg,var(--violet),var(--cyan))
+}
+.proj-feats li strong{color:var(--white)}
+
+/* TECH STACK ROW */
+.proj-stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:2rem}
+
+/* CTA LINKS */
+.proj-links{display:flex;gap:.9rem;flex-wrap:wrap}
+.proj-link{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:.65rem 1.3rem;border-radius:10px;
+  font-family:'Syne',sans-serif;font-weight:600;font-size:.82rem;
+  text-decoration:none;transition:all .35s;position:relative;overflow:hidden
+}
+.proj-link-primary{
+  background:linear-gradient(135deg,var(--violet),#5500cc);
+  color:var(--white);box-shadow:0 0 24px rgba(123,47,255,.4)
+}
+.proj-link-primary:hover{box-shadow:0 0 44px rgba(123,47,255,.7);transform:translateY(-2px)}
+.proj-link-ghost{
+  background:var(--glass);border:1px solid rgba(255,255,255,.1);color:var(--muted)
+}
+.proj-link-ghost:hover{color:var(--white);border-color:rgba(255,255,255,.25);transform:translateY(-2px)}
+
+/* DIVIDER */
+.proj-sep{
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(123,47,255,.3),rgba(0,240,255,.2),transparent);
+  margin:0;
+}
+
+@media(max-width:860px){
+  .proj-2col{grid-template-columns:1fr}
+  .proj.alt{direction:ltr}
+}
+</style>
+</head>
+<body>
+<div id="page-curtain"></div>
+<div id="cursor-glow"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-dot"></div>
+    <span class="oz">OZ</span>&nbsp;Creative
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hbg"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- PAGE HERO -->
+<section id="phero" class="grid-bg">
+  <canvas id="c-mini" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.6"></canvas>
+  <div class="orb orb-v" style="width:500px;height:500px;top:-100px;left:-100px;opacity:.35"></div>
+  <div class="orb orb-c" style="width:400px;height:400px;bottom:-100px;right:-50px;opacity:.25"></div>
+  <div style="position:relative;z-index:1">
+    <div class="label" style="justify-content:center;margin-bottom:1.5rem">Our Work</div>
+    <h1 class="sr up"><span class="g-text">Projects</span> yang<br>Sudah Kami Bangun</h1>
+    <p class="sr up" style="transition-delay:.1s;margin:1rem auto 0">Setiap project lahir dari problem nyata, dibangun dengan stack terdepan, dan di-deploy ke blockchain.</p>
+  </div>
+</section>
+
+<!-- FILTER -->
+<div id="filter-bar">
+  <div class="ftab active" data-filter="all">Semua Projects</div>
+  <div class="ftab" data-filter="solana">Solana</div>
+  <div class="ftab" data-filter="ethereum">Ethereum</div>
+  <div class="ftab" data-filter="ai">AI / Python</div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects-list">
+
+  <!-- ── 1. AXEON ────────────────────── -->
+  <div class="proj proj-2col" data-cat="solana" id="p1">
+    <div class="proj-img-wrap">
+      <!-- LETAKKAN GAMBAR SCREENSHOT / MOCKUP AXEON DI SINI -->
+      <!-- Rename file jadi "img-axeon.jpg" dan simpan di folder yang sama -->
+      <img src="img-axeon.jpg" alt="Axeon Management Protocol"
+           onerror="this.parentElement.querySelector('.proj-img-fallback').style.display='flex';this.remove()"/>
+      <div class="proj-img-fallback" style="display:none">
+        <div class="proj-img-grid"></div>
+        <div class="proj-abbr">AX</div>
+        <div class="proj-img-scan"></div>
+      </div>
+      <div class="proj-img-grid"></div>
+      <div class="proj-img-scan"></div>
+      <div class="proj-live-badge">● LIVE</div>
+    </div>
+    <div class="proj-info">
+      <div class="proj-num">PROJECT — 01</div>
+      <div class="proj-eco">⬡ Solana Ecosystem</div>
+      <h2 class="proj-title">Axeon Management<br><span class="g-text">Protocol</span></h2>
+      <div class="proj-tagline">"Infrastruktur Gatekeeping Hybrid untuk Komunitas Telegram Premium"</div>
+      <div class="proj-desc">
+        Platform manajemen komunitas digital pertama yang menggabungkan pembayaran <strong>QRIS/Bank (Web2)</strong> dan <strong>Kripto (Web3)</strong> dalam satu infrastruktur. Admin cukup daftarkan grup Telegram mereka, dan Axeon mengurus segalanya — dari validasi pembayaran hingga auto-remove member yang expired.
+      </div>
+      <ul class="proj-feats">
+        <li><strong>Unified Hybrid Payment</strong> — QRIS & Kripto dalam satu alur pembayaran seamless.</li>
+        <li><strong>Automated Validation</strong> — Verifikasi pembayaran real-time tanpa cek manual.</li>
+        <li><strong>Hourly Guard Bot</strong> — Scan setiap 1–60 menit, auto-remove member expired.</li>
+        <li><strong>ZK Privacy</strong> — Detail transaksi dilindungi Zero-Knowledge Proof Solana.</li>
+        <li><strong>Solana PDA</strong> — Biaya transaksi ultra-murah dan cepat.</li>
+      </ul>
+      <div class="proj-stack">
+        <span class="badge">Rust</span>
+        <span class="badge">Anchor Framework</span>
+        <span class="badge">Solana PDA</span>
+        <span class="badge">ZK Proofs</span>
+        <span class="badge cyan">Next.js</span>
+        <span class="badge cyan">TypeScript</span>
+        <span class="badge">Telegram Bot API</span>
+        <span class="badge cyan">QRIS Integration</span>
+      </div>
+      <div class="proj-links">
+        <a href="https://axeon-protocol.vercel.app/" target="_blank" class="proj-link proj-link-primary">🌐 Live Demo</a>
+        <a href="https://github.com/Opayys/Axeon-Management-Protocol" target="_blank" class="proj-link proj-link-ghost">⌥ GitHub</a>
+        <a href="https://x.com/axeonprotocol" target="_blank" class="proj-link proj-link-ghost">𝕏 Follow</a>
+      </div>
+    </div>
+  </div>
+  <div class="proj-sep"></div>
+
+  <!-- ── 2. STACK BLOCK ─────────────── -->
+  <div class="proj proj-2col alt" data-cat="solana" id="p2">
+    <div class="proj-img-wrap">
+      <!-- LETAKKAN GAMBAR SCREENSHOT STACK BLOCK ARCADE DI SINI -->
+      <!-- Rename file jadi "img-stackblock.jpg" -->
+      <img src="img-stackblock.jpg" alt="Stack Block Arcade"
+           onerror="this.parentElement.querySelector('.proj-img-fallback').style.display='flex';this.remove()"/>
+      <div class="proj-img-fallback" style="display:none">
+        <div class="proj-img-grid"></div>
+        <div class="proj-abbr">SB</div>
+        <div class="proj-img-scan"></div>
+      </div>
+      <div class="proj-img-grid"></div>
+      <div class="proj-img-scan" style="animation-delay:.8s"></div>
+      <div class="proj-live-badge">● LIVE</div>
+    </div>
+    <div class="proj-info">
+      <div class="proj-num">PROJECT — 02</div>
+      <div class="proj-eco">🎮 Solana · GameFi</div>
+      <h2 class="proj-title">Stack Block<br><span class="g-text">Arcade</span></h2>
+      <div class="proj-tagline">"Skill-to-Earn Arcade Game dengan Kriptografi Anti-Cheat"</div>
+      <div class="proj-desc">
+        Game arcade blockchain pertama yang memisahkan <strong>gameplay (off-chain)</strong> dan <strong>transaksi (on-chain)</strong> untuk menghilangkan lag sekaligus mencegah cheat. Pemain membeli tiket lewat smart contract, bermain di browser, lalu klaim reward dengan signature kriptografis yang divalidasi langsung oleh kontrak.
+      </div>
+      <ul class="proj-feats">
+        <li><strong>Hybrid Web2.5</strong> — Gameplay 60 FPS di browser, transaksi on-chain Solana.</li>
+        <li><strong>Anti-Cheat Engine</strong> — Server backend validasi ulang log koordinat & timestamp.</li>
+        <li><strong>Cryptographic Payout</strong> — Reward dikunci dengan digital signature, tidak bisa dipalsukan.</li>
+        <li><strong>Leaderboard Prize Pool</strong> — Pool mingguan dikunci di smart contract, distribusi otomatis.</li>
+        <li><strong>Tiered P2E Reward</strong> — Semakin tinggi skor, semakin besar return dari harga tiket.</li>
+      </ul>
+      <div class="proj-stack">
+        <span class="badge">Rust</span>
+        <span class="badge">Anchor Framework</span>
+        <span class="badge">Solana PDA</span>
+        <span class="badge cyan">Next.js</span>
+        <span class="badge cyan">HTML5 Canvas</span>
+        <span class="badge">Node.js Validator</span>
+        <span class="badge cyan">Wallet Adapter</span>
+        <span class="badge">Cryptographic Sig</span>
+      </div>
+      <div class="proj-links">
+        <a href="https://stack-block-arcade-ten.vercel.app/" target="_blank" class="proj-link proj-link-primary">🌐 Live Demo</a>
+        <a href="https://github.com/GodZenn/Stack-Block-Arcade-V2" target="_blank" class="proj-link proj-link-ghost">⌥ GitHub</a>
+        <a href="https://x.com/stackyourblock" target="_blank" class="proj-link proj-link-ghost">𝕏 Follow</a>
+      </div>
+    </div>
+  </div>
+  <div class="proj-sep"></div>
+
+  <!-- ── 3. VERITAS VOTE ────────────── -->
+  <div class="proj proj-2col" data-cat="ethereum" id="p3">
+    <div class="proj-img-wrap">
+      <!-- LETAKKAN GAMBAR SCREENSHOT VERITAS VOTE DI SINI -->
+      <!-- Rename file jadi "img-veritas.jpg" -->
+      <img src="img-veritas.jpg" alt="VeritasVote"
+           onerror="this.parentElement.querySelector('.proj-img-fallback').style.display='flex';this.remove()"/>
+      <div class="proj-img-fallback" style="display:none">
+        <div class="proj-img-grid"></div>
+        <div class="proj-abbr">VV</div>
+        <div class="proj-img-scan"></div>
+      </div>
+      <div class="proj-img-grid"></div>
+      <div class="proj-img-scan" style="animation-delay:1.2s"></div>
+      <div class="proj-live-badge">● LIVE</div>
+    </div>
+    <div class="proj-info">
+      <div class="proj-num">PROJECT — 03</div>
+      <div class="proj-eco">⟠ Ethereum Ecosystem</div>
+      <h2 class="proj-title">Veritas<br><span class="g-text">Vote</span></h2>
+      <div class="proj-tagline">"Protokol Governance Terdesentralisasi — Kepercayaan Mutlak, Tanpa Perantara"</div>
+      <div class="proj-desc">
+        Platform governance on-chain yang mengotomatisasi seluruh siklus hidup tata kelola — dari pembuatan proposal, snapshot voting power, hingga eksekusi keputusan otomatis di Ethereum. Tidak ada admin, tidak ada manipulasi — hanya kode yang berjalan.
+      </div>
+      <ul class="proj-feats">
+        <li><strong>Snapshot Anti-Flashloan</strong> — Hak suara dikunci pada blok pembuatan proposal.</li>
+        <li><strong>Fuzz Testing</strong> — Kontrak diuji ribuan input acak untuk deteksi integer overflow.</li>
+        <li><strong>Timelock Execution</strong> — Proposal yang disetujui dieksekusi otomatis setelah jeda pengaman.</li>
+        <li><strong>Wagmi + Viem</strong> — Dashboard reaktif ringan dengan React hooks blockchain-native.</li>
+        <li><strong>For / Against / Abstain</strong> — Sistem voting tiga opsi dengan kalkulasi kuorum otomatis.</li>
+      </ul>
+      <div class="proj-stack">
+        <span class="badge">Solidity v0.8.x</span>
+        <span class="badge">Foundry / Forge</span>
+        <span class="badge">Fuzz Testing</span>
+        <span class="badge">Ethereum</span>
+        <span class="badge cyan">Next.js</span>
+        <span class="badge cyan">Wagmi</span>
+        <span class="badge cyan">Viem</span>
+        <span class="badge cyan">React Hooks</span>
+      </div>
+      <div class="proj-links">
+        <a href="https://github.com/Opayys/VeritasVote" target="_blank" class="proj-link proj-link-primary">⌥ GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="proj-sep"></div>
+
+  <!-- ── 4. SOVEREIGN INTEL ─────────── -->
+  <div class="proj proj-2col alt" data-cat="ai" id="p4">
+    <div class="proj-img-wrap">
+      <!-- LETAKKAN GAMBAR SOVEREIGN INTELLIGENCE DI SINI -->
+      <!-- Rename file jadi "img-sovereign.jpg" -->
+      <img src="img-sovereign.jpg" alt="Sovereign Intelligence"
+           onerror="this.parentElement.querySelector('.proj-img-fallback').style.display='flex';this.remove()"/>
+      <div class="proj-img-fallback" style="display:none">
+        <div class="proj-img-grid"></div>
+        <div class="proj-abbr">SI</div>
+        <div class="proj-img-scan"></div>
+      </div>
+      <div class="proj-img-grid"></div>
+      <div class="proj-img-scan" style="animation-delay:1.6s"></div>
+      <div class="proj-internal-badge">⚙ INTERNAL</div>
+    </div>
+    <div class="proj-info">
+      <div class="proj-num">PROJECT — 04</div>
+      <div class="proj-eco">🤖 AI · Python · Discord</div>
+      <h2 class="proj-title">Sovereign<br><span class="g-text">Intelligence</span></h2>
+      <div class="proj-tagline">"Stop Scrolling, Start Analyzing — Data Intelijen Pasar Real-Time"</div>
+      <div class="proj-desc">
+        Sistem intelligence otomatis berbasis Python yang memproses informasi pasar secara real-time 24/7. Mengubah kebisingan data mentah menjadi wawasan presisi tinggi yang terdelivery langsung ke Discord — sebelum pasar bereaksi.
+      </div>
+      <ul class="proj-feats">
+        <li><strong>Auto Ingestion</strong> — Scanning sumber data terpercaya secara berkala dan otomatis.</li>
+        <li><strong>Smart Filtering</strong> — Pembersihan noise dan konten tidak relevan secara presisi.</li>
+        <li><strong>Async Pipeline</strong> — Aiohttp + Asyncio untuk pemrosesan data non-blocking ultra-cepat.</li>
+        <li><strong>Discord Delivery</strong> — Output langsung ke channel <code style="color:var(--cyan);font-size:.8rem">#market-pulse</code> dan <code style="color:var(--cyan);font-size:.8rem">#global-intel</code>.</li>
+        <li><strong>24/7 Uptime</strong> — Deploy di Railway Cloud Infrastructure untuk operasi tanpa henti.</li>
+      </ul>
+      <div class="proj-stack">
+        <span class="badge">Python</span>
+        <span class="badge">BeautifulSoup4</span>
+        <span class="badge">Playwright</span>
+        <span class="badge cyan">discord.py</span>
+        <span class="badge cyan">Aiohttp</span>
+        <span class="badge cyan">Asyncio</span>
+        <span class="badge">Railway Cloud</span>
+      </div>
+      <div class="proj-links">
+        <a href="#" class="proj-link proj-link-ghost" style="cursor:default;opacity:.6">🔒 Private Repository</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="fl"><span class="g-text">OZ</span> Creative</div>
+      <p>Fullstack · AI Engineering · Blockchain. Dari Jambi untuk dunia.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Projects</h4>
+      <ul>
+        <li><a href="https://axeon-protocol.vercel.app/" target="_blank">Axeon Protocol</a></li>
+        <li><a href="https://stack-block-arcade-ten.vercel.app/" target="_blank">Stack Block Arcade</a></li>
+        <li><a href="https://github.com/Opayys/VeritasVote" target="_blank">VeritasVote</a></li>
+        <li><a href="#">Sovereign Intel</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://github.com/Opayys" target="_blank">GitHub — Opayy</a></li>
+        <li><a href="https://github.com/GodZenn" target="_blank">GitHub — Zenn</a></li>
+        <li><a href="https://x.com/axeonprotocol" target="_blank">X — Axeon</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 OZ Creative Agency. Built by <span>Opayy × Zenn</span></p>
+    <div class="footer-socials">
+      <a href="https://github.com/Opayys" target="_blank" class="fsoc"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const cg=document.getElementById('cursor-glow');
+document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px'});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const hbg=document.getElementById('hbg'),nl=document.getElementById('navLinks');
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');nl.classList.toggle('open')});
+
+/* Page transitions */
+document.querySelectorAll('a[href]').forEach(a=>{
+  const href=a.getAttribute('href');
+  if(!href||href.startsWith('#')||href.startsWith('http')||href.startsWith('mailto'))return;
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const el=document.createElement('div');
+    el.id='page-curtain';
+    el.style.cssText='position:fixed;inset:0;z-index:9999;background:#04040f;transform:scaleY(0);transform-origin:bottom;animation:curtainIn .5s cubic-bezier(.77,0,.175,1) forwards';
+    document.body.appendChild(el);
+    setTimeout(()=>location.href=href,480);
+  });
+});
+
+/* Mini canvas */
+const cv=document.getElementById('c-mini'),cx=cv.getContext('2d');
+let W,H,pts=[];
+function resize(){W=cv.width=innerWidth;H=cv.height=cv.parentElement.offsetHeight}
+addEventListener('resize',resize);resize();
+for(let i=0;i<60;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*1.5+.3,c:Math.random()>.5?'123,47,255':'0,240,255'});
+function frame(){
+  cx.clearRect(0,0,W,H);
+  pts.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+    cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    cx.fillStyle=`rgba(${p.c},.4)`;cx.fill();
+  });
+  requestAnimationFrame(frame);
+}
+frame();
+
+/* Scroll reveal for projects */
+const projs=document.querySelectorAll('.proj,.sr');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis','visible');io.unobserve(e.target)}});
+},{threshold:.1});
+projs.forEach(p=>io.observe(p));
+
+/* Filter */
+document.querySelectorAll('.ftab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const f=tab.dataset.filter;
+    document.querySelectorAll('.proj').forEach(p=>{
+      const show=f==='all'||p.dataset.cat===f;
+      p.style.transition='opacity .4s,transform .4s';
+      if(show){p.style.opacity='1';p.style.pointerEvents=''}
+      else{p.style.opacity='0';p.style.pointerEvents='none'}
+    });
+  });
+});
+</script>
+</body>
+</html>
