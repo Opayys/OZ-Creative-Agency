@@ -1,0 +1,37 @@
+/* ════════════════════════════════════════════════════════════
+   OZ CREATIVE AGENCY — DESIGN TOKENS
+   Concept: "Build Log" — treating the site like a verifiable
+   ledger of shipped work, not a glassmorphism SaaS template.
+   ════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ── COLOR ── */
+  --paper:      #FAFAF7;   /* bone white base, never pure white */
+  --paper-dim:  #F0EEE6;   /* slightly recessed panels */
+  --ink:        #0E0E0E;   /* near-black, primary text/borders */
+  --ink-soft:   #2A2A26;   /* secondary ink, body copy */
+  --moss:       #3D5C3A;   /* primary accent — verified/signed */
+  --moss-dim:   #E8EDE4;   /* moss tint background */
+  --rust:       #C4471E;   /* secondary accent — flags/highlights */
+  --rust-dim:   #F7E7DE;   /* rust tint background */
+  --stone:      #8B8478;   /* muted text, captions */
+  --stone-line: #D8D4C8;   /* hairline borders */
+
+  /* dark inversion — used in footer & select blocks only */
+  --ink-bg:     #141310;
+  --paper-on-ink: #EFEDE4;
+
+  /* ── TYPE ── */
+  --f-display: 'Space Grotesk', sans-serif;
+  --f-body:    'IBM Plex Sans', sans-serif;
+  --f-mono:    'IBM Plex Mono', monospace;
+
+  /* ── STRUCTURE ── */
+  --border: 1px solid var(--ink);
+  --border-soft: 1px solid var(--stone-line);
+  --nav-h: 68px;
+  --container: 1280px;
+  --radius: 2px; /* near-zero — flat, not rounded */
+}

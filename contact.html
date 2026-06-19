@@ -4,255 +4,101 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Contact — OZ Creative Agency</title>
-<link rel="stylesheet" href="style.css"/>
-<style>
-#phero{
-  min-height:52vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:calc(var(--nav-h)+3rem) 6% 4rem;position:relative;overflow:hidden
-}
-#phero h1{font-size:clamp(3rem,7vw,6rem);font-weight:800;margin-bottom:1rem}
-#phero p{color:var(--muted);max-width:500px;font-size:1.05rem;line-height:1.8}
-
-/* ═══ CONTACT LAYOUT ══════════════════ */
-#contact-section{
-  padding:4rem 6% 8rem;display:grid;
-  grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;max-width:1200px;margin:0 auto
-}
-
-/* LEFT INFO */
-.contact-info h2{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:800;margin-bottom:1.25rem;line-height:1.15}
-.contact-info p{color:var(--muted);line-height:1.85;margin-bottom:2rem;font-size:.93rem}
-
-.contact-methods{display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem}
-.cm{
-  display:flex;align-items:center;gap:1.25rem;
-  padding:1.1rem 1.4rem;border-radius:14px;
-  background:var(--glass);border:1px solid rgba(123,47,255,.18);
-  transition:all .35s;text-decoration:none;color:inherit
-}
-.cm:hover{background:rgba(123,47,255,.1);border-color:var(--violet-light);transform:translateX(6px)}
-.cm-icon{
-  width:44px;height:44px;border-radius:11px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:1.3rem;
-  background:rgba(123,47,255,.12);border:1px solid rgba(123,47,255,.25)
-}
-.cm-label{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.2rem}
-.cm-value{font-weight:600;font-size:.9rem;color:var(--white)}
-
-.founders-quick{display:flex;gap:1rem;margin-top:2rem}
-.fq{
-  flex:1;padding:1.1rem;border-radius:14px;
-  background:var(--glass);border:1px solid rgba(123,47,255,.18);
-  transition:all .35s;text-align:center
-}
-.fq:hover{background:rgba(123,47,255,.1);border-color:var(--violet-light)}
-.fq-av{
-  width:48px;height:48px;border-radius:50%;margin:0 auto .75rem;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;
-  background:linear-gradient(135deg,var(--violet),var(--cyan));
-  box-shadow:0 0 20px rgba(123,47,255,.4);overflow:hidden
-}
-.fq-av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.fq-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;margin-bottom:.25rem}
-.fq-handle{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--cyan)}
-.fq-links{display:flex;gap:.5rem;justify-content:center;margin-top:.75rem}
-.fq-link{
-  padding:3px 10px;border-radius:7px;font-size:.68rem;font-weight:600;
-  font-family:'JetBrains Mono',monospace;text-decoration:none;
-  background:rgba(123,47,255,.12);border:1px solid rgba(123,47,255,.25);
-  color:var(--violet-light);transition:all .3s
-}
-.fq-link:hover{background:rgba(123,47,255,.25);color:var(--white)}
-
-/* RIGHT FORM */
-.contact-form-wrap{
-  background:linear-gradient(145deg,rgba(123,47,255,.08),rgba(255,255,255,.02));
-  border:1px solid rgba(123,47,255,.2);border-radius:24px;padding:2.75rem;
-  position:sticky;top:calc(var(--nav-h) + 2rem)
-}
-.form-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;margin-bottom:.5rem}
-.form-sub{color:var(--muted);font-size:.875rem;margin-bottom:2rem}
-
-.field{margin-bottom:1.4rem}
-.field label{
-  display:block;font-family:'JetBrains Mono',monospace;
-  font-size:.72rem;font-weight:600;color:var(--muted);
-  letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem
-}
-.field input,.field textarea,.field select{
-  width:100%;padding:.85rem 1.1rem;border-radius:11px;
-  background:rgba(255,255,255,.04);border:1px solid rgba(123,47,255,.22);
-  color:var(--white);font-family:'Inter',sans-serif;font-size:.9rem;
-  outline:none;transition:all .3s;resize:none;
-  -webkit-appearance:none;appearance:none
-}
-.field input::placeholder,.field textarea::placeholder{color:var(--muted2)}
-.field input:focus,.field textarea:focus,.field select:focus{
-  border-color:var(--violet-light);
-  background:rgba(123,47,255,.08);
-  box-shadow:0 0 0 3px rgba(123,47,255,.15)
-}
-.field select option{background:var(--bg2);color:var(--white)}
-.field textarea{min-height:130px;line-height:1.65}
-
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-
-.form-submit{
-  width:100%;padding:1rem;border-radius:12px;
-  background:linear-gradient(135deg,var(--violet),#5500cc);
-  color:var(--white);font-family:'Syne',sans-serif;font-weight:700;
-  font-size:1rem;border:none;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  transition:all .35s;box-shadow:0 0 30px rgba(123,47,255,.4);
-  position:relative;overflow:hidden
-}
-.form-submit::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.15) 50%,transparent 60%);
-  transform:translateX(-100%);transition:transform .6s
-}
-.form-submit:hover::before{transform:translateX(100%)}
-.form-submit:hover{box-shadow:0 0 55px rgba(123,47,255,.7);transform:translateY(-2px)}
-
-.form-note{
-  display:flex;align-items:center;gap:8px;
-  margin-top:1rem;font-size:.75rem;color:var(--muted2);
-  font-family:'JetBrains Mono',monospace
-}
-.form-note::before{content:'🔒';font-size:.9rem}
-
-/* SUCCESS STATE */
-.form-success{
-  display:none;text-align:center;padding:2rem;
-}
-.form-success.show{display:block}
-.success-icon{font-size:3.5rem;margin-bottom:1rem;animation:popIn .5s cubic-bezier(.22,1,.36,1)}
-@keyframes popIn{from{transform:scale(0)}to{transform:scale(1)}}
-.form-success h3{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:.5rem}
-.form-success p{color:var(--muted)}
-
-/* ═══ WHY US ══════════════════════════ */
-#why{padding:6rem 6%;background:linear-gradient(180deg,transparent,rgba(0,240,255,.03),transparent)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.why-card{
-  padding:2rem;border-radius:18px;
-  background:var(--glass);border:1px solid rgba(123,47,255,.15);
-  transition:all .4s;text-align:center
-}
-.why-card:hover{background:rgba(123,47,255,.08);border-color:var(--violet-light);transform:translateY(-6px)}
-.why-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
-.why-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:.6rem}
-.why-card p{color:var(--muted);font-size:.83rem;line-height:1.75}
-
-@media(max-width:900px){
-  #contact-section{grid-template-columns:1fr;gap:3rem}
-  .contact-form-wrap{position:static}
-  .why-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:600px){
-  .field-row{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr}
-  .founders-quick{flex-direction:column}
-}
-</style>
+<link rel="stylesheet" href="css/tokens.css"/>
+<link rel="stylesheet" href="css/base.css"/>
+<link rel="stylesheet" href="css/components.css"/>
+<link rel="stylesheet" href="css/pages.css"/>
 </head>
 <body>
-<div id="page-curtain"></div>
-<div id="cursor-glow"></div>
+<div id="curtain"></div>
 
-<nav id="nav">
-  <a href="index.html" class="nav-logo"><div class="nav-logo-dot"></div><span class="oz">OZ</span>&nbsp;Creative</a>
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="nav-mark">
+    <span class="mark-box">OZ</span>
+    <span>Creative<span class="mark-sub"><br>agency.sh</span></span>
+  </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html" class="active nav-cta">Contact</a></li>
+    <li><a href="index.html">home</a></li>
+    <li><a href="projects.html">projects</a></li>
+    <li><a href="services.html">services</a></li>
+    <li><a href="contact.html" class="active nav-cta">contact</a></li>
   </ul>
-  <button class="hamburger" id="hbg"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
 
-<section id="phero" class="grid-bg">
-  <canvas id="c-mini" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.5"></canvas>
-  <div class="orb orb-v" style="width:500px;height:500px;top:-100px;left:-100px;opacity:.35"></div>
-  <div class="orb orb-c" style="width:400px;height:400px;bottom:-80px;right:-50px;opacity:.25"></div>
-  <div style="position:relative;z-index:1">
-    <div class="label" style="justify-content:center;margin-bottom:1.5rem">Let's Talk</div>
-    <h1 class="sr up">Mari <span class="g-text">Berkolaborasi</span></h1>
-    <p class="sr up" style="transition-delay:.1s;margin:1rem auto 0">Punya ide project? Butuh konsultasi teknis? Atau sekadar ingin ngobrol tentang Web3? Kami siap merespons.</p>
-  </div>
+<section class="page-hero">
+  <div class="tag-label">let's talk</div>
+  <h1 class="rv">Mari mulai percakapan.</h1>
+  <p class="rv" style="transition-delay:.08s">Punya ide project, butuh konsultasi teknis, atau sekadar mau diskusi soal Web3? Isi form di bawah — kami biasanya merespons dalam 24 jam.</p>
 </section>
 
-<div id="contact-section">
+<div id="contact-grid">
   <!-- LEFT -->
-  <div class="contact-info sr left">
-    <div class="label">Reach Out</div>
-    <h2>Hubungi Kami<br><span class="g-text">Kapan Saja</span></h2>
-    <p>Kami dua builder yang selalu terbuka untuk diskusi, kolaborasi, atau project baru. Response time kami biasanya dalam 24 jam.</p>
+  <div class="contact-left rv rv-left">
+    <div class="tag-label">reach out</div>
+    <h2>Hubungi kami langsung.</h2>
+    <p>Kami dua builder yang selalu terbuka untuk diskusi, kolaborasi, atau project baru.</p>
 
-    <div class="contact-methods">
-      <a href="https://x.com/axeonprotocol" target="_blank" class="cm">
-        <div class="cm-icon">𝕏</div>
-        <div><div class="cm-label">X / Twitter</div><div class="cm-value">@axeonprotocol</div></div>
+    <div class="cm-list">
+      <a href="https://x.com/axeonprotocol" target="_blank" rel="noopener" class="cm-item">
+        <span class="cm-label">X / Twitter</span><span class="cm-value">@axeonprotocol ↗</span>
       </a>
-      <a href="https://github.com/Opayys" target="_blank" class="cm">
-        <div class="cm-icon">⌥</div>
-        <div><div class="cm-label">GitHub</div><div class="cm-value">github.com/Opayys</div></div>
+      <a href="https://github.com/Opayys" target="_blank" rel="noopener" class="cm-item">
+        <span class="cm-label">GitHub — Opayy</span><span class="cm-value">github.com/Opayys ↗</span>
       </a>
-      <a href="https://github.com/GodZenn" target="_blank" class="cm">
-        <div class="cm-icon">⌥</div>
-        <div><div class="cm-label">GitHub</div><div class="cm-value">github.com/GodZenn</div></div>
+      <a href="https://github.com/GodZenn" target="_blank" rel="noopener" class="cm-item">
+        <span class="cm-label">GitHub — Zenn</span><span class="cm-value">github.com/GodZenn ↗</span>
       </a>
     </div>
 
-    <div class="label" style="margin-bottom:1rem">Langsung ke Foundernya</div>
-    <div class="founders-quick">
-      <div class="fq">
+    <div class="tag-label">langsung ke founder</div>
+    <div class="fq-row">
+      <div class="fq-item">
         <div class="fq-av">
-          <img src="foto-opayy.jpg" alt="Opayy" onerror="this.style.display='none'"/>
-          N
+          <img src="assets/images/foto-opayy.jpg" alt="Opayy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="fq-av-fallback" style="display:none">N</div>
         </div>
         <div class="fq-name">Naufal</div>
-        <div class="fq-handle">// Opayy</div>
+        <div class="fq-handle">// opayy</div>
         <div class="fq-links">
-          <a href="https://github.com/Opayys" target="_blank" class="fq-link">GH</a>
-          <a href="https://x.com/axeonprotocol" target="_blank" class="fq-link">𝕏</a>
+          <a href="https://github.com/Opayys" target="_blank" rel="noopener" class="fq-link">gh</a>
+          <a href="https://x.com/axeonprotocol" target="_blank" rel="noopener" class="fq-link">x</a>
         </div>
       </div>
-      <div class="fq">
-        <div class="fq-av" style="background:linear-gradient(135deg,var(--cyan),var(--violet));box-shadow:0 0 20px rgba(0,240,255,.4)">
-          <img src="foto-zenn.jpg" alt="Zenn" onerror="this.style.display='none'"/>
-          R
+      <div class="fq-item">
+        <div class="fq-av">
+          <img src="assets/images/foto-zenn.jpg" alt="Zenn" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="fq-av-fallback" style="display:none">R</div>
         </div>
         <div class="fq-name">Reza</div>
-        <div class="fq-handle">// Zenn</div>
+        <div class="fq-handle" style="color:var(--rust)">// zenn</div>
         <div class="fq-links">
-          <a href="https://github.com/GodZenn" target="_blank" class="fq-link">GH</a>
-          <a href="https://x.com/stackyourblock" target="_blank" class="fq-link">𝕏</a>
+          <a href="https://github.com/GodZenn" target="_blank" rel="noopener" class="fq-link">gh</a>
+          <a href="https://x.com/stackyourblock" target="_blank" rel="noopener" class="fq-link">x</a>
         </div>
       </div>
     </div>
   </div>
 
   <!-- RIGHT FORM -->
-  <div class="contact-form-wrap sr right">
+  <div class="contact-right rv rv-right">
     <div id="formArea">
-      <div class="form-title">Kirim Pesan 🚀</div>
-      <div class="form-sub">Isi form ini dan kami akan merespons sesegera mungkin.</div>
+      <div class="cform-title">Kirim pesan</div>
+      <div class="cform-sub">Isi form ini, kami akan merespons sesegera mungkin.</div>
 
-      <div class="field-row">
+      <div class="field-row-2">
         <div class="field">
           <label>Nama</label>
-          <input type="text" id="f-name" placeholder="Nama kamu"/>
+          <input type="text" id="fName" placeholder="Nama kamu"/>
         </div>
         <div class="field">
           <label>Email / Sosial</label>
-          <input type="text" id="f-contact" placeholder="Email atau handle X/TG"/>
+          <input type="text" id="fContact" placeholder="Email atau handle X/TG"/>
         </div>
       </div>
       <div class="field">
         <label>Kebutuhan Project</label>
-        <select id="f-type">
+        <select id="fType">
           <option value="">Pilih kategori...</option>
           <option>Blockchain Development (Solana)</option>
           <option>Blockchain Development (Ethereum)</option>
@@ -266,122 +112,76 @@
       </div>
       <div class="field">
         <label>Ceritakan Project-mu</label>
-        <textarea id="f-msg" placeholder="Jelaskan problem yang ingin diselesaikan, estimasi scope, timeline, dll..."></textarea>
+        <textarea id="fMsg" placeholder="Jelaskan problem yang ingin diselesaikan, estimasi scope, timeline, dll..."></textarea>
       </div>
-      <button class="form-submit" onclick="submitForm()">
-        Kirim Pesan
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      <button class="form-submit" id="formSubmit">
+        kirim pesan <span class="btn-arrow">→</span>
       </button>
       <p class="form-note">Pesan kamu aman. Kami tidak pernah spam.</p>
     </div>
 
     <div class="form-success" id="formSuccess">
-      <div class="success-icon">🎉</div>
-      <h3>Pesan Terkirim!</h3>
-      <p>Terima kasih sudah menghubungi kami. Kami akan membalas dalam waktu 24 jam. Stay cool! ✌️</p>
-      <br/>
-      <a href="projects.html" class="btn btn-outline btn-sm" style="margin:0 auto">Explore Projects →</a>
+      <div class="fs-mark">✓ message logged</div>
+      <h3>Pesan terkirim.</h3>
+      <p>Terima kasih sudah menghubungi kami. Kami akan membalas dalam waktu 24 jam.</p>
+      <a href="projects.html" class="btn btn-outline">explore projects <span class="btn-arrow">→</span></a>
     </div>
   </div>
 </div>
 
 <!-- WHY US -->
-<section id="why">
-  <div class="orb orb-v" style="width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);opacity:.15"></div>
-  <div style="text-align:center">
-    <div class="label" style="justify-content:center">Why OZ</div>
-    <h2 class="sr up" style="font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:.5rem">Kenapa <span class="g-text">OZ Creative?</span></h2>
-    <p class="sr up" style="color:var(--muted);transition-delay:.1s;max-width:440px;margin:0 auto">Bukan hanya developer — kami adalah builder yang peduli dengan impact dari setiap baris kode.</p>
+<section id="why-section">
+  <div class="why-head rv">
+    <div class="tag-label" style="justify-content:center">why oz</div>
+    <h2>Kenapa kerja sama dengan kami.</h2>
   </div>
-  <div class="why-grid">
-    <div class="why-card sr up" style="transition-delay:.05s">
-      <span class="why-icon">⚡</span>
+  <div class="why-grid rv">
+    <div class="why-item">
+      <div class="why-item-num">01</div>
       <h3>Fast Execution</h3>
-      <p>Kami tidak suka overthinking. Ide masuk, planning cepat, eksekusi segera. Kami menghargai waktu kamu sebesar kami menghargai waktu kami.</p>
+      <p>Ide masuk, planning cepat, eksekusi segera. Kami menghargai waktu kamu sebesar kami menghargai waktu kami sendiri.</p>
     </div>
-    <div class="why-card sr up" style="transition-delay:.1s">
-      <span class="why-icon">🔐</span>
+    <div class="why-item">
+      <div class="why-item-num">02</div>
       <h3>Security First</h3>
-      <p>Setiap smart contract melalui review keamanan menyeluruh. Kami tidak deploy ke mainnet jika masih ada potensi exploit yang belum di-address.</p>
+      <p>Setiap smart contract melalui review keamanan menyeluruh sebelum mainnet — tidak ada jalan pintas.</p>
     </div>
-    <div class="why-card sr up" style="transition-delay:.15s">
-      <span class="why-icon">🎯</span>
+    <div class="why-item">
+      <div class="why-item-num">03</div>
       <h3>Problem-Focused</h3>
-      <p>Kami build solusi, bukan fitur. Setiap decision teknis selalu kembali ke satu pertanyaan: apakah ini benar-benar memecahkan problemnya?</p>
+      <p>Kami build solusi, bukan fitur. Setiap keputusan teknis kembali ke satu pertanyaan: apakah ini benar-benar menyelesaikan masalahnya?</p>
     </div>
-    <div class="why-card sr up" style="transition-delay:.2s">
-      <span class="why-icon">🌐</span>
+    <div class="why-item">
+      <div class="why-item-num">04</div>
       <h3>Full-Stack Web3</h3>
-      <p>Dari smart contract on-chain hingga dashboard UI yang indah — kami bisa handle semuanya dalam satu tim tanpa perlu outsource komponen lain.</p>
+      <p>Dari smart contract on-chain sampai dashboard UI — satu tim, tanpa outsource komponen lain.</p>
     </div>
-    <div class="why-card sr up" style="transition-delay:.25s">
-      <span class="why-icon">📖</span>
+    <div class="why-item">
+      <div class="why-item-num">05</div>
       <h3>Transparent Process</h3>
-      <p>Kamu selalu tahu project sedang ada di fase apa. Update berkala, repositori terbuka, dan tidak ada kejutan di akhir sprint.</p>
+      <p>Kamu selalu tahu project ada di fase apa. Update berkala, repository terbuka, tidak ada kejutan di akhir.</p>
     </div>
-    <div class="why-card sr up" style="transition-delay:.3s">
-      <span class="why-icon">🚀</span>
+    <div class="why-item">
+      <div class="why-item-num">06</div>
       <h3>Proven Track Record</h3>
-      <p>4 project sudah live. Axeon Protocol, Stack Block Arcade, VeritasVote, Sovereign Intelligence — semua bisa kamu cek, test, dan verifikasi sendiri.</p>
+      <p>Empat project sudah live dan bisa kamu verifikasi sendiri — bukan klaim, tapi link yang bisa diklik.</p>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand"><div class="fl"><span class="g-text">OZ</span> Creative</div><p>Fullstack · AI Engineering · Blockchain. Dari Jambi untuk dunia.</p></div>
-    <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Projects</h4><ul><li><a href="https://axeon-protocol.vercel.app/" target="_blank">Axeon Protocol</a></li><li><a href="https://stack-block-arcade-ten.vercel.app/" target="_blank">Stack Block Arcade</a></li><li><a href="https://github.com/Opayys/VeritasVote" target="_blank">VeritasVote</a></li></ul></div>
-    <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/Opayys" target="_blank">GitHub — Opayy</a></li><li><a href="https://github.com/GodZenn" target="_blank">GitHub — Zenn</a></li><li><a href="https://x.com/axeonprotocol" target="_blank">X — Axeon</a></li></ul></div>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><div class="footer-mark"><span>OZ</span> Creative</div><p>Fullstack · AI Engineering · Blockchain. Dari Jambi, Indonesia.</p></div>
+    <div class="footer-col"><h4>navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>projects</h4><ul><li><a href="https://axeon-protocol.vercel.app/" target="_blank" rel="noopener">Axeon Protocol</a></li><li><a href="https://stack-block-arcade-ten.vercel.app/" target="_blank" rel="noopener">Stack Block Arcade</a></li></ul></div>
+    <div class="footer-col"><h4>connect</h4><ul><li><a href="https://github.com/Opayys" target="_blank" rel="noopener">GitHub — Opayy</a></li><li><a href="https://github.com/GodZenn" target="_blank" rel="noopener">GitHub — Zenn</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><p class="footer-copy">© 2025 OZ Creative Agency. Built by <span>Opayy × Zenn</span></p></div>
+  <div class="footer-bottom"><p>© 2025 OZ Creative Agency — built by <span>Opayy × Zenn</span></p><p>jambi, indonesia</p></div>
 </footer>
 
-<script>
-const cg=document.getElementById('cursor-glow');
-document.addEventListener('mousemove',e=>{cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px'});
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
-const hbg=document.getElementById('hbg'),nl=document.getElementById('navLinks');
-hbg.addEventListener('click',()=>{hbg.classList.toggle('open');nl.classList.toggle('open')});
-document.querySelectorAll('a[href]').forEach(a=>{
-  const href=a.getAttribute('href');
-  if(!href||href.startsWith('#')||href.startsWith('http')||href.startsWith('mailto'))return;
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    const el=document.createElement('div');
-    el.style.cssText='position:fixed;inset:0;z-index:9999;background:#04040f;transform:scaleY(0);transform-origin:bottom;animation:curtainIn .5s cubic-bezier(.77,0,.175,1) forwards';
-    document.body.appendChild(el);
-    setTimeout(()=>location.href=href,480);
-  });
-});
-
-function submitForm(){
-  const n=document.getElementById('f-name').value.trim();
-  const c=document.getElementById('f-contact').value.trim();
-  const t=document.getElementById('f-type').value;
-  const m=document.getElementById('f-msg').value.trim();
-  if(!n||!c||!t||!m){
-    const btn=document.querySelector('.form-submit');
-    btn.style.animation='shake .4s ease';
-    btn.textContent='⚠ Lengkapi semua field dulu!';
-    setTimeout(()=>{btn.style.animation='';btn.innerHTML='Kirim Pesan <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>';},2000);
-    return;
-  }
-  document.getElementById('formArea').style.display='none';
-  document.getElementById('formSuccess').classList.add('show');
-}
-
-const cv=document.getElementById('c-mini'),cx=cv.getContext('2d');
-let W,H,pts=[];
-function resize(){W=cv.width=innerWidth;H=cv.height=cv.parentElement.offsetHeight||400}
-addEventListener('resize',resize);resize();
-for(let i=0;i<50;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.4,c:Math.random()>.5?'123,47,255':'0,240,255'});
-function frame(){cx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=`rgba(${p.c},.35)`;cx.fill()});requestAnimationFrame(frame)}
-frame();
-
-const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:.1});
-document.querySelectorAll('.sr').forEach(el=>io.observe(el));
-</script>
+<script src="js/nav.js"></script>
+<script src="js/transition.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/form.js"></script>
 </body>
 </html>
