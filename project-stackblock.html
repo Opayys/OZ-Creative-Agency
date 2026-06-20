@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Stack Block Arcade — OZ Creative Agency</title>
+<link rel="stylesheet" href="css/tokens.css"/>
+<link rel="stylesheet" href="css/base.css"/>
+<link rel="stylesheet" href="css/components.css"/>
+<link rel="stylesheet" href="css/pages.css"/>
+</head>
+<body>
+<div id="curtain"></div>
+
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="nav-mark"><span class="mark-box">OZ</span><span>Creative<span class="mark-sub"><br>agency.sh</span></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">home</a></li>
+    <li><a href="projects.html" class="active">projects</a></li>
+    <li><a href="services.html">services</a></li>
+    <li><a href="contact.html" class="nav-cta">contact</a></li>
+    <li class="lang-switch"><button data-lang-btn="id">ID</button><button data-lang-btn="en">EN</button></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="pp-hero">
+  <div class="fp-breadcrumb rv">
+    <a href="index.html" data-lang-id>beranda</a><a href="index.html" data-lang-en style="display:none">home</a>
+    <span>/</span>
+    <a href="projects.html" data-lang-id>proyek</a><a href="projects.html" data-lang-en style="display:none">projects</a>
+    <span>/</span>
+    <span style="color:var(--ink)">stack-block-arcade</span>
+  </div>
+
+  <div class="pp-hero-grid">
+    <div class="rv rv-left">
+      <span class="chip moss pp-eco-tag">🎮 Solana · GameFi</span>
+      <h1 class="pp-title-big" data-scramble>Stack Block Arcade</h1>
+      <p class="pp-tagline-big">
+        <span data-lang-id>"Skill-to-earn arcade — gameplay berjalan di browser, hadiah dikunci dan diverifikasi di blockchain."</span>
+        <span data-lang-en style="display:none">"Skill-to-earn arcade — gameplay runs in the browser, rewards locked and verified on-chain."</span>
+      </p>
+    </div>
+    <div class="pp-meta-card rv rv-right">
+      <div class="pp-meta-row"><span data-lang-id>status</span><span data-lang-en style="display:none">status</span><span style="color:var(--moss)">● live / mainnet</span></div>
+      <div class="pp-meta-row"><span data-lang-id>ekosistem</span><span data-lang-en style="display:none">ecosystem</span><span>Solana</span></div>
+      <div class="pp-meta-row"><span data-lang-id>kategori</span><span data-lang-en style="display:none">category</span><span>GameFi</span></div>
+      <div class="pp-meta-row"><span data-lang-id>peran tim</span><span data-lang-en style="display:none">team roles</span><span data-lang-id>Zenn &amp; Opayy</span><span data-lang-en style="display:none">Zenn &amp; Opayy</span></div>
+    </div>
+  </div>
+
+  <div class="pp-hero-media rv">
+    <img src="assets/images/img-stackblock.jpg" alt="Stack Block Arcade" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="pp-hero-media-fallback" style="display:none">STACK BLOCK</div>
+  </div>
+</section>
+
+<section class="pp-body-section">
+  <div class="pp-body-grid">
+    <div class="rv rv-left">
+      <div class="tag-label" data-lang-id>masalah</div><div class="tag-label" data-lang-en style="display:none">problem</div>
+      <h2 data-lang-id>Dilema klasik game Web3.</h2>
+      <h2 data-lang-en style="display:none">The classic Web3 game dilemma.</h2>
+      <p data-lang-id>Kalau semua aksi pemain dikirim ke blockchain, game jadi lag dan gas fee mahal. Tapi kalau gameplay sepenuhnya off-chain, pemain bisa eksploitasi skor pakai skrip atau bot — menguras reward pool secara curang. Industri GameFi arcade terjebak di antara dua ekstrem ini.</p>
+      <p data-lang-en style="display:none">Sending every player action to the blockchain makes the game laggy and expensive. But if gameplay is fully off-chain, players can exploit scores with scripts or bots — draining the reward pool unfairly. The arcade GameFi industry is stuck between these two extremes.</p>
+    </div>
+    <div class="rv rv-right">
+      <div class="tag-label" data-lang-id>solusi</div><div class="tag-label" data-lang-en style="display:none">solution</div>
+      <h2 data-lang-id>Pisahkan gameplay dari transaksi.</h2>
+      <h2 data-lang-en style="display:none">Separate gameplay from transactions.</h2>
+      <p data-lang-id>Stack Block Arcade memisahkan <strong>gameplay (off-chain, di browser)</strong> dari <strong>transaksi keuangan (on-chain)</strong>. Pemain beli tiket dan klaim reward lewat smart contract, tapi gameplay-nya sendiri berjalan mulus tanpa transaksi sama sekali — sambil tetap divalidasi server untuk mencegah cheat.</p>
+      <p data-lang-en style="display:none">Stack Block Arcade separates <strong>gameplay (off-chain, in-browser)</strong> from <strong>financial transactions (on-chain)</strong>. Players buy tickets and claim rewards via smart contract, but gameplay itself runs smoothly with zero transactions — while still server-validated to prevent cheating.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pp-body-section">
+  <div class="tag-label" data-lang-id>alur kerja</div><div class="tag-label" data-lang-en style="display:none">how it works</div>
+  <h2 class="rv" data-lang-id>Dari beli tiket sampai klaim reward.</h2>
+  <h2 class="rv" data-lang-en style="display:none">From buying a ticket to claiming the reward.</h2>
+  <div class="pp-flow-list rv-stagger rv">
+    <div class="pp-flow-step">
+      <div class="pp-flow-num">01</div>
+      <div><h4 data-lang-id>Beli tiket (on-chain)</h4><h4 data-lang-en style="display:none">Buy ticket (on-chain)</h4>
+        <p data-lang-id>Pemain hubungkan wallet dan bayar biaya masuk lewat fungsi buy_ticket() di smart contract.</p>
+        <p data-lang-en style="display:none">Player connects wallet and pays entry fee via the buy_ticket() smart contract function.</p>
+      </div>
+    </div>
+    <div class="pp-flow-step">
+      <div class="pp-flow-num">02</div>
+      <div><h4 data-lang-id>Inisiasi sesi</h4><h4 data-lang-en style="display:none">Session initiation</h4>
+        <p data-lang-id>Smart contract mengunci token dan menerbitkan SessionID unik untuk pemain.</p>
+        <p data-lang-en style="display:none">Smart contract locks the token and issues a unique SessionID for the player.</p>
+      </div>
+    </div>
+    <div class="pp-flow-step">
+      <div class="pp-flow-num">03</div>
+      <div><h4 data-lang-id>Bermain (off-chain)</h4><h4 data-lang-en style="display:none">Play (off-chain)</h4>
+        <p data-lang-id>Game berjalan di browser, mencatat koordinat dan timestamp tiap balok secara lokal.</p>
+        <p data-lang-en style="display:none">Game runs in-browser, recording coordinates and timestamp for each block locally.</p>
+      </div>
+    </div>
+    <div class="pp-flow-step">
+      <div class="pp-flow-num">04</div>
+      <div><h4 data-lang-id>Validasi anti-cheat</h4><h4 data-lang-en style="display:none">Anti-cheat validation</h4>
+        <p data-lang-id>Server mensimulasikan ulang log koordinat untuk memastikan skor wajar dan tidak hasil hack.</p>
+        <p data-lang-en style="display:none">Server re-simulates the coordinate log to confirm the score is plausible and not hacked.</p>
+      </div>
+    </div>
+    <div class="pp-flow-step">
+      <div class="pp-flow-num">05</div>
+      <div><h4 data-lang-id>Klaim reward (on-chain)</h4><h4 data-lang-en style="display:none">Claim reward (on-chain)</h4>
+        <p data-lang-id>Server beri signature digital, lalu smart contract verifikasi dan kirim reward ke wallet pemain.</p>
+        <p data-lang-en style="display:none">Server issues a digital signature, then the smart contract verifies it and sends the reward to the player's wallet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pp-body-section">
+  <div class="tag-label" data-lang-id>fitur utama</div><div class="tag-label" data-lang-en style="display:none">key features</div>
+  <h2 class="rv" data-lang-id>Apa yang membuat Stack Block berbeda.</h2>
+  <h2 class="rv" data-lang-en style="display:none">What makes Stack Block different.</h2>
+  <div class="pp-features-grid rv-stagger rv">
+    <div class="pp-feat-item">
+      <h4 data-lang-id>Hybrid Web2.5 Gameplay</h4><h4 data-lang-en style="display:none">Hybrid Web2.5 Gameplay</h4>
+      <p data-lang-id>Gameplay 60 FPS di browser, finansial di-handle on-chain Solana.</p>
+      <p data-lang-en style="display:none">60 FPS gameplay in-browser, finances handled on-chain via Solana.</p>
+    </div>
+    <div class="pp-feat-item">
+      <h4 data-lang-id>Automated Anti-Cheat</h4><h4 data-lang-en style="display:none">Automated Anti-Cheat</h4>
+      <p data-lang-id>Server backend mendeteksi kecurangan secara real-time lewat re-simulasi.</p>
+      <p data-lang-en style="display:none">Backend server detects cheating in real-time through re-simulation.</p>
+    </div>
+    <div class="pp-feat-item">
+      <h4 data-lang-id>Cryptographic Payout</h4><h4 data-lang-en style="display:none">Cryptographic Payout</h4>
+      <p data-lang-id>Pembayaran instan dengan signature digital yang diverifikasi smart contract.</p>
+      <p data-lang-en style="display:none">Instant payout with digital signature verified by smart contract.</p>
+    </div>
+    <div class="pp-feat-item">
+      <h4 data-lang-id>On-Chain Leaderboard Pool</h4><h4 data-lang-en style="display:none">On-Chain Leaderboard Pool</h4>
+      <p data-lang-id>Prize pool mingguan dikunci on-chain, didistribusikan otomatis ke top player.</p>
+      <p data-lang-en style="display:none">Weekly prize pool locked on-chain, distributed automatically to top players.</p>
+    </div>
+  </div>
+
+  <div class="tag-label" style="margin-top:3rem">tech stack</div>
+  <div class="pp-stack-full rv">
+    <span class="chip">Rust</span><span class="chip">Anchor Framework</span><span class="chip">Solana PDA</span>
+    <span class="chip moss">Next.js</span><span class="chip moss">HTML5 Canvas</span><span class="chip">Node.js Validator</span>
+    <span class="chip moss">Wallet Adapter</span><span class="chip">Cryptographic Signature</span>
+  </div>
+
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem">
+    <a href="https://stack-block-arcade-ten.vercel.app/" target="_blank" rel="noopener" class="btn btn-solid" data-magnetic>
+      <span data-lang-id>demo langsung</span><span data-lang-en style="display:none">live demo</span> <span class="btn-arrow">↗</span>
+    </a>
+    <a href="https://github.com/GodZenn/Stack-Block-Arcade-V2" target="_blank" rel="noopener" class="btn btn-outline" data-magnetic>github</a>
+    <a href="https://x.com/stackyourblock" target="_blank" rel="noopener" class="btn btn-outline" data-magnetic>x / twitter</a>
+  </div>
+</section>
+
+<section style="padding:0 6%">
+  <div class="pp-nav-other rv">
+    <a href="project-axeon.html" class="pp-nav-item">
+      <span class="pp-nav-label" data-lang-id>← project sebelumnya</span><span class="pp-nav-label" data-lang-en style="display:none">← previous project</span>
+      <span class="pp-nav-title">Axeon Protocol</span>
+    </a>
+    <a href="project-veritasvote.html" class="pp-nav-item" style="text-align:right">
+      <span class="pp-nav-label" data-lang-id>project selanjutnya →</span><span class="pp-nav-label" data-lang-en style="display:none">next project →</span>
+      <span class="pp-nav-title">VeritasVote</span>
+    </a>
+  </div>
+</section>
+
+<section id="cta-block">
+  <div class="cta-inner rv rv-scale">
+    <h2 data-lang-id>Mau bangun GameFi serupa?</h2><h2 data-lang-en style="display:none">Want to build a similar GameFi?</h2>
+    <p data-lang-id>Kami bisa rancang arsitektur hybrid on-chain/off-chain untuk game kamu.</p>
+    <p data-lang-en style="display:none">We can design a hybrid on-chain/off-chain architecture for your game.</p>
+    <div class="cta-acts">
+      <a href="contact.html" class="btn btn-solid" data-magnetic><span data-lang-id>hubungi kami</span><span data-lang-en style="display:none">contact us</span> <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><div class="footer-mark"><span>OZ</span> Creative</div><p>Fullstack · AI Engineering · Blockchain.</p></div>
+    <div class="footer-col"><h4 data-lang-id>navigasi</h4><h4 data-lang-en style="display:none">navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4 data-lang-id>proyek</h4><h4 data-lang-en style="display:none">projects</h4><ul><li><a href="project-axeon.html">Axeon Protocol</a></li><li><a href="project-veritasvote.html">VeritasVote</a></li></ul></div>
+    <div class="footer-col"><h4 data-lang-id>terhubung</h4><h4 data-lang-en style="display:none">connect</h4><ul><li><a href="https://github.com/GodZenn" target="_blank" rel="noopener">GitHub</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 OZ Creative Agency — <span>Opayy × Zenn</span></p><p>jambi, indonesia</p></div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/transition.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/tilt.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/scramble.js"></script>
+<script src="js/magnetic.js"></script>
+<script src="js/i18n.js"></script>
+</body>
+</html>

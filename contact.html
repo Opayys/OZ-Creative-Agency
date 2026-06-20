@@ -4,12 +4,45 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Contact — OZ Creative Agency</title>
+<meta name="description" content="Hubungi OZ Creative Agency untuk diskusi project blockchain, fullstack, atau AI. Respon dalam 24 jam."/>
+<link rel="canonical" href="https://ozcreative.agency/contact.html"/>
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png"/>
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
+<link rel="manifest" href="site.webmanifest"/>
+<meta name="theme-color" content="#0E0E0E"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Contact — OZ Creative Agency"/>
+<meta property="og:description" content="Hubungi OZ Creative Agency untuk diskusi project blockchain, fullstack, atau AI. Respon dalam 24 jam."/>
+<meta property="og:image" content="https://ozcreative.agency/assets/images/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:url" content="https://ozcreative.agency/contact.html"/>
+<meta property="og:site_name" content="OZ Creative Agency"/>
+<meta property="og:locale" content="id_ID"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Contact — OZ Creative Agency"/>
+<meta name="twitter:description" content="Hubungi OZ Creative Agency untuk diskusi project blockchain, fullstack, atau AI. Respon dalam 24 jam."/>
+<meta name="twitter:image" content="https://ozcreative.agency/assets/images/og-image.png"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"/>
 <link rel="stylesheet" href="css/tokens.css"/>
 <link rel="stylesheet" href="css/base.css"/>
 <link rel="stylesheet" href="css/components.css"/>
 <link rel="stylesheet" href="css/pages.css"/>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <div id="curtain"></div>
 
 <nav class="site-nav" id="siteNav">
@@ -22,11 +55,12 @@
     <li><a href="projects.html">projects</a></li>
     <li><a href="services.html">services</a></li>
     <li><a href="contact.html" class="active nav-cta">contact</a></li>
+    <li class="lang-switch"><button data-lang-btn="id" aria-label="Switch to Indonesian">ID</button><button data-lang-btn="en" aria-label="Switch to English">EN</button></li>
   </ul>
-  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
-<section class="page-hero">
+<section id="main-content" class="page-hero">
   <div class="tag-label">let's talk</div>
   <h1 class="rv">Mari mulai percakapan.</h1>
   <p class="rv" style="transition-delay:.08s">Punya ide project, butuh konsultasi teknis, atau sekadar mau diskusi soal Web3? Isi form di bawah — kami biasanya merespons dalam 24 jam.</p>
@@ -55,7 +89,7 @@
     <div class="fq-row">
       <div class="fq-item">
         <div class="fq-av">
-          <img src="assets/images/foto-opayy.jpg" alt="Opayy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <img src="assets/images/foto-opayy.jpg" alt="Opayy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy" decoding="async"/>
           <div class="fq-av-fallback" style="display:none">N</div>
         </div>
         <div class="fq-name">Naufal</div>
@@ -67,7 +101,7 @@
       </div>
       <div class="fq-item">
         <div class="fq-av">
-          <img src="assets/images/foto-zenn.jpg" alt="Zenn" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <img src="assets/images/foto-zenn.jpg" alt="Zenn" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy" decoding="async"/>
           <div class="fq-av-fallback" style="display:none">R</div>
         </div>
         <div class="fq-name">Reza</div>
@@ -117,14 +151,28 @@
       <button class="form-submit" id="formSubmit">
         kirim pesan <span class="btn-arrow">→</span>
       </button>
-      <p class="form-note">Pesan kamu aman. Kami tidak pernah spam.</p>
+      <p class="form-note">
+        <span data-lang-id>Pesan dikirim langsung ke inbox kami — tidak perlu buka aplikasi email.</span>
+        <span data-lang-en style="display:none">Your message goes straight to our inbox — no email app required.</span>
+      </p>
+    </div>
+
+    <div class="form-error" id="formError">
+      <span data-lang-id>⚠ Gagal mengirim. Coba lagi, atau hubungi kami lewat X / GitHub di samping.</span>
+      <span data-lang-en style="display:none">⚠ Failed to send. Try again, or reach us via X / GitHub on the side.</span>
     </div>
 
     <div class="form-success" id="formSuccess">
-      <div class="fs-mark">✓ message logged</div>
-      <h3>Pesan terkirim.</h3>
-      <p>Terima kasih sudah menghubungi kami. Kami akan membalas dalam waktu 24 jam.</p>
-      <a href="projects.html" class="btn btn-outline">explore projects <span class="btn-arrow">→</span></a>
+      <div class="fs-mark">✓ <span data-lang-id>pesan terkirim</span><span data-lang-en style="display:none">message delivered</span></div>
+      <h3 data-lang-id>Terima kasih!</h3>
+      <h3 data-lang-en style="display:none">Thank you!</h3>
+      <p data-lang-id>Pesan kamu sudah masuk ke inbox kami. Kami biasanya merespons dalam <strong>24 jam</strong>.</p>
+      <p data-lang-en style="display:none">Your message has landed in our inbox. We typically respond within <strong>24 hours</strong>.</p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:.5rem">
+        <a href="projects.html" class="btn btn-outline" data-magnetic>
+          <span data-lang-id>explore projects</span><span data-lang-en style="display:none">explore projects</span> <span class="btn-arrow">→</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -183,5 +231,10 @@
 <script src="js/transition.js"></script>
 <script src="js/reveal.js"></script>
 <script src="js/form.js"></script>
+<script src="js/tilt.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/scramble.js"></script>
+<script src="js/magnetic.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>
