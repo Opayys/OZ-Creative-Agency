@@ -1,186 +1,612 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Projects — OZ Creative Agency</title>
-<meta name="description" content="Empat sistem yang sudah live: Axeon Protocol, Stack Block Arcade, VeritasVote, dan Sovereign Intelligence. Lihat detail teknis lengkapnya."/>
-<link rel="canonical" href="https://ozcreative.agency/projects.html"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects — OZ Creative Agency</title>
+    <meta
+      name="description"
+      content="Empat sistem yang sudah live: Axeon Protocol, Stack Block Arcade, VeritasVote, dan Sovereign Intelligence. Lihat detail teknis lengkapnya."
+    />
+    <link rel="canonical" href="https://ozcreative.agency/projects.html" />
 
-<!-- Favicons -->
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg"/>
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png"/>
-<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
-<link rel="manifest" href="site.webmanifest"/>
-<meta name="theme-color" content="#0E0E0E"/>
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16.png"
+    />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#0E0E0E" />
 
-<!-- Open Graph -->
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Projects — OZ Creative Agency"/>
-<meta property="og:description" content="Empat sistem yang sudah live: Axeon Protocol, Stack Block Arcade, VeritasVote, dan Sovereign Intelligence. Lihat detail teknis lengkapnya."/>
-<meta property="og:image" content="https://ozcreative.agency/assets/images/og-image.png"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
-<meta property="og:url" content="https://ozcreative.agency/projects.html"/>
-<meta property="og:site_name" content="OZ Creative Agency"/>
-<meta property="og:locale" content="id_ID"/>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Projects — OZ Creative Agency" />
+    <meta
+      property="og:description"
+      content="Empat sistem yang sudah live: Axeon Protocol, Stack Block Arcade, VeritasVote, dan Sovereign Intelligence. Lihat detail teknis lengkapnya."
+    />
+    <meta
+      property="og:image"
+      content="https://ozcreative.agency/assets/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://ozcreative.agency/projects.html" />
+    <meta property="og:site_name" content="OZ Creative Agency" />
+    <meta property="og:locale" content="id_ID" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Projects — OZ Creative Agency"/>
-<meta name="twitter:description" content="Empat sistem yang sudah live: Axeon Protocol, Stack Block Arcade, VeritasVote, dan Sovereign Intelligence. Lihat detail teknis lengkapnya."/>
-<meta name="twitter:image" content="https://ozcreative.agency/assets/images/og-image.png"/>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Projects — OZ Creative Agency" />
+    <meta
+      name="twitter:description"
+      content="Empat sistem yang sudah live: Axeon Protocol, Stack Block Arcade, VeritasVote, dan Sovereign Intelligence. Lihat detail teknis lengkapnya."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ozcreative.agency/assets/images/og-image.png"
+    />
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"/>
-<link rel="stylesheet" href="css/tokens.css"/>
-<link rel="stylesheet" href="css/base.css"/>
-<link rel="stylesheet" href="css/components.css"/>
-<link rel="stylesheet" href="css/pages.css"/>
-</head>
-<body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
-<div id="curtain"></div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="curtain"></div>
 
-<nav class="site-nav" id="siteNav">
-  <a href="index.html" class="nav-mark">
-    <img src="assets/images/logo-oz-mark-transparent.png" alt="OZ Creative Agency" class="mark-logo" loading="eager"/>
-    <span>Creative<span class="mark-sub"><br>agency.sh</span></span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">home</a></li>
-    <li><a href="projects.html" class="active">projects</a></li>
-    <li><a href="services.html">services</a></li>
-    <li><a href="contact.html" class="nav-cta">contact</a></li>
-    <li class="lang-switch"><button data-lang-btn="id" aria-label="Switch to Indonesian">ID</button><button data-lang-btn="en" aria-label="Switch to English">EN</button></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html" class="nav-mark">
+        <img
+          src="assets/images/logo-oz-mark-transparent.png"
+          alt="OZ Creative Agency"
+          class="mark-logo"
+          loading="eager"
+        />
+        <span
+          >Creative<span class="mark-sub"><br />agency.sh</span></span
+        >
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="projects.html" class="active">projects</a></li>
+        <li><a href="services.html">services</a></li>
+        <li><a href="contact.html" class="nav-cta">contact</a></li>
+        <li class="lang-switch">
+          <button data-lang-btn="id" aria-label="Switch to Indonesian">
+            ID</button
+          ><button data-lang-btn="en" aria-label="Switch to English">EN</button>
+        </li>
+      </ul>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-<section id="main-content" class="page-hero">
-  <div class="tag-label" data-lang-id>build log — rekam lengkap</div>
-  <div class="tag-label" data-lang-en style="display:none">build log — full record</div>
-  <h1 class="rv" data-scramble data-lang-id>Setiap project, didokumentasikan apa adanya.</h1>
-  <h1 class="rv" data-lang-en style="display:none">Every project, documented as it is.</h1>
-  <p class="rv" style="transition-delay:.08s" data-lang-id>Bukan mockup, bukan konsep. Empat sistem yang sudah ditulis, di-deploy, dan bisa kamu verifikasi sendiri lewat repository atau demo live. Klik kartu untuk lihat detail lengkap masing-masing.</p>
-  <p class="rv" style="transition-delay:.08s" data-lang-en style="display:none">Not mockups, not concepts. Four systems already written, deployed, and verifiable yourself via repository or live demo. Click a card to see full details for each.</p>
-</section>
-
-<div id="filter-row" class="rv">
-  <div class="filter-tab active" data-filter="all"><span data-lang-id>semua</span><span data-lang-en style="display:none">all</span> (4)</div>
-  <div class="filter-tab" data-filter="solana">solana (2)</div>
-  <div class="filter-tab" data-filter="ethereum">ethereum (1)</div>
-  <div class="filter-tab" data-filter="ai">ai / python (1)</div>
-</div>
-
-<!-- PROJECT INDEX — each card links to its own detail page -->
-<section style="padding: 4rem 6% 7rem;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;">
-
-    <a href="project-axeon.html" class="flat-card moss-hover rv rv-left" data-cat="solana" data-tilt data-tilt-strength="5" style="display:block;padding:2.25rem;text-decoration:none;color:inherit;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;">
-        <span class="chip moss">⬡ Solana</span>
-        <span class="chip" style="border-color:var(--moss);color:var(--moss)">● live</span>
+    <section id="main-content" class="page-hero">
+      <div class="tag-label" data-lang-id>build log — rekam lengkap</div>
+      <div class="tag-label" data-lang-en style="display: none">
+        build log — full record
       </div>
-      <div style="font-family:var(--f-mono);font-size:0.75rem;color:var(--stone);margin-bottom:.5rem">01 / 04</div>
-      <h3 style="font-size:1.5rem;margin-bottom:.75rem;">Axeon Management Protocol</h3>
-      <p style="font-size:.88rem;color:var(--stone);line-height:1.75;margin-bottom:1.5rem" data-lang-id>Hybrid gatekeeping infrastructure untuk komunitas Telegram premium — bayar lewat QRIS atau kripto.</p>
-      <p style="font-size:.88rem;color:var(--stone);line-height:1.75;margin-bottom:1.5rem" data-lang-en style="display:none">Hybrid gatekeeping infrastructure for premium Telegram communities — pay via QRIS or crypto.</p>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem">
-        <span class="chip">Rust</span><span class="chip">Anchor</span><span class="chip">ZK Proofs</span>
-      </div>
-      <div class="f-card-view-more"><span data-lang-id>lihat detail lengkap</span><span data-lang-en style="display:none">view full details</span><span class="arr">→</span></div>
-    </a>
+      <h1 class="rv" data-scramble data-lang-id>
+        Setiap project, didokumentasikan apa adanya.
+      </h1>
+      <h1 class="rv" data-lang-en style="display: none">
+        Every project, documented as it is.
+      </h1>
+      <p class="rv" style="transition-delay: 0.08s" data-lang-id>
+        Bukan mockup, bukan konsep. Empat sistem yang sudah ditulis, di-deploy,
+        dan bisa kamu verifikasi sendiri lewat repository atau demo live. Klik
+        kartu untuk lihat detail lengkap masing-masing.
+      </p>
+      <p
+        class="rv"
+        style="transition-delay: 0.08s"
+        data-lang-en
+        style="display: none"
+      >
+        Not mockups, not concepts. Four systems already written, deployed, and
+        verifiable yourself via repository or live demo. Click a card to see
+        full details for each.
+      </p>
+    </section>
 
-    <a href="project-stackblock.html" class="flat-card moss-hover rv rv-right" data-cat="solana" data-tilt data-tilt-strength="5" style="display:block;padding:2.25rem;text-decoration:none;color:inherit;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;">
-        <span class="chip moss">🎮 Solana · GameFi</span>
-        <span class="chip" style="border-color:var(--moss);color:var(--moss)">● live</span>
+    <div id="filter-row" class="rv">
+      <div class="filter-tab active" data-filter="all">
+        <span data-lang-id>semua</span
+        ><span data-lang-en style="display: none">all</span> (4)
       </div>
-      <div style="font-family:var(--f-mono);font-size:0.75rem;color:var(--stone);margin-bottom:.5rem">02 / 04</div>
-      <h3 style="font-size:1.5rem;margin-bottom:.75rem;">Stack Block Arcade</h3>
-      <p style="font-size:.88rem;color:var(--stone);line-height:1.75;margin-bottom:1.5rem" data-lang-id>GameFi skill-to-earn — gameplay di browser, hadiah dikunci dan diverifikasi di blockchain.</p>
-      <p style="font-size:.88rem;color:var(--stone);line-height:1.75;margin-bottom:1.5rem" data-lang-en style="display:none">Skill-to-earn GameFi — gameplay in-browser, rewards locked and verified on-chain.</p>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem">
-        <span class="chip">Rust</span><span class="chip">HTML5 Canvas</span><span class="chip">Anti-Cheat</span>
-      </div>
-      <div class="f-card-view-more"><span data-lang-id>lihat detail lengkap</span><span data-lang-en style="display:none">view full details</span><span class="arr">→</span></div>
-    </a>
-
-    <a href="project-veritasvote.html" class="flat-card rust-hover rv rv-left" data-cat="ethereum" data-tilt data-tilt-strength="5" style="display:block;padding:2.25rem;text-decoration:none;color:inherit;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;">
-        <span class="chip rust">⟠ Ethereum</span>
-        <span class="chip" style="border-color:var(--moss);color:var(--moss)">● live</span>
-      </div>
-      <div style="font-family:var(--f-mono);font-size:0.75rem;color:var(--stone);margin-bottom:.5rem">03 / 04</div>
-      <h3 style="font-size:1.5rem;margin-bottom:.75rem;">VeritasVote</h3>
-      <p style="font-size:.88rem;color:var(--stone);line-height:1.75;margin-bottom:1.5rem" data-lang-id>Governance terdesentralisasi anti-flashloan dengan snapshot voting dan timelock execution.</p>
-      <p style="font-size:.88rem;color:var(--stone);line-height:1.75;margin-bottom:1.5rem" data-lang-en style="display:none">Anti-flashloan decentralized governance with snapshot voting and timelock execution.</p>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem">
-        <span class="chip">Solidity</span><span class="chip">Foundry</span><span class="chip">Wagmi</span>
-      </div>
-      <div class="f-card-view-more"><span data-lang-id>lihat detail lengkap</span><span data-lang-en style="display:none">view full details</span><span class="arr">→</span></div>
-    </a>
-
-    <a href="project-sovereign.html" class="flat-card rust-hover rv rv-right" data-cat="ai" data-tilt data-tilt-strength="5" style="display:block;padding:2.25rem;text-decoration:none;color:inherit;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;">
-        <span class="chip rust">🤖 AI · Python</span>
-        <span class="chip" style="border-color:var(--rust);color:var(--rust)" data-lang-id>● internal</span>
-        <span class="chip" style="border-color:var(--rust);color:var(--rust)" data-lang-en style="display:none">● internal</span>
-      </div>
-      <div style="font-family:var(--f-mono);font-size:0.75rem;color:var(--stone);margin-bottom:.5rem">04 / 04</div>
-      <h3 style="font-size:1.5rem;margin-bottom:.75rem;">Sovereign Intelligence</h3>
-      <p style="font-size:.88rem;color:var(--stone);line-height:1.75;margin-bottom:1.5rem" data-lang-id>Sistem intelijen pasar real-time — pipeline async yang mengirim insight ke Discord, 24/7.</p>
-      <p style="font-size:.88rem;color:var(--stone);line-height:1.75;margin-bottom:1.5rem" data-lang-en style="display:none">Real-time market intelligence system — async pipeline delivering insight to Discord, 24/7.</p>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem">
-        <span class="chip">Python</span><span class="chip">discord.py</span><span class="chip">Asyncio</span>
-      </div>
-      <div class="f-card-view-more"><span data-lang-id>lihat detail lengkap</span><span data-lang-en style="display:none">view full details</span><span class="arr">→</span></div>
-    </a>
-
-  </div>
-</section>
-
-<section id="cta-block">
-  <div class="cta-inner rv rv-scale">
-    <div class="tag-label" style="justify-content:center" data-lang-id>next build</div>
-    <div class="tag-label" style="justify-content:center" data-lang-en style="display:none">next build</div>
-    <h2 data-lang-id>Project kelima kamu bisa dimulai hari ini.</h2>
-    <h2 data-lang-en style="display:none">Your fifth project can start today.</h2>
-    <p data-lang-id>Kalau salah satu dari sistem ini relevan dengan masalah yang kamu hadapi, mari diskusikan.</p>
-    <p data-lang-en style="display:none">If any of these systems are relevant to your problem, let's talk.</p>
-    <div class="cta-acts">
-      <a href="contact.html" class="btn btn-solid" data-magnetic><span data-lang-id>hubungi kami</span><span data-lang-en style="display:none">contact us</span> <span class="btn-arrow">→</span></a>
-      <a href="services.html" class="btn btn-outline" data-magnetic><span data-lang-id>lihat services</span><span data-lang-en style="display:none">view services</span></a>
+      <div class="filter-tab" data-filter="solana">solana (2)</div>
+      <div class="filter-tab" data-filter="ethereum">ethereum (1)</div>
+      <div class="filter-tab" data-filter="ai">ai / python (1)</div>
     </div>
-  </div>
-</section>
 
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-mark"><span>OZ</span> Creative</div>
-      <p data-lang-id>Fullstack · AI Engineering · Blockchain. Dari Jambi, Indonesia.</p>
-      <p data-lang-en style="display:none">Fullstack · AI Engineering · Blockchain. From Jambi, Indonesia.</p>
-    </div>
-    <div class="footer-col"><h4 data-lang-id>navigasi</h4><h4 data-lang-en style="display:none">navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4 data-lang-id>proyek</h4><h4 data-lang-en style="display:none">projects</h4><ul><li><a href="project-axeon.html">Axeon Protocol</a></li><li><a href="project-stackblock.html">Stack Block Arcade</a></li><li><a href="project-veritasvote.html">VeritasVote</a></li></ul></div>
-    <div class="footer-col"><h4 data-lang-id>terhubung</h4><h4 data-lang-en style="display:none">connect</h4><ul><li><a href="https://github.com/Opayys" target="_blank" rel="noopener">GitHub — Opayy</a></li><li><a href="https://github.com/GodZenn" target="_blank" rel="noopener">GitHub — Zenn</a></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p><span data-lang-id>© 2025 OZ Creative Agency — dibangun oleh</span><span data-lang-en style="display:none">© 2025 OZ Creative Agency — built by</span> <span>Opayy × Zenn</span></p><p>jambi, indonesia</p></div>
-</footer>
+    <!-- PROJECT INDEX — each card links to its own detail page -->
+    <section style="padding: 4rem 6% 7rem">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem">
+        <a
+          href="project-axeon.html"
+          class="flat-card moss-hover rv rv-left"
+          data-cat="solana"
+          data-tilt
+          data-tilt-strength="5"
+          style="
+            display: block;
+            padding: 2.25rem;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              margin-bottom: 1.5rem;
+            "
+          >
+            <span class="chip moss">⬡ Solana</span>
+            <span
+              class="chip"
+              style="border-color: var(--moss); color: var(--moss)"
+              >● live</span
+            >
+          </div>
+          <div
+            style="
+              font-family: var(--f-mono);
+              font-size: 0.75rem;
+              color: var(--stone);
+              margin-bottom: 0.5rem;
+            "
+          >
+            01 / 04
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem">
+            Axeon Management Protocol
+          </h3>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--stone);
+              line-height: 1.75;
+              margin-bottom: 1.5rem;
+            "
+            data-lang-id
+          >
+            Hybrid gatekeeping infrastructure untuk komunitas Telegram premium —
+            bayar lewat QRIS atau kripto.
+          </p>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--stone);
+              line-height: 1.75;
+              margin-bottom: 1.5rem;
+            "
+            data-lang-en
+            style="display: none"
+          >
+            Hybrid gatekeeping infrastructure for premium Telegram communities —
+            pay via QRIS or crypto.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 6px;
+              flex-wrap: wrap;
+              margin-bottom: 1.5rem;
+            "
+          >
+            <span class="chip">Rust</span><span class="chip">Anchor</span
+            ><span class="chip">ZK Proofs</span>
+          </div>
+          <div class="f-card-view-more">
+            <span data-lang-id>lihat detail lengkap</span
+            ><span data-lang-en style="display: none">view full details</span
+            ><span class="arr">→</span>
+          </div>
+        </a>
 
-<script src="js/nav.js"></script>
-<script src="js/transition.js"></script>
-<script src="js/reveal.js"></script>
-<script src="js/filter.js"></script>
-<script src="js/tilt.js"></script>
-<script src="js/cursor.js"></script>
-<script src="js/scramble.js"></script>
-<script src="js/magnetic.js"></script>
-<script src="js/i18n.js"></script>
-</body>
+        <a
+          href="project-stackblock.html"
+          class="flat-card moss-hover rv rv-right"
+          data-cat="solana"
+          data-tilt
+          data-tilt-strength="5"
+          style="
+            display: block;
+            padding: 2.25rem;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              margin-bottom: 1.5rem;
+            "
+          >
+            <span class="chip moss">🎮 Solana · GameFi</span>
+            <span
+              class="chip"
+              style="border-color: var(--moss); color: var(--moss)"
+              >● live</span
+            >
+          </div>
+          <div
+            style="
+              font-family: var(--f-mono);
+              font-size: 0.75rem;
+              color: var(--stone);
+              margin-bottom: 0.5rem;
+            "
+          >
+            02 / 04
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem">
+            Stack Block Arcade
+          </h3>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--stone);
+              line-height: 1.75;
+              margin-bottom: 1.5rem;
+            "
+            data-lang-id
+          >
+            GameFi skill-to-earn — gameplay di browser, hadiah dikunci dan
+            diverifikasi di blockchain.
+          </p>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--stone);
+              line-height: 1.75;
+              margin-bottom: 1.5rem;
+            "
+            data-lang-en
+            style="display: none"
+          >
+            Skill-to-earn GameFi — gameplay in-browser, rewards locked and
+            verified on-chain.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 6px;
+              flex-wrap: wrap;
+              margin-bottom: 1.5rem;
+            "
+          >
+            <span class="chip">Rust</span><span class="chip">HTML5 Canvas</span
+            ><span class="chip">Anti-Cheat</span>
+          </div>
+          <div class="f-card-view-more">
+            <span data-lang-id>lihat detail lengkap</span
+            ><span data-lang-en style="display: none">view full details</span
+            ><span class="arr">→</span>
+          </div>
+        </a>
+
+        <a
+          href="project-veritasvote.html"
+          class="flat-card rust-hover rv rv-left"
+          data-cat="ethereum"
+          data-tilt
+          data-tilt-strength="5"
+          style="
+            display: block;
+            padding: 2.25rem;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              margin-bottom: 1.5rem;
+            "
+          >
+            <span class="chip rust">⟠ Ethereum</span>
+            <span
+              class="chip"
+              style="border-color: var(--moss); color: var(--moss)"
+              >● live</span
+            >
+          </div>
+          <div
+            style="
+              font-family: var(--f-mono);
+              font-size: 0.75rem;
+              color: var(--stone);
+              margin-bottom: 0.5rem;
+            "
+          >
+            03 / 04
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem">VeritasVote</h3>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--stone);
+              line-height: 1.75;
+              margin-bottom: 1.5rem;
+            "
+            data-lang-id
+          >
+            Governance terdesentralisasi anti-flashloan dengan snapshot voting
+            dan timelock execution.
+          </p>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--stone);
+              line-height: 1.75;
+              margin-bottom: 1.5rem;
+            "
+            data-lang-en
+            style="display: none"
+          >
+            Anti-flashloan decentralized governance with snapshot voting and
+            timelock execution.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 6px;
+              flex-wrap: wrap;
+              margin-bottom: 1.5rem;
+            "
+          >
+            <span class="chip">Solidity</span><span class="chip">Foundry</span
+            ><span class="chip">Wagmi</span>
+          </div>
+          <div class="f-card-view-more">
+            <span data-lang-id>lihat detail lengkap</span
+            ><span data-lang-en style="display: none">view full details</span
+            ><span class="arr">→</span>
+          </div>
+        </a>
+
+        <a
+          href="project-sovereign.html"
+          class="flat-card rust-hover rv rv-right"
+          data-cat="ai"
+          data-tilt
+          data-tilt-strength="5"
+          style="
+            display: block;
+            padding: 2.25rem;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              margin-bottom: 1.5rem;
+            "
+          >
+            <span class="chip rust">🤖 AI · Python</span>
+            <span
+              class="chip"
+              style="border-color: var(--rust); color: var(--rust)"
+              data-lang-id
+              >● internal</span
+            >
+            <span
+              class="chip"
+              style="border-color: var(--rust); color: var(--rust)"
+              data-lang-en
+              style="display: none"
+              >● internal</span
+            >
+          </div>
+          <div
+            style="
+              font-family: var(--f-mono);
+              font-size: 0.75rem;
+              color: var(--stone);
+              margin-bottom: 0.5rem;
+            "
+          >
+            04 / 04
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem">
+            Sovereign Intelligence
+          </h3>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--stone);
+              line-height: 1.75;
+              margin-bottom: 1.5rem;
+            "
+            data-lang-id
+          >
+            Sistem intelijen pasar real-time — pipeline async yang mengirim
+            insight ke Discord, 24/7.
+          </p>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--stone);
+              line-height: 1.75;
+              margin-bottom: 1.5rem;
+            "
+            data-lang-en
+            style="display: none"
+          >
+            Real-time market intelligence system — async pipeline delivering
+            insight to Discord, 24/7.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 6px;
+              flex-wrap: wrap;
+              margin-bottom: 1.5rem;
+            "
+          >
+            <span class="chip">Python</span><span class="chip">discord.py</span
+            ><span class="chip">Asyncio</span>
+          </div>
+          <div class="f-card-view-more">
+            <span data-lang-id>lihat detail lengkap</span
+            ><span data-lang-en style="display: none">view full details</span
+            ><span class="arr">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="cta-block">
+      <div class="cta-inner rv rv-scale">
+        <div class="tag-label" style="justify-content: center" data-lang-id>
+          next build
+        </div>
+        <div
+          class="tag-label"
+          style="justify-content: center"
+          data-lang-en
+          style="display: none"
+        >
+          next build
+        </div>
+        <h2 data-lang-id>Project kelima kamu bisa dimulai hari ini.</h2>
+        <h2 data-lang-en style="display: none">
+          Your fifth project can start today.
+        </h2>
+        <p data-lang-id>
+          Kalau salah satu dari sistem ini relevan dengan masalah yang kamu
+          hadapi, mari diskusikan.
+        </p>
+        <p data-lang-en style="display: none">
+          If any of these systems are relevant to your problem, let's talk.
+        </p>
+        <div class="cta-acts">
+          <a href="contact.html" class="btn btn-solid" data-magnetic
+            ><span data-lang-id>hubungi kami</span
+            ><span data-lang-en style="display: none">contact us</span>
+            <span class="btn-arrow">→</span></a
+          >
+          <a href="services.html" class="btn btn-outline" data-magnetic
+            ><span data-lang-id>lihat services</span
+            ><span data-lang-en style="display: none">view services</span></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-mark"><span>OZ</span> Creative</div>
+          <p data-lang-id>
+            Fullstack · AI Engineering · Blockchain. Dari Jambi, Indonesia.
+          </p>
+          <p data-lang-en style="display: none">
+            Fullstack · AI Engineering · Blockchain. From Jambi, Indonesia.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang-id>navigasi</h4>
+          <h4 data-lang-en style="display: none">navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang-id>proyek</h4>
+          <h4 data-lang-en style="display: none">projects</h4>
+          <ul>
+            <li><a href="project-axeon.html">Axeon Protocol</a></li>
+            <li><a href="project-stackblock.html">Stack Block Arcade</a></li>
+            <li><a href="project-veritasvote.html">VeritasVote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang-id>terhubung</h4>
+          <h4 data-lang-en style="display: none">connect</h4>
+          <ul>
+            <li>
+              <a href="https://github.com/Opayys" target="_blank" rel="noopener"
+                >GitHub — Opayy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/GodZenn"
+                target="_blank"
+                rel="noopener"
+                >GitHub — Zenn</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://x.com/0xOZCreative"
+                target="_blank"
+                rel="noopener"
+                >X — OZ Creative</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          <span data-lang-id>© 2025 OZ Creative Agency — dibangun oleh</span
+          ><span data-lang-en style="display: none"
+            >© 2025 OZ Creative Agency — built by</span
+          >
+          <span>Opayy × Zenn</span>
+        </p>
+        <p>jambi, indonesia</p>
+      </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/scramble.js"></script>
+    <script src="js/magnetic.js"></script>
+    <script src="js/i18n.js"></script>
+  </body>
 </html>

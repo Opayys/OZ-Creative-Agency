@@ -1,244 +1,555 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Axeon Management Protocol — OZ Creative Agency</title>
-<meta name="description" content="Hybrid payment gatekeeper untuk komunitas Telegram premium di Solana. QRIS + Kripto, ZK Privacy, auto-remove otomatis."/>
-<link rel="canonical" href="https://ozcreative.agency/project-axeon.html"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Axeon Management Protocol — OZ Creative Agency</title>
+    <meta
+      name="description"
+      content="Hybrid payment gatekeeper untuk komunitas Telegram premium di Solana. QRIS + Kripto, ZK Privacy, auto-remove otomatis."
+    />
+    <link rel="canonical" href="https://ozcreative.agency/project-axeon.html" />
 
-<!-- Favicons -->
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg"/>
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png"/>
-<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
-<link rel="manifest" href="site.webmanifest"/>
-<meta name="theme-color" content="#0E0E0E"/>
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16.png"
+    />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#0E0E0E" />
 
-<!-- Open Graph -->
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Axeon Management Protocol — OZ Creative Agency"/>
-<meta property="og:description" content="Hybrid payment gatekeeper untuk komunitas Telegram premium di Solana. QRIS + Kripto, ZK Privacy, auto-remove otomatis."/>
-<meta property="og:image" content="https://ozcreative.agency/assets/images/og-image.png"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
-<meta property="og:url" content="https://ozcreative.agency/project-axeon.html"/>
-<meta property="og:site_name" content="OZ Creative Agency"/>
-<meta property="og:locale" content="id_ID"/>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Axeon Management Protocol — OZ Creative Agency"
+    />
+    <meta
+      property="og:description"
+      content="Hybrid payment gatekeeper untuk komunitas Telegram premium di Solana. QRIS + Kripto, ZK Privacy, auto-remove otomatis."
+    />
+    <meta
+      property="og:image"
+      content="https://ozcreative.agency/assets/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:url"
+      content="https://ozcreative.agency/project-axeon.html"
+    />
+    <meta property="og:site_name" content="OZ Creative Agency" />
+    <meta property="og:locale" content="id_ID" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Axeon Management Protocol — OZ Creative Agency"/>
-<meta name="twitter:description" content="Hybrid payment gatekeeper untuk komunitas Telegram premium di Solana. QRIS + Kripto, ZK Privacy, auto-remove otomatis."/>
-<meta name="twitter:image" content="https://ozcreative.agency/assets/images/og-image.png"/>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Axeon Management Protocol — OZ Creative Agency"
+    />
+    <meta
+      name="twitter:description"
+      content="Hybrid payment gatekeeper untuk komunitas Telegram premium di Solana. QRIS + Kripto, ZK Privacy, auto-remove otomatis."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ozcreative.agency/assets/images/og-image.png"
+    />
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"/>
-<link rel="stylesheet" href="css/tokens.css"/>
-<link rel="stylesheet" href="css/base.css"/>
-<link rel="stylesheet" href="css/components.css"/>
-<link rel="stylesheet" href="css/pages.css"/>
-</head>
-<body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
-<div id="curtain"></div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="curtain"></div>
 
-<nav class="site-nav" id="siteNav">
-  <a href="index.html" class="nav-mark"><img src="assets/images/logo-oz-mark-transparent.png" alt="OZ Creative Agency" class="mark-logo" loading="eager"/><span>Creative<span class="mark-sub"><br>agency.sh</span></span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">home</a></li>
-    <li><a href="projects.html" class="active">projects</a></li>
-    <li><a href="services.html">services</a></li>
-    <li><a href="contact.html" class="nav-cta">contact</a></li>
-    <li class="lang-switch"><button data-lang-btn="id" aria-label="Switch to Indonesian">ID</button><button data-lang-btn="en" aria-label="Switch to English">EN</button></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html" class="nav-mark"
+        ><img
+          src="assets/images/logo-oz-mark-transparent.png"
+          alt="OZ Creative Agency"
+          class="mark-logo"
+          loading="eager"
+        /><span
+          >Creative<span class="mark-sub"><br />agency.sh</span></span
+        ></a
+      >
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">home</a></li>
+        <li><a href="projects.html" class="active">projects</a></li>
+        <li><a href="services.html">services</a></li>
+        <li><a href="contact.html" class="nav-cta">contact</a></li>
+        <li class="lang-switch">
+          <button data-lang-btn="id" aria-label="Switch to Indonesian">
+            ID</button
+          ><button data-lang-btn="en" aria-label="Switch to English">EN</button>
+        </li>
+      </ul>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-<section id="main-content" class="pp-hero">
-  <div class="fp-breadcrumb rv">
-    <a href="index.html" data-lang-id>beranda</a><a href="index.html" data-lang-en style="display:none">home</a>
-    <span>/</span>
-    <a href="projects.html" data-lang-id>proyek</a><a href="projects.html" data-lang-en style="display:none">projects</a>
-    <span>/</span>
-    <span style="color:var(--ink)">axeon</span>
-  </div>
-
-  <div class="pp-hero-grid">
-    <div class="rv rv-left">
-      <span class="chip moss pp-eco-tag">⬡ Solana Ecosystem</span>
-      <h1 class="pp-title-big" data-scramble>Axeon Management Protocol</h1>
-      <p class="pp-tagline-big">
-        <span data-lang-id>"Hybrid gatekeeping infrastructure untuk komunitas Telegram premium — bayar lewat QRIS atau kripto, akses dikontrol otomatis."</span>
-        <span data-lang-en style="display:none">"Hybrid gatekeeping infrastructure for premium Telegram communities — pay via QRIS or crypto, access controlled automatically."</span>
-      </p>
-    </div>
-    <div class="pp-meta-card rv rv-right">
-      <div class="pp-meta-row"><span data-lang-id>status</span><span data-lang-en style="display:none">status</span><span style="color:var(--moss)">● live / mainnet</span></div>
-      <div class="pp-meta-row"><span data-lang-id>ekosistem</span><span data-lang-en style="display:none">ecosystem</span><span>Solana</span></div>
-      <div class="pp-meta-row"><span data-lang-id>kategori</span><span data-lang-en style="display:none">category</span><span data-lang-id>DeFi / Payment</span><span data-lang-en style="display:none">DeFi / Payment</span></div>
-      <div class="pp-meta-row"><span data-lang-id>peran tim</span><span data-lang-en style="display:none">team roles</span><span data-lang-id>Opayy &amp; Zenn</span><span data-lang-en style="display:none">Opayy &amp; Zenn</span></div>
-    </div>
-  </div>
-
-  <div class="pp-hero-media rv">
-    <img src="assets/images/img-axeon.jpg" alt="Axeon Management Protocol" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="eager" fetchpriority="high"/>
-    <div class="pp-hero-media-fallback" style="display:none">AXEON</div>
-  </div>
-</section>
-
-<!-- PROBLEM / SOLUTION -->
-<section class="pp-body-section">
-  <div class="pp-body-grid">
-    <div class="rv rv-left">
-      <div class="tag-label" data-lang-id>masalah</div><div class="tag-label" data-lang-en style="display:none">problem</div>
-      <h2 data-lang-id>Kenapa Axeon dibuat.</h2>
-      <h2 data-lang-en style="display:none">Why Axeon exists.</h2>
-      <p data-lang-id>Admin grup Telegram premium biasanya mengecek bukti transfer satu per satu secara manual — proses yang lambat dan rawan kesalahan. Sering terjadi keterlambatan memasukkan atau mengeluarkan anggota, dan sistem pembayaran konvensional (Web2) terpisah total dari sistem kripto (Web3), membuat admin harus mengelola dua dunia berbeda.</p>
-      <p data-lang-en style="display:none">Premium Telegram group admins typically check payment proofs one by one manually — a slow, error-prone process. Delays in adding or removing members are common, and conventional (Web2) payment systems are completely separate from crypto (Web3) systems, forcing admins to manage two different worlds.</p>
-    </div>
-    <div class="rv rv-right">
-      <div class="tag-label" data-lang-id>solusi</div><div class="tag-label" data-lang-en style="display:none">solution</div>
-      <h2 data-lang-id>Bagaimana Axeon menyelesaikannya.</h2>
-      <h2 data-lang-en style="display:none">How Axeon solves it.</h2>
-      <p data-lang-id>Axeon menggabungkan pembayaran <strong>QRIS/Bank</strong> dan <strong>Kripto</strong> dalam satu alur. Setiap pembayaran masuk on-chain, divalidasi otomatis secara real-time, dan bot melakukan scan berkala (1–60 menit) untuk auto-remove member yang masa langganannya habis — tanpa intervensi manual sama sekali.</p>
-      <p data-lang-en style="display:none">Axeon combines <strong>QRIS/Bank</strong> and <strong>Crypto</strong> payments into a single flow. Every payment goes on-chain, gets validated automatically in real time, and the bot runs periodic scans (1–60 minutes) to auto-remove members whose subscription has expired — with zero manual intervention.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FLOW -->
-<section class="pp-body-section">
-  <div class="tag-label" data-lang-id>alur kerja</div><div class="tag-label" data-lang-en style="display:none">how it works</div>
-  <h2 class="rv" data-lang-id>Dari pendaftaran sampai auto-remove.</h2>
-  <h2 class="rv" data-lang-en style="display:none">From registration to auto-remove.</h2>
-  <div class="pp-flow-list rv-stagger rv">
-    <div class="pp-flow-step">
-      <div class="pp-flow-num">01</div>
-      <div><h4 data-lang-id>Admin mendaftarkan grup</h4><h4 data-lang-en style="display:none">Admin registers the group</h4>
-        <p data-lang-id>Admin Telegram mendaftarkan grup premium mereka ke platform Axeon.</p>
-        <p data-lang-en style="display:none">Telegram admin registers their premium group on the Axeon platform.</p>
+    <section id="main-content" class="pp-hero">
+      <div class="fp-breadcrumb rv">
+        <a href="index.html" data-lang-id>beranda</a
+        ><a href="index.html" data-lang-en style="display: none">home</a>
+        <span>/</span>
+        <a href="projects.html" data-lang-id>proyek</a
+        ><a href="projects.html" data-lang-en style="display: none">projects</a>
+        <span>/</span>
+        <span style="color: var(--ink)">axeon</span>
       </div>
-    </div>
-    <div class="pp-flow-step">
-      <div class="pp-flow-num">02</div>
-      <div><h4 data-lang-id>Member membayar</h4><h4 data-lang-en style="display:none">Member pays</h4>
-        <p data-lang-id>Member memilih metode pembayaran — QRIS/Bank atau Kripto — dan dana masuk langsung ke smart contract.</p>
-        <p data-lang-en style="display:none">Member chooses a payment method — QRIS/Bank or Crypto — and funds go directly into the smart contract.</p>
+
+      <div class="pp-hero-grid">
+        <div class="rv rv-left">
+          <span class="chip moss pp-eco-tag">⬡ Solana Ecosystem</span>
+          <h1 class="pp-title-big" data-scramble>Axeon Management Protocol</h1>
+          <p class="pp-tagline-big">
+            <span data-lang-id
+              >"Hybrid gatekeeping infrastructure untuk komunitas Telegram
+              premium — bayar lewat QRIS atau kripto, akses dikontrol
+              otomatis."</span
+            >
+            <span data-lang-en style="display: none"
+              >"Hybrid gatekeeping infrastructure for premium Telegram
+              communities — pay via QRIS or crypto, access controlled
+              automatically."</span
+            >
+          </p>
+        </div>
+        <div class="pp-meta-card rv rv-right">
+          <div class="pp-meta-row">
+            <span data-lang-id>status</span
+            ><span data-lang-en style="display: none">status</span
+            ><span style="color: var(--moss)">● Development / Devnet</span>
+          </div>
+          <div class="pp-meta-row">
+            <span data-lang-id>ekosistem</span
+            ><span data-lang-en style="display: none">ecosystem</span
+            ><span>Solana</span>
+          </div>
+          <div class="pp-meta-row">
+            <span data-lang-id>kategori</span
+            ><span data-lang-en style="display: none">category</span
+            ><span data-lang-id>DeFi / Payment</span
+            ><span data-lang-en style="display: none">DeFi / Payment</span>
+          </div>
+          <div class="pp-meta-row">
+            <span data-lang-id>peran tim</span
+            ><span data-lang-en style="display: none">team roles</span
+            ><span data-lang-id>Opayy &amp; Zenn</span
+            ><span data-lang-en style="display: none">Opayy &amp; Zenn</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="pp-flow-step">
-      <div class="pp-flow-num">03</div>
-      <div><h4 data-lang-id>Validasi otomatis</h4><h4 data-lang-en style="display:none">Automated validation</h4>
-        <p data-lang-id>Sistem memverifikasi pembayaran secara real-time, tanpa admin perlu cek manual.</p>
-        <p data-lang-en style="display:none">The system verifies payment in real time, no manual admin checks needed.</p>
+
+      <div class="pp-hero-media rv">
+        <img
+          src="assets/images/img-axeon.jpg"
+          alt="Axeon Management Protocol"
+          onerror="
+            this.style.display = 'none';
+            this.nextElementSibling.style.display = 'flex';
+          "
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="pp-hero-media-fallback" style="display: none">AXEON</div>
       </div>
-    </div>
-    <div class="pp-flow-step">
-      <div class="pp-flow-num">04</div>
-      <div><h4 data-lang-id>Hourly Guard Bot berjalan</h4><h4 data-lang-en style="display:none">Hourly Guard Bot runs</h4>
-        <p data-lang-id>Bot scan setiap 1–60 menit untuk mengecek status kedaluwarsa member.</p>
-        <p data-lang-en style="display:none">Bot scans every 1–60 minutes to check member expiry status.</p>
+    </section>
+
+    <!-- PROBLEM / SOLUTION -->
+    <section class="pp-body-section">
+      <div class="pp-body-grid">
+        <div class="rv rv-left">
+          <div class="tag-label" data-lang-id>masalah</div>
+          <div class="tag-label" data-lang-en style="display: none">
+            problem
+          </div>
+          <h2 data-lang-id>Kenapa Axeon dibuat.</h2>
+          <h2 data-lang-en style="display: none">Why Axeon exists.</h2>
+          <p data-lang-id>
+            Admin grup Telegram premium biasanya mengecek bukti transfer satu
+            per satu secara manual — proses yang lambat dan rawan kesalahan.
+            Sering terjadi keterlambatan memasukkan atau mengeluarkan anggota,
+            dan sistem pembayaran konvensional (Web2) terpisah total dari sistem
+            kripto (Web3), membuat admin harus mengelola dua dunia berbeda.
+          </p>
+          <p data-lang-en style="display: none">
+            Premium Telegram group admins typically check payment proofs one by
+            one manually — a slow, error-prone process. Delays in adding or
+            removing members are common, and conventional (Web2) payment systems
+            are completely separate from crypto (Web3) systems, forcing admins
+            to manage two different worlds.
+          </p>
+        </div>
+        <div class="rv rv-right">
+          <div class="tag-label" data-lang-id>solusi</div>
+          <div class="tag-label" data-lang-en style="display: none">
+            solution
+          </div>
+          <h2 data-lang-id>Bagaimana Axeon menyelesaikannya.</h2>
+          <h2 data-lang-en style="display: none">How Axeon solves it.</h2>
+          <p data-lang-id>
+            Axeon menggabungkan pembayaran <strong>QRIS/Bank</strong> dan
+            <strong>Kripto</strong> dalam satu alur. Setiap pembayaran masuk
+            on-chain, divalidasi otomatis secara real-time, dan bot melakukan
+            scan berkala (1–60 menit) untuk auto-remove member yang masa
+            langganannya habis — tanpa intervensi manual sama sekali.
+          </p>
+          <p data-lang-en style="display: none">
+            Axeon combines <strong>QRIS/Bank</strong> and
+            <strong>Crypto</strong> payments into a single flow. Every payment
+            goes on-chain, gets validated automatically in real time, and the
+            bot runs periodic scans (1–60 minutes) to auto-remove members whose
+            subscription has expired — with zero manual intervention.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="pp-flow-step">
-      <div class="pp-flow-num">05</div>
-      <div><h4 data-lang-id>Auto-remove jika expired</h4><h4 data-lang-en style="display:none">Auto-remove if expired</h4>
-        <p data-lang-id>Member yang masa langganannya habis otomatis dikeluarkan dari grup, tanpa delay.</p>
-        <p data-lang-en style="display:none">Members whose subscription has lapsed are automatically removed from the group, with no delay.</p>
+    </section>
+
+    <!-- FLOW -->
+    <section class="pp-body-section">
+      <div class="tag-label" data-lang-id>alur kerja</div>
+      <div class="tag-label" data-lang-en style="display: none">
+        how it works
       </div>
-    </div>
-  </div>
-</section>
+      <h2 class="rv" data-lang-id>Dari pendaftaran sampai auto-remove.</h2>
+      <h2 class="rv" data-lang-en style="display: none">
+        From registration to auto-remove.
+      </h2>
+      <div class="pp-flow-list rv-stagger rv">
+        <div class="pp-flow-step">
+          <div class="pp-flow-num">01</div>
+          <div>
+            <h4 data-lang-id>Admin mendaftarkan grup</h4>
+            <h4 data-lang-en style="display: none">
+              Admin registers the group
+            </h4>
+            <p data-lang-id>
+              Admin Telegram mendaftarkan grup premium mereka ke platform Axeon.
+            </p>
+            <p data-lang-en style="display: none">
+              Telegram admin registers their premium group on the Axeon
+              platform.
+            </p>
+          </div>
+        </div>
+        <div class="pp-flow-step">
+          <div class="pp-flow-num">02</div>
+          <div>
+            <h4 data-lang-id>Member membayar</h4>
+            <h4 data-lang-en style="display: none">Member pays</h4>
+            <p data-lang-id>
+              Member memilih metode pembayaran — QRIS/Bank atau Kripto — dan
+              dana masuk langsung ke smart contract.
+            </p>
+            <p data-lang-en style="display: none">
+              Member chooses a payment method — QRIS/Bank or Crypto — and funds
+              go directly into the smart contract.
+            </p>
+          </div>
+        </div>
+        <div class="pp-flow-step">
+          <div class="pp-flow-num">03</div>
+          <div>
+            <h4 data-lang-id>Validasi otomatis</h4>
+            <h4 data-lang-en style="display: none">Automated validation</h4>
+            <p data-lang-id>
+              Sistem memverifikasi pembayaran secara real-time, tanpa admin
+              perlu cek manual.
+            </p>
+            <p data-lang-en style="display: none">
+              The system verifies payment in real time, no manual admin checks
+              needed.
+            </p>
+          </div>
+        </div>
+        <div class="pp-flow-step">
+          <div class="pp-flow-num">04</div>
+          <div>
+            <h4 data-lang-id>Hourly Guard Bot berjalan</h4>
+            <h4 data-lang-en style="display: none">Hourly Guard Bot runs</h4>
+            <p data-lang-id>
+              Bot scan setiap 1–60 menit untuk mengecek status kedaluwarsa
+              member.
+            </p>
+            <p data-lang-en style="display: none">
+              Bot scans every 1–60 minutes to check member expiry status.
+            </p>
+          </div>
+        </div>
+        <div class="pp-flow-step">
+          <div class="pp-flow-num">05</div>
+          <div>
+            <h4 data-lang-id>Auto-remove jika expired</h4>
+            <h4 data-lang-en style="display: none">Auto-remove if expired</h4>
+            <p data-lang-id>
+              Member yang masa langganannya habis otomatis dikeluarkan dari
+              grup, tanpa delay.
+            </p>
+            <p data-lang-en style="display: none">
+              Members whose subscription has lapsed are automatically removed
+              from the group, with no delay.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- FEATURES -->
-<section class="pp-body-section">
-  <div class="tag-label" data-lang-id>fitur utama</div><div class="tag-label" data-lang-en style="display:none">key features</div>
-  <h2 class="rv" data-lang-id>Apa yang membuat Axeon berbeda.</h2>
-  <h2 class="rv" data-lang-en style="display:none">What makes Axeon different.</h2>
-  <div class="pp-features-grid rv-stagger rv">
-    <div class="pp-feat-item">
-      <h4 data-lang-id>Unified Hybrid Payment</h4><h4 data-lang-en style="display:none">Unified Hybrid Payment</h4>
-      <p data-lang-id>QRIS/Bank dan Kripto dalam satu infrastruktur pembayaran yang seamless.</p>
-      <p data-lang-en style="display:none">QRIS/Bank and Crypto in one seamless payment infrastructure.</p>
-    </div>
-    <div class="pp-feat-item">
-      <h4 data-lang-id>Automated Validation</h4><h4 data-lang-en style="display:none">Automated Validation</h4>
-      <p data-lang-id>Verifikasi pembayaran real-time tanpa proses cek manual sama sekali.</p>
-      <p data-lang-en style="display:none">Real-time payment verification with zero manual checking.</p>
-    </div>
-    <div class="pp-feat-item">
-      <h4 data-lang-id>Hourly Guard Bot</h4><h4 data-lang-en style="display:none">Hourly Guard Bot</h4>
-      <p data-lang-id>Scan otomatis setiap 1–60 menit, auto-remove member yang expired.</p>
-      <p data-lang-en style="display:none">Automated scan every 1–60 minutes, auto-removes expired members.</p>
-    </div>
-    <div class="pp-feat-item">
-      <h4 data-lang-id>ZK Privacy Verification</h4><h4 data-lang-en style="display:none">ZK Privacy Verification</h4>
-      <p data-lang-id>Detail transaksi dilindungi Zero-Knowledge Proof, privasi tetap terjaga.</p>
-      <p data-lang-en style="display:none">Transaction details protected with Zero-Knowledge Proof, privacy preserved.</p>
-    </div>
-  </div>
+    <!-- FEATURES -->
+    <section class="pp-body-section">
+      <div class="tag-label" data-lang-id>fitur utama</div>
+      <div class="tag-label" data-lang-en style="display: none">
+        key features
+      </div>
+      <h2 class="rv" data-lang-id>Apa yang membuat Axeon berbeda.</h2>
+      <h2 class="rv" data-lang-en style="display: none">
+        What makes Axeon different.
+      </h2>
+      <div class="pp-features-grid rv-stagger rv">
+        <div class="pp-feat-item">
+          <h4 data-lang-id>Unified Hybrid Payment</h4>
+          <h4 data-lang-en style="display: none">Unified Hybrid Payment</h4>
+          <p data-lang-id>
+            QRIS/Bank dan Kripto dalam satu infrastruktur pembayaran yang
+            seamless.
+          </p>
+          <p data-lang-en style="display: none">
+            QRIS/Bank and Crypto in one seamless payment infrastructure.
+          </p>
+        </div>
+        <div class="pp-feat-item">
+          <h4 data-lang-id>Automated Validation</h4>
+          <h4 data-lang-en style="display: none">Automated Validation</h4>
+          <p data-lang-id>
+            Verifikasi pembayaran real-time tanpa proses cek manual sama sekali.
+          </p>
+          <p data-lang-en style="display: none">
+            Real-time payment verification with zero manual checking.
+          </p>
+        </div>
+        <div class="pp-feat-item">
+          <h4 data-lang-id>Hourly Guard Bot</h4>
+          <h4 data-lang-en style="display: none">Hourly Guard Bot</h4>
+          <p data-lang-id>
+            Scan otomatis setiap 1–60 menit, auto-remove member yang expired.
+          </p>
+          <p data-lang-en style="display: none">
+            Automated scan every 1–60 minutes, auto-removes expired members.
+          </p>
+        </div>
+        <div class="pp-feat-item">
+          <h4 data-lang-id>ZK Privacy Verification</h4>
+          <h4 data-lang-en style="display: none">ZK Privacy Verification</h4>
+          <p data-lang-id>
+            Detail transaksi dilindungi Zero-Knowledge Proof, privasi tetap
+            terjaga.
+          </p>
+          <p data-lang-en style="display: none">
+            Transaction details protected with Zero-Knowledge Proof, privacy
+            preserved.
+          </p>
+        </div>
+      </div>
 
-  <div class="tag-label" style="margin-top:3rem" data-lang-id>tech stack</div><div class="tag-label" style="margin-top:3rem" data-lang-en style="display:none">tech stack</div>
-  <div class="pp-stack-full rv">
-    <span class="chip">Rust</span><span class="chip">Anchor Framework</span><span class="chip">Solana PDA</span>
-    <span class="chip">ZK Proofs</span><span class="chip moss">Next.js</span><span class="chip moss">TypeScript</span>
-    <span class="chip">Telegram Bot API</span><span class="chip moss">QRIS Integration</span>
-  </div>
+      <div class="tag-label" style="margin-top: 3rem" data-lang-id>
+        tech stack
+      </div>
+      <div
+        class="tag-label"
+        style="margin-top: 3rem"
+        data-lang-en
+        style="display: none"
+      >
+        tech stack
+      </div>
+      <div class="pp-stack-full rv">
+        <span class="chip">Rust</span><span class="chip">Anchor Framework</span
+        ><span class="chip">Solana PDA</span> <span class="chip">ZK Proofs</span
+        ><span class="chip moss">Next.js</span
+        ><span class="chip moss">TypeScript</span>
+        <span class="chip">Telegram Bot API</span
+        ><span class="chip moss">QRIS Integration</span>
+      </div>
 
-  <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem">
-    <a href="https://axeon-protocol.vercel.app/" target="_blank" rel="noopener" class="btn btn-solid" data-magnetic>
-      <span data-lang-id>demo langsung</span><span data-lang-en style="display:none">live demo</span> <span class="btn-arrow">↗</span>
-    </a>
-    <a href="https://github.com/Opayys/Axeon-Management-Protocol" target="_blank" rel="noopener" class="btn btn-outline" data-magnetic>github</a>
-    <a href="https://x.com/axeonprotocol" target="_blank" rel="noopener" class="btn btn-outline" data-magnetic>x / twitter</a>
-  </div>
-</section>
+      <div
+        style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem"
+      >
+        <a
+          href="https://axeon-protocol.vercel.app/"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-solid"
+          data-magnetic
+        >
+          <span data-lang-id>demo langsung</span
+          ><span data-lang-en style="display: none">live demo</span>
+          <span class="btn-arrow">↗</span>
+        </a>
+        <a
+          href="https://github.com/Opayys/Axeon-Management-Protocol"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-outline"
+          data-magnetic
+          >github</a
+        >
+        <a
+          href="https://x.com/axeonprotocol"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-outline"
+          data-magnetic
+          >x / twitter</a
+        >
+      </div>
+    </section>
 
-<!-- NEXT/PREV NAV -->
-<section style="padding:0 6%">
-  <div class="pp-nav-other rv">
-    <a href="projects.html" class="pp-nav-item">
-      <span class="pp-nav-label" data-lang-id>← kembali</span><span class="pp-nav-label" data-lang-en style="display:none">← back</span>
-      <span class="pp-nav-title" data-lang-id>Semua Project</span><span class="pp-nav-title" data-lang-en style="display:none">All Projects</span>
-    </a>
-    <a href="project-stackblock.html" class="pp-nav-item" style="text-align:right">
-      <span class="pp-nav-label" data-lang-id>project selanjutnya →</span><span class="pp-nav-label" data-lang-en style="display:none">next project →</span>
-      <span class="pp-nav-title">Stack Block Arcade</span>
-    </a>
-  </div>
-</section>
+    <!-- NEXT/PREV NAV -->
+    <section style="padding: 0 6%">
+      <div class="pp-nav-other rv">
+        <a href="projects.html" class="pp-nav-item">
+          <span class="pp-nav-label" data-lang-id>← kembali</span
+          ><span class="pp-nav-label" data-lang-en style="display: none"
+            >← back</span
+          >
+          <span class="pp-nav-title" data-lang-id>Semua Project</span
+          ><span class="pp-nav-title" data-lang-en style="display: none"
+            >All Projects</span
+          >
+        </a>
+        <a
+          href="project-stackblock.html"
+          class="pp-nav-item"
+          style="text-align: right"
+        >
+          <span class="pp-nav-label" data-lang-id>project selanjutnya →</span
+          ><span class="pp-nav-label" data-lang-en style="display: none"
+            >next project →</span
+          >
+          <span class="pp-nav-title">Stack Block Arcade</span>
+        </a>
+      </div>
+    </section>
 
-<section id="cta-block">
-  <div class="cta-inner rv rv-scale">
-    <h2 data-lang-id>Tertarik dengan sistem serupa?</h2><h2 data-lang-en style="display:none">Interested in a similar system?</h2>
-    <p data-lang-id>Kami bisa bantu rancang infrastruktur payment hybrid untuk kebutuhan komunitas atau bisnis kamu.</p>
-    <p data-lang-en style="display:none">We can help design a hybrid payment infrastructure for your community or business needs.</p>
-    <div class="cta-acts">
-      <a href="contact.html" class="btn btn-solid" data-magnetic><span data-lang-id>hubungi kami</span><span data-lang-en style="display:none">contact us</span> <span class="btn-arrow">→</span></a>
-    </div>
-  </div>
-</section>
+    <section id="cta-block">
+      <div class="cta-inner rv rv-scale">
+        <h2 data-lang-id>Tertarik dengan sistem serupa?</h2>
+        <h2 data-lang-en style="display: none">
+          Interested in a similar system?
+        </h2>
+        <p data-lang-id>
+          Kami bisa bantu rancang infrastruktur payment hybrid untuk kebutuhan
+          komunitas atau bisnis kamu.
+        </p>
+        <p data-lang-en style="display: none">
+          We can help design a hybrid payment infrastructure for your community
+          or business needs.
+        </p>
+        <div class="cta-acts">
+          <a href="contact.html" class="btn btn-solid" data-magnetic
+            ><span data-lang-id>hubungi kami</span
+            ><span data-lang-en style="display: none">contact us</span>
+            <span class="btn-arrow">→</span></a
+          >
+        </div>
+      </div>
+    </section>
 
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div><div class="footer-mark"><span>OZ</span> Creative</div><p data-lang-id>Fullstack · AI Engineering · Blockchain.</p><p data-lang-en style="display:none">Fullstack · AI Engineering · Blockchain.</p></div>
-    <div class="footer-col"><h4 data-lang-id>navigasi</h4><h4 data-lang-en style="display:none">navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4 data-lang-id>proyek</h4><h4 data-lang-en style="display:none">projects</h4><ul><li><a href="project-stackblock.html">Stack Block Arcade</a></li><li><a href="project-veritasvote.html">VeritasVote</a></li></ul></div>
-    <div class="footer-col"><h4 data-lang-id>terhubung</h4><h4 data-lang-en style="display:none">connect</h4><ul><li><a href="https://github.com/Opayys" target="_blank" rel="noopener">GitHub</a></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>© 2025 OZ Creative Agency — <span>Opayy × Zenn</span></p><p>jambi, indonesia</p></div>
-</footer>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-mark"><span>OZ</span> Creative</div>
+          <p data-lang-id>Fullstack · AI Engineering · Blockchain.</p>
+          <p data-lang-en style="display: none">
+            Fullstack · AI Engineering · Blockchain.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang-id>navigasi</h4>
+          <h4 data-lang-en style="display: none">navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang-id>proyek</h4>
+          <h4 data-lang-en style="display: none">projects</h4>
+          <ul>
+            <li><a href="project-stackblock.html">Stack Block Arcade</a></li>
+            <li><a href="project-veritasvote.html">VeritasVote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang-id>terhubung</h4>
+          <h4 data-lang-en style="display: none">connect</h4>
+          <ul>
+            <li>
+              <a href="https://github.com/Opayys" target="_blank" rel="noopener"
+                >GitHub — Opayy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/GodZenn"
+                target="_blank"
+                rel="noopener"
+                >GitHub — Zenn</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://x.com/0xOZCreative"
+                target="_blank"
+                rel="noopener"
+                >X — OZ Creative</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 OZ Creative Agency — <span>Opayy × Zenn</span></p>
+        <p>jambi, indonesia</p>
+      </div>
+    </footer>
 
-<script src="js/nav.js"></script>
-<script src="js/transition.js"></script>
-<script src="js/reveal.js"></script>
-<script src="js/tilt.js"></script>
-<script src="js/cursor.js"></script>
-<script src="js/scramble.js"></script>
-<script src="js/magnetic.js"></script>
-<script src="js/i18n.js"></script>
-</body>
+    <script src="js/nav.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/scramble.js"></script>
+    <script src="js/magnetic.js"></script>
+    <script src="js/i18n.js"></script>
+  </body>
 </html>

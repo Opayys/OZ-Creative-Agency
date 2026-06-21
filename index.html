@@ -1,344 +1,684 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>OZ Creative Agency — Fullstack · AI · Blockchain</title>
-<meta name="description" content="OZ Creative Agency — dua builder yang menulis smart contract, sistem AI, dan aplikasi fullstack yang bisa diaudit. Solana × Ethereum."/>
-<link rel="canonical" href="https://ozcreative.agency/index.html"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>OZ Creative Agency — Fullstack · AI · Blockchain</title>
+    <meta
+      name="description"
+      content="OZ Creative Agency — dua builder yang menulis smart contract, sistem AI, dan aplikasi fullstack yang bisa diaudit. Solana × Ethereum."
+    />
+    <link rel="canonical" href="https://ozcreative.agency/index.html" />
 
-<!-- Favicons -->
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg"/>
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png"/>
-<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
-<link rel="manifest" href="site.webmanifest"/>
-<meta name="theme-color" content="#0E0E0E"/>
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16.png"
+    />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#0E0E0E" />
 
-<!-- Open Graph -->
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="OZ Creative Agency — Fullstack · AI · Blockchain"/>
-<meta property="og:description" content="OZ Creative Agency — dua builder yang menulis smart contract, sistem AI, dan aplikasi fullstack yang bisa diaudit. Solana × Ethereum."/>
-<meta property="og:image" content="https://ozcreative.agency/assets/images/og-image.png"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
-<meta property="og:url" content="https://ozcreative.agency/index.html"/>
-<meta property="og:site_name" content="OZ Creative Agency"/>
-<meta property="og:locale" content="id_ID"/>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="OZ Creative Agency — Fullstack · AI · Blockchain"
+    />
+    <meta
+      property="og:description"
+      content="OZ Creative Agency — dua builder yang menulis smart contract, sistem AI, dan aplikasi fullstack yang bisa diaudit. Solana × Ethereum."
+    />
+    <meta
+      property="og:image"
+      content="https://ozcreative.agency/assets/images/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://ozcreative.agency/index.html" />
+    <meta property="og:site_name" content="OZ Creative Agency" />
+    <meta property="og:locale" content="id_ID" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="OZ Creative Agency — Fullstack · AI · Blockchain"/>
-<meta name="twitter:description" content="OZ Creative Agency — dua builder yang menulis smart contract, sistem AI, dan aplikasi fullstack yang bisa diaudit. Solana × Ethereum."/>
-<meta name="twitter:image" content="https://ozcreative.agency/assets/images/og-image.png"/>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="OZ Creative Agency — Fullstack · AI · Blockchain"
+    />
+    <meta
+      name="twitter:description"
+      content="OZ Creative Agency — dua builder yang menulis smart contract, sistem AI, dan aplikasi fullstack yang bisa diaudit. Solana × Ethereum."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ozcreative.agency/assets/images/og-image.png"
+    />
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"/>
-<link rel="stylesheet" href="css/tokens.css"/>
-<link rel="stylesheet" href="css/base.css"/>
-<link rel="stylesheet" href="css/components.css"/>
-<link rel="stylesheet" href="css/pages.css"/>
-</head>
-<body>
-<a href="#hero" class="skip-link">Skip to main content</a>
-<div id="curtain"></div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+  </head>
+  <body>
+    <a href="#hero" class="skip-link">Skip to main content</a>
+    <div id="curtain"></div>
 
-<!-- NAV -->
-<nav class="site-nav" id="siteNav">
-  <a href="index.html" class="nav-mark">
-    <img src="assets/images/logo-oz-mark-transparent.png" alt="OZ Creative Agency" class="mark-logo" loading="eager"/>
-    <span>Creative<span class="mark-sub"><br>agency.sh</span></span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" class="active">home</a></li>
-    <li><a href="projects.html">projects</a></li>
-    <li><a href="services.html">services</a></li>
-    <li><a href="contact.html" class="nav-cta">contact</a></li>
-    <li class="lang-switch"><button data-lang-btn="id" aria-label="Switch to Indonesian">ID</button><button data-lang-btn="en" aria-label="Switch to English">EN</button></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav>
+    <!-- NAV -->
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html" class="nav-mark">
+        <img
+          src="assets/images/logo-oz-mark-transparent.png"
+          alt="OZ Creative Agency"
+          class="mark-logo"
+          loading="eager"
+        />
+        <span
+          >Creative<span class="mark-sub"><br />agency.sh</span></span
+        >
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">home</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="services.html">services</a></li>
+        <li><a href="contact.html" class="nav-cta">contact</a></li>
+        <li class="lang-switch">
+          <button data-lang-btn="id" aria-label="Switch to Indonesian">
+            ID</button
+          ><button data-lang-btn="en" aria-label="Switch to English">EN</button>
+        </li>
+      </ul>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-grid">
-    <div>
-      <div class="hero-kicker"><span class="dot"></span>
-        <span data-lang-id>status: shipping — dua founder, empat build live</span>
-        <span data-lang-en style="display:none">status: shipping — two founders, four live builds</span>
-      </div>
-      <h1 class="hero-h1">
-        <span class="line"><span data-lang-id>Kami membangun</span><span data-lang-en style="display:none">We build</span></span>
-        <span class="line"><span class="accent-word" data-lang-id>sistem</span><span class="accent-word" data-lang-en style="display:none">verifiable</span></span>
-        <span class="line"><span data-lang-id>yang terverifikasi.</span><span data-lang-en style="display:none">systems.</span></span>
-      </h1>
-    </div>
-    <div class="hero-side rv rv-right">
-      <span data-lang-id>OZ Creative Agency menulis smart contract, sistem AI, dan aplikasi fullstack yang bisa kamu audit sendiri — bukan janji marketing, tapi kode yang berjalan di chain.</span>
-      <span data-lang-en style="display:none">OZ Creative Agency writes smart contracts, AI systems, and fullstack apps you can audit yourself — not marketing promises, but code that actually runs on-chain.</span>
-    </div>
-  </div>
-
-  <div class="hero-meta-row rv">
-    <div class="hero-meta-cell">
-      <span class="hmc-num" data-count="4">0</span>
-      <span class="hmc-label" data-lang-id>Build Live</span><span class="hmc-label" data-lang-en style="display:none">Shipped Builds</span>
-    </div>
-    <div class="hero-meta-cell">
-      <span class="hmc-num" data-count="2">0</span>
-      <span class="hmc-label" data-lang-id>Ekosistem Chain</span><span class="hmc-label" data-lang-en style="display:none">Chain Ecosystems</span>
-    </div>
-    <div class="hero-meta-cell">
-      <span class="hmc-num" data-count="2">0</span>
-      <span class="hmc-label" data-lang-id>Founder</span><span class="hmc-label" data-lang-en style="display:none">Founders</span>
-    </div>
-    <div class="hero-meta-cell">
-      <span class="hmc-num" data-count="100" data-suffix="%">0</span>
-      <span class="hmc-label" data-lang-id>Terverifikasi On-Chain</span><span class="hmc-label" data-lang-en style="display:none">On-Chain Verified</span>
-    </div>
-  </div>
-</section>
-
-<!-- LEDGER TICKER -->
-<div class="ledger">
-  <div class="ledger-track">
-    <div class="ledger-row"><span class="lg-pulse"></span><span class="ledger-hash">0x7a2f</span><span class="lg-sep">·</span>AXEON-PROTOCOL<span class="lg-sep">·</span>solana<span class="lg-sep">·</span>verified</div>
-    <div class="ledger-row"><span class="lg-pulse"></span><span class="ledger-hash">0xc41e</span><span class="lg-sep">·</span>STACK-BLOCK-ARCADE<span class="lg-sep">·</span>solana<span class="lg-sep">·</span>verified</div>
-    <div class="ledger-row"><span class="lg-pulse"></span><span class="ledger-hash">0x3d5c</span><span class="lg-sep">·</span>VERITASVOTE<span class="lg-sep">·</span>ethereum<span class="lg-sep">·</span>verified</div>
-    <div class="ledger-row"><span class="lg-pulse"></span><span class="ledger-hash">0x8b84</span><span class="lg-sep">·</span>SOVEREIGN-INTEL<span class="lg-sep">·</span>python/ai<span class="lg-sep">·</span>internal</div>
-    <div class="ledger-row"><span class="lg-pulse"></span><span class="ledger-hash">0x7a2f</span><span class="lg-sep">·</span>AXEON-PROTOCOL<span class="lg-sep">·</span>solana<span class="lg-sep">·</span>verified</div>
-    <div class="ledger-row"><span class="lg-pulse"></span><span class="ledger-hash">0xc41e</span><span class="lg-sep">·</span>STACK-BLOCK-ARCADE<span class="lg-sep">·</span>solana<span class="lg-sep">·</span>verified</div>
-    <div class="ledger-row"><span class="lg-pulse"></span><span class="ledger-hash">0x3d5c</span><span class="lg-sep">·</span>VERITASVOTE<span class="lg-sep">·</span>ethereum<span class="lg-sep">·</span>verified</div>
-    <div class="ledger-row"><span class="lg-pulse"></span><span class="ledger-hash">0x8b84</span><span class="lg-sep">·</span>SOVEREIGN-INTEL<span class="lg-sep">·</span>python/ai<span class="lg-sep">·</span>internal</div>
-  </div>
-</div>
-
-<!-- ABOUT (with 3D node network) -->
-<section id="about">
-  <div class="about-grid">
-    <div class="rv rv-left">
-      <div class="about-stamp scan-frame">
-        <div class="scene3d-wrap" style="position:absolute;inset:0;">
-          <canvas data-scene3d data-density="26" data-radius="1"></canvas>
-        </div>
-        <div class="about-stamp-grid"></div>
-        <div class="about-stamp-corner tl">OPAYY × ZENN</div>
-        <div class="about-stamp-corner br">EST. 2024</div>
-        <div class="about-stamp-inner">
-          <div class="about-stamp-logo-card">
-            <img src="assets/images/logo-oz-mark-transparent.png" alt="OZ Creative Agency Logo" class="about-stamp-logo" loading="lazy" decoding="async"/>
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-kicker">
+            <span class="dot"></span>
+            <span data-lang-id
+              >status: shipping — dua founder, empat build live</span
+            >
+            <span data-lang-en style="display: none"
+              >status: shipping — two founders, four live builds</span
+            >
           </div>
-          <div class="about-stamp-tag">Creative Agency</div>
+          <h1 class="hero-h1">
+            <span class="line"
+              ><span data-lang-id>Kami membangun</span
+              ><span data-lang-en style="display: none">We build</span></span
+            >
+            <span class="line"
+              ><span class="accent-word" data-lang-id>sistem</span
+              ><span class="accent-word" data-lang-en style="display: none"
+                >verifiable</span
+              ></span
+            >
+            <span class="line"
+              ><span data-lang-id>yang terverifikasi.</span
+              ><span data-lang-en style="display: none">systems.</span></span
+            >
+          </h1>
+        </div>
+        <div class="hero-side rv rv-right">
+          <span data-lang-id
+            >OZ Creative Agency menulis smart contract, sistem AI, dan aplikasi
+            fullstack yang bisa kamu audit sendiri — bukan janji marketing, tapi
+            kode yang berjalan di chain.</span
+          >
+          <span data-lang-en style="display: none"
+            >OZ Creative Agency writes smart contracts, AI systems, and
+            fullstack apps you can audit yourself — not marketing promises, but
+            code that actually runs on-chain.</span
+          >
+        </div>
+      </div>
+
+      <div class="hero-meta-row rv">
+        <div class="hero-meta-cell">
+          <span class="hmc-num" data-count="4">0</span>
+          <span class="hmc-label" data-lang-id>Build Live</span
+          ><span class="hmc-label" data-lang-en style="display: none"
+            >Shipped Builds</span
+          >
+        </div>
+        <div class="hero-meta-cell">
+          <span class="hmc-num" data-count="2">0</span>
+          <span class="hmc-label" data-lang-id>Ekosistem Chain</span
+          ><span class="hmc-label" data-lang-en style="display: none"
+            >Chain Ecosystems</span
+          >
+        </div>
+        <div class="hero-meta-cell">
+          <span class="hmc-num" data-count="2">0</span>
+          <span class="hmc-label" data-lang-id>Founder</span
+          ><span class="hmc-label" data-lang-en style="display: none"
+            >Founders</span
+          >
+        </div>
+        <div class="hero-meta-cell">
+          <span class="hmc-num" data-count="100" data-suffix="%">0</span>
+          <span class="hmc-label" data-lang-id>Terverifikasi On-Chain</span
+          ><span class="hmc-label" data-lang-en style="display: none"
+            >On-Chain Verified</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- LEDGER TICKER -->
+    <div class="ledger">
+      <div class="ledger-track">
+        <div class="ledger-row">
+          <span class="lg-pulse"></span><span class="ledger-hash">0x7a2f</span
+          ><span class="lg-sep">·</span>AXEON-PROTOCOL<span class="lg-sep"
+            >·</span
+          >solana<span class="lg-sep">·</span>verified
+        </div>
+        <div class="ledger-row">
+          <span class="lg-pulse"></span><span class="ledger-hash">0xc41e</span
+          ><span class="lg-sep">·</span>STACK-BLOCK-ARCADE<span class="lg-sep"
+            >·</span
+          >solana<span class="lg-sep">·</span>verified
+        </div>
+        <div class="ledger-row">
+          <span class="lg-pulse"></span><span class="ledger-hash">0x3d5c</span
+          ><span class="lg-sep">·</span>VERITASVOTE<span class="lg-sep">·</span
+          >ethereum<span class="lg-sep">·</span>verified
+        </div>
+        <div class="ledger-row">
+          <span class="lg-pulse"></span><span class="ledger-hash">0x8b84</span
+          ><span class="lg-sep">·</span>SOVEREIGN-INTEL<span class="lg-sep"
+            >·</span
+          >python/ai<span class="lg-sep">·</span>internal
+        </div>
+        <div class="ledger-row">
+          <span class="lg-pulse"></span><span class="ledger-hash">0x7a2f</span
+          ><span class="lg-sep">·</span>AXEON-PROTOCOL<span class="lg-sep"
+            >·</span
+          >solana<span class="lg-sep">·</span>verified
+        </div>
+        <div class="ledger-row">
+          <span class="lg-pulse"></span><span class="ledger-hash">0xc41e</span
+          ><span class="lg-sep">·</span>STACK-BLOCK-ARCADE<span class="lg-sep"
+            >·</span
+          >solana<span class="lg-sep">·</span>verified
+        </div>
+        <div class="ledger-row">
+          <span class="lg-pulse"></span><span class="ledger-hash">0x3d5c</span
+          ><span class="lg-sep">·</span>VERITASVOTE<span class="lg-sep">·</span
+          >ethereum<span class="lg-sep">·</span>verified
+        </div>
+        <div class="ledger-row">
+          <span class="lg-pulse"></span><span class="ledger-hash">0x8b84</span
+          ><span class="lg-sep">·</span>SOVEREIGN-INTEL<span class="lg-sep"
+            >·</span
+          >python/ai<span class="lg-sep">·</span>internal
         </div>
       </div>
     </div>
 
-    <div>
-      <div class="rv">
-        <div class="tag-label" data-lang-id>tentang kami</div>
-        <div class="tag-label" data-lang-en style="display:none">about us</div>
-        <h2 class="about-title" data-scramble>
-          <span data-lang-id>Dua nama, satu standar kerja.</span><span data-lang-en style="display:none">Two names, one standard of work.</span>
+    <!-- ABOUT (with 3D node network) -->
+    <section id="about">
+      <div class="about-grid">
+        <div class="rv rv-left">
+          <div class="about-stamp scan-frame">
+            <div class="scene3d-wrap" style="position: absolute; inset: 0">
+              <canvas data-scene3d data-density="26" data-radius="1"></canvas>
+            </div>
+            <div class="about-stamp-grid"></div>
+            <div class="about-stamp-corner tl">OPAYY × ZENN</div>
+            <div class="about-stamp-corner br">EST. 2024</div>
+            <div class="about-stamp-inner">
+              <div class="about-stamp-logo-card">
+                <img
+                  src="assets/images/logo-oz-mark-transparent.png"
+                  alt="OZ Creative Agency Logo"
+                  class="about-stamp-logo"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="about-stamp-tag">Creative Agency</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="rv">
+            <div class="tag-label" data-lang-id>tentang kami</div>
+            <div class="tag-label" data-lang-en style="display: none">
+              about us
+            </div>
+            <h2 class="about-title" data-scramble>
+              <span data-lang-id>Dua nama, satu standar kerja.</span
+              ><span data-lang-en style="display: none"
+                >Two names, one standard of work.</span
+              >
+            </h2>
+          </div>
+          <div class="about-copy rv" style="transition-delay: 0.08s">
+            <p data-lang-id>
+              <strong>OZ</strong> bukan singkatan perusahaan — itu gabungan dua
+              alias kami: <strong>Opayy</strong> dan <strong>Zenn</strong>. Kami
+              berdua setara secara skill teknis; bedanya, Opayy merangkap
+              sebagai business development di samping development, sementara
+              Zenn full fokus sebagai core developer.
+            </p>
+            <p data-lang-id>
+              Kami tidak menjual buzzword Web3. Setiap project yang kami pegang
+              punya smart contract yang bisa kamu baca, repository yang bisa
+              kamu clone, dan demo yang bisa kamu coba sendiri sebelum percaya
+              pada klaim kami.
+            </p>
+            <p data-lang-id>
+              Berbasis di <strong>Jambi, Indonesia</strong> — bekerja untuk
+              ekosistem <strong>Solana</strong> dan <strong>Ethereum</strong>.
+            </p>
+
+            <p data-lang-en style="display: none">
+              <strong>OZ</strong> isn't a company acronym — it's a fusion of our
+              two aliases: <strong>Opayy</strong> and <strong>Zenn</strong>.
+              We're equal in technical skill; the difference is Opayy also
+              handles business development alongside development, while Zenn
+              focuses fully as core developer.
+            </p>
+            <p data-lang-en style="display: none">
+              We don't sell Web3 buzzwords. Every project we take on has a smart
+              contract you can read, a repository you can clone, and a demo you
+              can try yourself before trusting our claims.
+            </p>
+            <p data-lang-en style="display: none">
+              Based in <strong>Jambi, Indonesia</strong> — building for the
+              <strong>Solana</strong> and <strong>Ethereum</strong> ecosystems.
+            </p>
+          </div>
+          <div class="about-stack-row rv" style="transition-delay: 0.16s">
+            <span class="chip">Rust</span>
+            <span class="chip">Anchor</span>
+            <span class="chip">Solidity</span>
+            <span class="chip">Foundry</span>
+            <span class="chip moss">Next.js</span>
+            <span class="chip moss">Wagmi / Viem</span>
+            <span class="chip">Python</span>
+            <span class="chip">Node.js</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDERS — now clickable cards linking to full profile pages -->
+    <section id="founders">
+      <div class="founders-head rv">
+        <div class="tag-label" data-lang-id>tim inti</div>
+        <div class="tag-label" data-lang-en style="display: none">
+          core team
+        </div>
+        <h2 data-lang-id>Dua pendiri yang menulis kode mereka sendiri.</h2>
+        <h2 data-lang-en style="display: none">
+          Two founders who write their own code.
         </h2>
+        <p data-lang-id>
+          Tidak ada ghost developer. Setiap commit di repository publik kami
+          bisa ditelusuri ke salah satu dari kami berdua. Klik kartu untuk lihat
+          profil lengkap.
+        </p>
+        <p data-lang-en style="display: none">
+          No ghost developers. Every commit in our public repositories traces
+          back to one of us. Click a card to view the full profile.
+        </p>
       </div>
-      <div class="about-copy rv" style="transition-delay:.08s">
-        <p data-lang-id><strong>OZ</strong> bukan singkatan perusahaan — itu gabungan dua alias kami: <strong>Opayy</strong> dan <strong>Zenn</strong>. Kami berdua setara secara skill teknis; bedanya, Opayy merangkap sebagai business development di samping development, sementara Zenn full fokus sebagai core developer.</p>
-        <p data-lang-id>Kami tidak menjual buzzword Web3. Setiap project yang kami pegang punya smart contract yang bisa kamu baca, repository yang bisa kamu clone, dan demo yang bisa kamu coba sendiri sebelum percaya pada klaim kami.</p>
-        <p data-lang-id>Berbasis di <strong>Jambi, Indonesia</strong> — bekerja untuk ekosistem <strong>Solana</strong> dan <strong>Ethereum</strong>.</p>
 
-        <p data-lang-en style="display:none"><strong>OZ</strong> isn't a company acronym — it's a fusion of our two aliases: <strong>Opayy</strong> and <strong>Zenn</strong>. We're equal in technical skill; the difference is Opayy also handles business development alongside development, while Zenn focuses fully as core developer.</p>
-        <p data-lang-en style="display:none">We don't sell Web3 buzzwords. Every project we take on has a smart contract you can read, a repository you can clone, and a demo you can try yourself before trusting our claims.</p>
-        <p data-lang-en style="display:none">Based in <strong>Jambi, Indonesia</strong> — building for the <strong>Solana</strong> and <strong>Ethereum</strong> ecosystems.</p>
-      </div>
-      <div class="about-stack-row rv" style="transition-delay:.16s">
-        <span class="chip">Rust</span>
-        <span class="chip">Anchor</span>
-        <span class="chip">Solidity</span>
-        <span class="chip">Foundry</span>
-        <span class="chip moss">Next.js</span>
-        <span class="chip moss">Wagmi / Viem</span>
-        <span class="chip">Python</span>
-        <span class="chip">Node.js</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDERS — now clickable cards linking to full profile pages -->
-<section id="founders">
-  <div class="founders-head rv">
-    <div class="tag-label" data-lang-id>tim inti</div>
-    <div class="tag-label" data-lang-en style="display:none">core team</div>
-    <h2 data-lang-id>Dua pendiri yang menulis kode mereka sendiri.</h2>
-    <h2 data-lang-en style="display:none">Two founders who write their own code.</h2>
-    <p data-lang-id>Tidak ada ghost developer. Setiap commit di repository publik kami bisa ditelusuri ke salah satu dari kami berdua. Klik kartu untuk lihat profil lengkap.</p>
-    <p data-lang-en style="display:none">No ghost developers. Every commit in our public repositories traces back to one of us. Click a card to view the full profile.</p>
-  </div>
-
-  <div class="founders-grid">
-    <!-- OPAYY -->
-    <a href="founder-opayy.html" class="f-card-link rv rv-left">
-      <div class="f-card flat-card moss-hover" data-tilt data-tilt-strength="6">
-        <div class="f-card-top">
-          <div class="f-photo scan-frame">
-            <img src="assets/images/foto-opayy.jpg" alt="Naufal Aufaa Abyan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy" decoding="async"/>
-            <div class="f-photo-fallback" style="display:none">N</div>
+      <div class="founders-grid">
+        <!-- OPAYY -->
+        <a href="founder-opayy.html" class="f-card-link rv rv-left">
+          <div
+            class="f-card flat-card moss-hover"
+            data-tilt
+            data-tilt-strength="6"
+          >
+            <div class="f-card-top">
+              <div class="f-photo scan-frame">
+                <img
+                  src="assets/images/foto-opayy.jpg"
+                  alt="Naufal Aufaa Abyan"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="f-photo-fallback" style="display: none">N</div>
+              </div>
+              <div class="f-meta-top">
+                <div class="f-handle">// opayy</div>
+                <div class="f-name">Naufal Aufaa Abyan</div>
+                <div class="f-role" data-lang-id>
+                  co-founder — dev &amp; business
+                </div>
+                <div class="f-role" data-lang-en style="display: none">
+                  co-founder — dev &amp; business
+                </div>
+              </div>
+            </div>
+            <p class="f-bio" data-lang-id>
+              Fullstack developer di Solana dan Ethereum, sekaligus orang yang
+              mengurus sisi bisnis: pitch deck, strategi produk, dan
+              partnership.
+            </p>
+            <p class="f-bio" data-lang-en style="display: none">
+              Fullstack developer across Solana and Ethereum, also handling the
+              business side: pitch decks, product strategy, and partnerships.
+            </p>
+            <div class="f-skills">
+              <span class="chip">Rust</span>
+              <span class="chip">Anchor</span>
+              <span class="chip">Solidity</span>
+              <span class="chip moss">Business Dev</span>
+            </div>
+            <div class="f-card-view-more">
+              <span data-lang-id>lihat profil lengkap</span
+              ><span data-lang-en style="display: none">view full profile</span>
+              <span class="arr">→</span>
+            </div>
           </div>
-          <div class="f-meta-top">
-            <div class="f-handle">// opayy</div>
-            <div class="f-name">Naufal Aufaa Abyan</div>
-            <div class="f-role" data-lang-id>co-founder — dev &amp; business</div>
-            <div class="f-role" data-lang-en style="display:none">co-founder — dev &amp; business</div>
+        </a>
+
+        <!-- ZENN -->
+        <a href="founder-zenn.html" class="f-card-link rv rv-right">
+          <div
+            class="f-card flat-card rust-hover"
+            data-tilt
+            data-tilt-strength="6"
+          >
+            <div class="f-card-top">
+              <div class="f-photo scan-frame scan-rust">
+                <img
+                  src="assets/images/foto-zenn.jpg"
+                  alt="Reza Dwi Wiranata"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="f-photo-fallback" style="display: none">R</div>
+              </div>
+              <div class="f-meta-top">
+                <div class="f-handle" style="color: var(--rust)">// zenn</div>
+                <div class="f-name">Reza Dwi Wiranata</div>
+                <div class="f-role" data-lang-id>
+                  co-founder — core developer
+                </div>
+                <div class="f-role" data-lang-en style="display: none">
+                  co-founder — core developer
+                </div>
+              </div>
+            </div>
+            <p class="f-bio" data-lang-id>
+              Core developer yang memastikan setiap baris kode yang keluar punya
+              arsitektur bersih dan performa tinggi — dari rancangan kontrak
+              sampai deployment.
+            </p>
+            <p class="f-bio" data-lang-en style="display: none">
+              Core developer ensuring every line of code shipped has clean
+              architecture and high performance — from contract design to
+              deployment.
+            </p>
+            <div class="f-skills">
+              <span class="chip">Rust</span>
+              <span class="chip">Anchor</span>
+              <span class="chip">Solidity</span>
+              <span class="chip rust">Smart Contract</span>
+            </div>
+            <div class="f-card-view-more">
+              <span data-lang-id>lihat profil lengkap</span
+              ><span data-lang-en style="display: none">view full profile</span>
+              <span class="arr">→</span>
+            </div>
           </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- WORK PREVIEW (each row links to its own project page) -->
+    <section id="work-preview">
+      <div class="wp-head rv">
+        <div>
+          <div class="tag-label" data-lang-id>build log</div>
+          <div class="tag-label" data-lang-en style="display: none">
+            build log
+          </div>
+          <h2 data-lang-id>Yang sudah live.</h2>
+          <h2 data-lang-en style="display: none">What's already live.</h2>
         </div>
-        <p class="f-bio" data-lang-id>Fullstack developer di Solana dan Ethereum, sekaligus orang yang mengurus sisi bisnis: pitch deck, strategi produk, dan partnership.</p>
-        <p class="f-bio" data-lang-en style="display:none">Fullstack developer across Solana and Ethereum, also handling the business side: pitch decks, product strategy, and partnerships.</p>
-        <div class="f-skills">
-          <span class="chip">Rust</span>
-          <span class="chip">Anchor</span>
-          <span class="chip">Solidity</span>
-          <span class="chip moss">Business Dev</span>
+        <a
+          href="projects.html"
+          class="btn btn-outline rv rv-right"
+          data-magnetic
+        >
+          <span data-lang-id>lihat detail lengkap</span
+          ><span data-lang-en style="display: none">view full details</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="wp-list rv-stagger rv">
+        <a href="project-axeon.html" class="wp-row-link"
+          ><div class="wp-row">
+            <div class="wp-idx">01</div>
+            <div class="wp-name">
+              Axeon Management Protocol<span data-lang-id
+                >Hybrid payment gatekeeper untuk komunitas Telegram
+                premium</span
+              ><span data-lang-en style="display: none"
+                >Hybrid payment gatekeeper for premium Telegram
+                communities</span
+              >
+            </div>
+            <div class="wp-eco">Solana · Rust/Anchor</div>
+            <div class="wp-status live">live</div>
+            <div class="wp-arrow">↗</div>
+          </div></a
+        >
+        <a href="project-stackblock.html" class="wp-row-link"
+          ><div class="wp-row">
+            <div class="wp-idx">02</div>
+            <div class="wp-name">
+              Stack Block Arcade<span data-lang-id
+                >GameFi skill-to-earn dengan anti-cheat kriptografis</span
+              ><span data-lang-en style="display: none"
+                >Skill-to-earn GameFi with cryptographic anti-cheat</span
+              >
+            </div>
+            <div class="wp-eco">Solana · GameFi</div>
+            <div class="wp-status live">live</div>
+            <div class="wp-arrow">↗</div>
+          </div></a
+        >
+        <a href="project-veritasvote.html" class="wp-row-link"
+          ><div class="wp-row">
+            <div class="wp-idx">03</div>
+            <div class="wp-name">
+              VeritasVote<span data-lang-id
+                >Governance terdesentralisasi anti-flashloan di Ethereum</span
+              ><span data-lang-en style="display: none"
+                >Anti-flashloan decentralized governance on Ethereum</span
+              >
+            </div>
+            <div class="wp-eco">Ethereum · Solidity</div>
+            <div class="wp-status live">live</div>
+            <div class="wp-arrow">↗</div>
+          </div></a
+        >
+        <a href="project-sovereign.html" class="wp-row-link"
+          ><div class="wp-row">
+            <div class="wp-idx">04</div>
+            <div class="wp-name">
+              Sovereign Intelligence<span data-lang-id
+                >Sistem intelijen pasar real-time berbasis Python/AI</span
+              ><span data-lang-en style="display: none"
+                >Real-time market intelligence system built on Python/AI</span
+              >
+            </div>
+            <div class="wp-eco">Python · AI</div>
+            <div class="wp-status dev" data-lang-id>internal</div>
+            <div class="wp-status dev" data-lang-en style="display: none">
+              internal
+            </div>
+            <div class="wp-arrow">↗</div>
+          </div></a
+        >
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta-block">
+      <div class="cta-inner rv rv-scale">
+        <div class="tag-label" style="justify-content: center" data-lang-id>
+          mulai project
         </div>
-        <div class="f-card-view-more">
-          <span data-lang-id>lihat profil lengkap</span><span data-lang-en style="display:none">view full profile</span>
-          <span class="arr">→</span>
+        <div
+          class="tag-label"
+          style="justify-content: center"
+          data-lang-en
+          style="display: none"
+        >
+          start a project
+        </div>
+        <h2 data-lang-id>Ada masalah yang butuh diselesaikan dengan kode?</h2>
+        <h2 data-lang-en style="display: none">
+          Got a problem that needs solving with code?
+        </h2>
+        <p data-lang-id>
+          Dari smart contract sampai dashboard, dari AI pipeline sampai
+          deployment mainnet — ceritakan masalahnya, kami yang eksekusi.
+        </p>
+        <p data-lang-en style="display: none">
+          From smart contracts to dashboards, AI pipelines to mainnet deployment
+          — tell us the problem, we'll execute.
+        </p>
+        <div class="cta-acts">
+          <a href="contact.html" class="btn btn-solid" data-magnetic
+            ><span data-lang-id>hubungi kami</span
+            ><span data-lang-en style="display: none">contact us</span>
+            <span class="btn-arrow">→</span></a
+          >
+          <a href="services.html" class="btn btn-outline" data-magnetic
+            ><span data-lang-id>lihat services</span
+            ><span data-lang-en style="display: none">view services</span></a
+          >
         </div>
       </div>
-    </a>
+    </section>
 
-    <!-- ZENN -->
-    <a href="founder-zenn.html" class="f-card-link rv rv-right">
-      <div class="f-card flat-card rust-hover" data-tilt data-tilt-strength="6">
-        <div class="f-card-top">
-          <div class="f-photo scan-frame scan-rust">
-            <img src="assets/images/foto-zenn.jpg" alt="Reza Dwi Wiranata" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy" decoding="async"/>
-            <div class="f-photo-fallback" style="display:none">R</div>
-          </div>
-          <div class="f-meta-top">
-            <div class="f-handle" style="color:var(--rust)">// zenn</div>
-            <div class="f-name">Reza Dwi Wiranata</div>
-            <div class="f-role" data-lang-id>co-founder — core developer</div>
-            <div class="f-role" data-lang-en style="display:none">co-founder — core developer</div>
-          </div>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-mark"><span>OZ</span> Creative</div>
+          <p data-lang-id>
+            Fullstack · AI Engineering · Blockchain. Membangun dari Jambi,
+            Indonesia.
+          </p>
+          <p data-lang-en style="display: none">
+            Fullstack · AI Engineering · Blockchain. Built from Jambi,
+            Indonesia.
+          </p>
         </div>
-        <p class="f-bio" data-lang-id>Core developer yang memastikan setiap baris kode yang keluar punya arsitektur bersih dan performa tinggi — dari rancangan kontrak sampai deployment.</p>
-        <p class="f-bio" data-lang-en style="display:none">Core developer ensuring every line of code shipped has clean architecture and high performance — from contract design to deployment.</p>
-        <div class="f-skills">
-          <span class="chip">Rust</span>
-          <span class="chip">Anchor</span>
-          <span class="chip">Solidity</span>
-          <span class="chip rust">Smart Contract</span>
+        <div class="footer-col">
+          <h4 data-lang-id>navigasi</h4>
+          <h4 data-lang-en style="display: none">navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-        <div class="f-card-view-more">
-          <span data-lang-id>lihat profil lengkap</span><span data-lang-en style="display:none">view full profile</span>
-          <span class="arr">→</span>
+        <div class="footer-col">
+          <h4 data-lang-id>proyek</h4>
+          <h4 data-lang-en style="display: none">projects</h4>
+          <ul>
+            <li><a href="project-axeon.html">Axeon Protocol</a></li>
+            <li><a href="project-stackblock.html">Stack Block Arcade</a></li>
+            <li><a href="project-veritasvote.html">VeritasVote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-lang-id>terhubung</h4>
+          <h4 data-lang-en style="display: none">connect</h4>
+          <ul>
+            <li>
+              <a href="https://github.com/Opayys" target="_blank" rel="noopener"
+                >GitHub — Opayy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/GodZenn"
+                target="_blank"
+                rel="noopener"
+                >GitHub — Zenn</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://x.com/0xOZCreative"
+                target="_blank"
+                rel="noopener"
+                >X — OZ Creative</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </a>
-  </div>
-</section>
+      <div class="footer-bottom">
+        <p>
+          <span data-lang-id>© 2025 OZ Creative Agency — dibangun oleh</span
+          ><span data-lang-en style="display: none"
+            >© 2025 OZ Creative Agency — built by</span
+          >
+          <span>Opayy × Zenn</span>
+        </p>
+        <p>jambi, indonesia</p>
+      </div>
+    </footer>
 
-<!-- WORK PREVIEW (each row links to its own project page) -->
-<section id="work-preview">
-  <div class="wp-head rv">
-    <div>
-      <div class="tag-label" data-lang-id>build log</div>
-      <div class="tag-label" data-lang-en style="display:none">build log</div>
-      <h2 data-lang-id>Yang sudah live.</h2>
-      <h2 data-lang-en style="display:none">What's already live.</h2>
-    </div>
-    <a href="projects.html" class="btn btn-outline rv rv-right" data-magnetic>
-      <span data-lang-id>lihat detail lengkap</span><span data-lang-en style="display:none">view full details</span>
-      <span class="btn-arrow">→</span>
-    </a>
-  </div>
-
-  <div class="wp-list rv-stagger rv">
-    <a href="project-axeon.html" class="wp-row-link"><div class="wp-row">
-      <div class="wp-idx">01</div>
-      <div class="wp-name">Axeon Management Protocol<span data-lang-id>Hybrid payment gatekeeper untuk komunitas Telegram premium</span><span data-lang-en style="display:none">Hybrid payment gatekeeper for premium Telegram communities</span></div>
-      <div class="wp-eco">Solana · Rust/Anchor</div>
-      <div class="wp-status live">live</div>
-      <div class="wp-arrow">↗</div>
-    </div></a>
-    <a href="project-stackblock.html" class="wp-row-link"><div class="wp-row">
-      <div class="wp-idx">02</div>
-      <div class="wp-name">Stack Block Arcade<span data-lang-id>GameFi skill-to-earn dengan anti-cheat kriptografis</span><span data-lang-en style="display:none">Skill-to-earn GameFi with cryptographic anti-cheat</span></div>
-      <div class="wp-eco">Solana · GameFi</div>
-      <div class="wp-status live">live</div>
-      <div class="wp-arrow">↗</div>
-    </div></a>
-    <a href="project-veritasvote.html" class="wp-row-link"><div class="wp-row">
-      <div class="wp-idx">03</div>
-      <div class="wp-name">VeritasVote<span data-lang-id>Governance terdesentralisasi anti-flashloan di Ethereum</span><span data-lang-en style="display:none">Anti-flashloan decentralized governance on Ethereum</span></div>
-      <div class="wp-eco">Ethereum · Solidity</div>
-      <div class="wp-status live">live</div>
-      <div class="wp-arrow">↗</div>
-    </div></a>
-    <a href="project-sovereign.html" class="wp-row-link"><div class="wp-row">
-      <div class="wp-idx">04</div>
-      <div class="wp-name">Sovereign Intelligence<span data-lang-id>Sistem intelijen pasar real-time berbasis Python/AI</span><span data-lang-en style="display:none">Real-time market intelligence system built on Python/AI</span></div>
-      <div class="wp-eco">Python · AI</div>
-      <div class="wp-status dev" data-lang-id>internal</div><div class="wp-status dev" data-lang-en style="display:none">internal</div>
-      <div class="wp-arrow">↗</div>
-    </div></a>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta-block">
-  <div class="cta-inner rv rv-scale">
-    <div class="tag-label" style="justify-content:center" data-lang-id>mulai project</div>
-    <div class="tag-label" style="justify-content:center" data-lang-en style="display:none">start a project</div>
-    <h2 data-lang-id>Ada masalah yang butuh diselesaikan dengan kode?</h2>
-    <h2 data-lang-en style="display:none">Got a problem that needs solving with code?</h2>
-    <p data-lang-id>Dari smart contract sampai dashboard, dari AI pipeline sampai deployment mainnet — ceritakan masalahnya, kami yang eksekusi.</p>
-    <p data-lang-en style="display:none">From smart contracts to dashboards, AI pipelines to mainnet deployment — tell us the problem, we'll execute.</p>
-    <div class="cta-acts">
-      <a href="contact.html" class="btn btn-solid" data-magnetic><span data-lang-id>hubungi kami</span><span data-lang-en style="display:none">contact us</span> <span class="btn-arrow">→</span></a>
-      <a href="services.html" class="btn btn-outline" data-magnetic><span data-lang-id>lihat services</span><span data-lang-en style="display:none">view services</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-mark"><span>OZ</span> Creative</div>
-      <p data-lang-id>Fullstack · AI Engineering · Blockchain. Membangun dari Jambi, Indonesia.</p>
-      <p data-lang-en style="display:none">Fullstack · AI Engineering · Blockchain. Built from Jambi, Indonesia.</p>
-    </div>
-    <div class="footer-col">
-      <h4 data-lang-id>navigasi</h4><h4 data-lang-en style="display:none">navigation</h4>
-      <ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-lang-id>proyek</h4><h4 data-lang-en style="display:none">projects</h4>
-      <ul><li><a href="project-axeon.html">Axeon Protocol</a></li><li><a href="project-stackblock.html">Stack Block Arcade</a></li><li><a href="project-veritasvote.html">VeritasVote</a></li></ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-lang-id>terhubung</h4><h4 data-lang-en style="display:none">connect</h4>
-      <ul><li><a href="https://github.com/Opayys" target="_blank" rel="noopener">GitHub — Opayy</a></li><li><a href="https://github.com/GodZenn" target="_blank" rel="noopener">GitHub — Zenn</a></li><li><a href="https://x.com/axeonprotocol" target="_blank" rel="noopener">X — Axeon</a></li></ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p><span data-lang-id>© 2025 OZ Creative Agency — dibangun oleh</span><span data-lang-en style="display:none">© 2025 OZ Creative Agency — built by</span> <span>Opayy × Zenn</span></p>
-    <p>jambi, indonesia</p>
-  </div>
-</footer>
-
-<script src="js/nav.js"></script>
-<script src="js/transition.js"></script>
-<script src="js/reveal.js"></script>
-<script src="js/counter.js"></script>
-<script src="js/tilt.js"></script>
-<script src="js/cursor.js"></script>
-<script src="js/scramble.js"></script>
-<script src="js/magnetic.js"></script>
-<script src="js/scene3d.js"></script>
-<script src="js/i18n.js"></script>
-</body>
+    <script src="js/nav.js"></script>
+    <script src="js/transition.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/scramble.js"></script>
+    <script src="js/magnetic.js"></script>
+    <script src="js/scene3d.js"></script>
+    <script src="js/i18n.js"></script>
+  </body>
 </html>
