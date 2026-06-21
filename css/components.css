@@ -19,15 +19,11 @@ nav.site-nav.scrolled { border-bottom: 1px solid var(--ink); box-shadow: 0 4px 0
   font-family: var(--f-display); font-weight: 700; font-size: 1.15rem;
   letter-spacing: -0.01em;
 }
-.nav-mark .mark-box {
-  width: 30px; height: 30px;
-  background: var(--ink); color: var(--paper);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.85rem; font-weight: 700;
-  font-family: var(--f-mono);
-  transition: background .3s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
+.nav-mark .mark-logo {
+  height: 32px; width: auto; object-fit: contain;
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1);
 }
-.nav-mark:hover .mark-box { background: var(--moss); transform: rotate(-8deg) scale(1.06); }
+.nav-mark:hover .mark-logo { transform: rotate(-8deg) scale(1.08); }
 .nav-mark .mark-sub {
   font-family: var(--f-mono); font-size: 0.65rem; color: var(--stone);
   font-weight: 400; letter-spacing: 0.05em;
@@ -268,3 +264,12 @@ footer.site-footer {
 @media (max-width: 860px) {
   #cursorDot { display: none; }
 }
+
+/* ── SKIP LINK (accessibility) ─────────────────── */
+.skip-link {
+  position: absolute; top: -100px; left: 12px; z-index: 10000;
+  background: var(--ink); color: var(--paper);
+  padding: 10px 18px; font-family: var(--f-mono); font-size: 0.8rem;
+  border: 2px solid var(--moss); transition: top .2s ease;
+}
+.skip-link:focus { top: 12px; }

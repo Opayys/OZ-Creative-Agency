@@ -1,12 +1,16 @@
-/* form.js — validates contact form, then opens the visitor's email client
-   (mailto:) addressed to OZ Creative Agency with subject/body pre-filled
-   from what they typed. Shows a success state once the email client opens. */
+/* form.js — validates the contact form, then submits it to Web3Forms
+   (a free form-delivery API — no backend needed). The message lands
+   directly in the destination inbox; no email client popup required.
+   Docs: https://docs.web3forms.com */
 (function () {
   const submitBtn = document.getElementById('formSubmit');
   if (!submitBtn) return;
 
-  // ── CHANGE THIS to the real inbox you want messages sent to ──
-  const DESTINATION_EMAIL = 'ozcreativeagency@gmail.com';
+  // ── CHANGE THIS to your own Web3Forms access key ──
+  // Get a free key in ~10 seconds at https://web3forms.com (no signup
+  // required to generate one, just enter the destination email).
+  const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE';
+  const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
   const fields = {
     name: document.getElementById('fName'),
@@ -16,46 +20,67 @@
   };
   const formArea = document.getElementById('formArea');
   const successArea = document.getElementById('formSuccess');
+  const errorArea = document.getElementById('formError');
   const defaultLabel = submitBtn.innerHTML;
 
-  function buildMailto() {
-    const name = fields.name.value.trim();
-    const contact = fields.contact.value.trim();
-    const type = fields.type.value;
-    const msg = fields.msg.value.trim();
-
-    const subject = `[OZ Creative] Project Inquiry — ${name}`;
-    const body =
-      `Nama / Name: ${name}\n` +
-      `Email / Kontak: ${contact}\n` +
-      `Kategori Project: ${type}\n` +
-      `\n` +
-      `Pesan:\n${msg}\n` +
-      `\n---\nDikirim dari form contact oz-creative-agency`;
-
-    const params = new URLSearchParams({ subject, body });
-    return `mailto:${DESTINATION_EMAIL}?${params.toString().replace(/\+/g, '%20')}`;
+  function flashInvalid() {
+    submitBtn.textContent = 'Lengkapi semua field dulu';
+    submitBtn.style.background = 'var(--rust)';
+    submitBtn.style.borderColor = 'var(--rust)';
+    setTimeout(() => {
+      submitBtn.innerHTML = defaultLabel;
+      submitBtn.style.background = '';
+      submitBtn.style.borderColor = '';
+    }, 1900);
   }
 
-  submitBtn.addEventListener('click', () => {
+  function setLoading(isLoading) {
+    submitBtn.disabled = isLoading;
+    submitBtn.style.opacity = isLoading ? '0.6' : '1';
+    submitBtn.style.cursor = isLoading ? 'wait' : 'pointer';
+    submitBtn.textContent = isLoading ? 'mengirim…' : defaultLabel;
+    if (!isLoading) submitBtn.innerHTML = defaultLabel;
+  }
+
+  submitBtn.addEventListener('click', async () => {
     const empty = Object.values(fields).some((el) => !el.value.trim());
+    if (empty) { flashInvalid(); return; }
 
-    if (empty) {
-      submitBtn.textContent = 'Lengkapi semua field dulu';
-      submitBtn.style.background = 'var(--rust)';
-      submitBtn.style.borderColor = 'var(--rust)';
-      setTimeout(() => {
-        submitBtn.innerHTML = defaultLabel;
-        submitBtn.style.background = '';
-        submitBtn.style.borderColor = '';
-      }, 1900);
-      return;
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: `[OZ Creative] Project Inquiry — ${fields.name.value.trim()}`,
+      from_name: 'OZ Creative Agency — Website',
+      name: fields.name.value.trim(),
+      contact: fields.contact.value.trim(),
+      category: fields.type.value,
+      message: fields.msg.value.trim(),
+    };
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      setLoading(false);
+
+      if (data.success) {
+        formArea.style.display = 'none';
+        successArea.classList.add('show');
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      setLoading(false);
+      if (errorArea) {
+        errorArea.classList.add('show');
+        setTimeout(() => errorArea.classList.remove('show'), 5000);
+      }
+      console.error('Web3Forms submission error:', err);
     }
-
-    // Open the visitor's default mail client addressed to us, pre-filled.
-    window.location.href = buildMailto();
-
-    formArea.style.display = 'none';
-    successArea.classList.add('show');
   });
 })();
