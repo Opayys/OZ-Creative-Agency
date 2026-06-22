@@ -9,7 +9,7 @@
   // ── CHANGE THIS to your own Web3Forms access key ──
   // Get a free key in ~10 seconds at https://web3forms.com (no signup
   // required to generate one, just enter the destination email).
-  const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE';
+  const WEB3FORMS_ACCESS_KEY = '1c6492c9-c075-41a1-830f-cea7c01230a3';
   const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
   const fields = {
