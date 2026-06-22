@@ -99,7 +99,7 @@ Taruh di `assets/images/`, nama file **harus persis**:
 
 | File | Isi |
 |---|---|
-| `foto-opayy.jpg` | Foto kamu (Naufal/Opayy) |
+| `foto-opayy.jpg` | Foto Naufal (Opayy) |
 | `foto-zenn.jpg` | Foto Reza (Zenn) |
 | `img-axeon.jpg` | Screenshot Axeon Management Protocol |
 | `img-stackblock.jpg` | Screenshot Stack Block Arcade |
